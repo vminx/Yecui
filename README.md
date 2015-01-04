@@ -24,10 +24,10 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 	}
 ```
 3.空格的使用：
+选择器与 { 之前（必须）要有空格
+属性名的 : 后（必须）要有空格
+属性名的 : 前（禁止）加空格
 ```
-	选择器与 { 之前（必须）要有空格
-	属性名的 : 后（必须）要有空格
-	属性名的 : 前（禁止）加空格
 	.hotel-content {
     	font-weight: bold;
 	}
@@ -46,8 +46,36 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
     left: 0px;
 }
 ```
-
-
+6.推荐使用css书写顺序,按照这样的顺序书写可见提升浏览器渲染dom的性能
+```
+	.hotel-content {
+	     /* 定位 */
+	     display: block;
+	     position: absolute;
+	     left: 0;
+	     top: 0;
+	     /* 盒模型 */
+	     width: 50px;
+	     height: 50px;
+	     margin: 10px;
+	     border: 1px solid black;
+	     / *其他* /
+	     color: #efefef;
+	}
+```
+7.小图片（必须）sprite 合并
+8.IE Hack List
+```
+/* 针对ie的hack */
+	selector {
+	     property: value;     /* 所有浏览器 */ 
+	     property: value\9;   /* 所有IE浏览器 */ 
+	     property: value\0;   /* IE8 */
+	     +property: value;    /* IE7 */
+	     _property: value;    /* IE6 */
+	     *property: value;    /* IE6-7 */
+	}
+```
 
 
 
