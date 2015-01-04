@@ -1,16 +1,15 @@
 <h1><a href="#" title="yep-ui 官网"></h1>
 
-[![Bower version](https://badge.fury.io/bo/amazeui.svg)](http://badge.fury.io/bo/amazeui)
-[![NPM version](https://badge.fury.io/js/amazeui.svg)](http://badge.fury.io/js/amazeui)
-[![Build Status](https://travis-ci.org/allmobilize/amazeui.svg?branch=master)](https://travis-ci.org/allmobilize/amazeui)
 
-yep-ui 是基于公司内部项目构建的一个跨屏前端框架。 __[README in English](https://github.com/allmobilize/amazeui/blob/master/README_EN.md)__
+yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 
 ## 功能简介
 
 ### 移动优先
 
 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。
+
+####对称性
 
 ### 组件丰富，模块化
 
