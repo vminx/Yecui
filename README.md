@@ -3,7 +3,7 @@
 
 yeps 是基于公司内部项目构建的一个跨屏前端框架和前端规范。
 框架简单地说，就是一些事先写好的css，你只需要给你的html元素加上一些特定的类，就可以快速的得到一些想要的效果。
-##项目开发
+## 项目开发
 - 大中型项目,页面开发套PHP壳,公共页面维护方便
 - 基本结构
 ```
@@ -32,16 +32,16 @@ yeps 是基于公司内部项目构建的一个跨屏前端框架和前端规范
 	|	|	└── widget/				//页面组件
 	└── tool/
 ```
-##模块组织规范
+## 模块组织规范
 
 yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 - 基础框架（reset +  function + iconfont + 栅格）
 - 通用模块（符合 yeps 规范的样式模块）
 - 页面样式（继承通用模块,开发人员进一步开发）
 
-##CSS书写规范 
+## CSS书写规范 
 
-	参考 [google的html\css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html/)
+参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
 
 1. 多人开发,推荐竖版写法,方便修改维护
 ```
@@ -129,19 +129,17 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 
 
 
-###图标使用
+### 图标使用
 - ui 彩色图标建议使用雪碧图合并一起,减小请求数
-- 扁平化纯色图标尽量使用 font-face 代替 雪碧图
-	推荐使用 [淘宝图标库Iconfont](http://www.iconfont.cn/)
+- 扁平化纯色图标尽量使用 font-face 代替 雪碧图,推荐使用 [淘宝图标库Iconfont](http://www.iconfont.cn/)
 
-###命名建议
+### 命名建议
 常用状态有：hover, current, selected, disabled, focus, blur, checked, success, error 等
 	
-###简写的建议
+### 简写的建议
 ```
 	title = tt	content = cnt
 ```
-##移动端开发说明
-###单位的使用
-	rem是否能替代px 作为基础单位  [淘宝图标库Iconfont](http://isux.tencent.com/web-app-rem.html/)
-	最还有一套快速切换px ,rem 为单位的解决烦啊
+## 移动端开发说明
+### 单位的使用
+rem是否能替代px 作为基础单位  [web-app子rem的变革](http://isux.tencent.com/web-app-rem.html),最还有一套快速切换px ,rem 为单位的解决烦啊
