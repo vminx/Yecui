@@ -143,5 +143,5 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 ## 移动端开发说明
 #### 单位的使用
 rem是否能替代px 作为基础单位  
--[webapprem的变革](http://isux.tencent.com/web-app-rem.html)
--最还有一套快速切换px ,rem 为单位的解决烦啊
+- [webapprem的变革](http://isux.tencent.com/web-app-rem.html)
+- 最还有一套快速切换px ,rem 为单位的解决烦啊
