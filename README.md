@@ -110,12 +110,14 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 9.避免不必要的 CSS 选择符嵌套
 
 10.ID和class的命名尽可能短，并符合语义。
+```
 	/* 不推荐 */
 	.navigation {}
 	.atr {}
 	/* 推荐 */
 	.nav {}
 	.author {}
+```
 
 
 
@@ -129,7 +131,7 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 ####ui 彩色图标建议使用雪碧图合并一起,减小请求数
 		合并规则 ------todo-------
 ####扁平化纯色图标尽量使用 fontface 代替 雪碧图
-		推荐使用 [ 淘宝图标库Iconfont ](http://www.iconfont.cn/)
+		推荐使用 [淘宝图标库Iconfont](http://www.iconfont.cn/)
 
 ###命名建议
 常用状态有：hover, current, selected, disabled, focus, blur, checked, success, error 等
