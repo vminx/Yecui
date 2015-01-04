@@ -1,12 +1,46 @@
 <h1><a href="#" title="yep-ui 官网"></h1>
 
 
-yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
-简单地说，就是一些事先写好的css，你只需要给你的html元素加上一些特定的类，就可以快速的得到一些想要的效果。
+yeps 是基于公司内部项目构建的一个跨屏前端框架和前端规范。
+框架简单地说，就是一些事先写好的css，你只需要给你的html元素加上一些特定的类，就可以快速的得到一些想要的效果。
+##项目开发
+1.大中型项目,页面开发使用PHP壳,公共页面维护方便
+2.基本结构
+```
+	项目名称/
+	├── src/
+	|	├── assets/
+	|	|	├── css/
+	|	|	├── img/
+	|	|	|	├── 基础ui图
+	|	|	|	└── project/项目专有图片
+	|	|	├── js/
+	|	|	└── less/
+	|	|		├── view/
+	|	|		└── widget/
+	|	├── mock/
+	|	├── page/
+	|	|	├── layout/
+	|	|	├── tmpl/
+	|	|	├── view/
+	|	|	└── widget/
+	└── tool/
+```
+##模块组织规范
 
+yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
+```
+	基础框架（reset + iconfont + 栅格）
 
-##CSS书写规范
+	通用模块（符合 yeps 规范的样式模块）
 
+	页面样式（继承通用模块,开发人员进一步开发）
+```	
+
+###CSS书写规范 
+```
+	参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
+```
 1.多人开发,推荐竖版写法,方便修改维护
 ```
 	.yp-title {
@@ -23,10 +57,7 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 		font-weight: bold;
 	}
 ```
-3.空格的使用：
-	选择器与 { 之前（必须）要有空格
-	属性名的 : 后（必须）要有空格
-	属性名的 : 前（禁止）加空格
+3.在紧跟属性名的冒号后,和属性名和{之间 使用一个空格
 ```
 	.hotel-content {
     	font-weight: bold;
@@ -40,11 +71,11 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 	     ......
 	}
 ```
-5.禁止向 0 后添加单位, 如：
+5.如果css属性的值为0,则后面不要带上单位。除非真的是需要。
 ```
-.obj {
-    left: 0px;
-}
+	.obj {
+	    left: 0;    
+	}
 ```
 6.推荐使用css书写顺序,按照这样的顺序书写可见提升浏览器渲染dom的性能
 ```
@@ -64,9 +95,9 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 	}
 ```
 7.小图片（必须）sprite 合并
+
 8.IE Hack List
 ```
-/* 针对ie的hack */
 	selector {
 	     property: value;     /* 所有浏览器 */ 
 	     property: value\9;   /* 所有IE浏览器 */ 
@@ -76,30 +107,36 @@ yep-ui 是基于公司内部项目构建的一个跨屏前端框架。
 	     *property: value;    /* IE6-7 */
 	}
 ```
+9.避免不必要的 CSS 选择符嵌套
+
+10.ID和class的命名尽可能短，并符合语义。
+```
+	/* 不推荐 */
+	.navigation {}
+	.atr {}
+	/* 推荐 */
+	.nav {}
+	.author {}
+```
 
 
 
 
 
-
-
-##CSS 大致分为四部分
-	###基础（默认）样式
-		使用 normalize.css 统一浏览器差异， 以及一些基础的元素样式。
-	###布局样式
 
 
 
 
 ###图标使用
-ui图标建议使用css sprites合并一起
-	合并规则 ------todo-------
-扁平化纯色图标建议使用 fontface 
-	淘宝图标库[Iconfont](http://www.iconfont.cn/)
+	####ui 彩色图标建议使用雪碧图合并一起,减小请求数
+		合并规则 ------todo-------
+	####扁平化纯色图标尽量使用 fontface 代替 雪碧图
+		推荐使用 [ 淘宝图标库Iconfont ](http://www.iconfont.cn/)
 
 ###命名建议
 常用状态有：hover, current, selected, disabled, focus, blur, checked, success, error 等
 	
 ###简写的建议
+```
 	title = tt	content = cnt
 ###	
