@@ -41,7 +41,7 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 
 ##CSS书写规范 
 
-	参考 [google的html\css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
+	参考 [google的html\css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html/)
 
 1. 多人开发,推荐竖版写法,方便修改维护
 ```
@@ -143,5 +143,5 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 ```
 ##移动端开发说明
 ###单位的使用
-	rem是否能替代px 作为基础单位  [web-app子rem的变革](http://isux.tencent.com/web-app-rem.html)
+	rem是否能替代px 作为基础单位  [web-app子rem的变革](http://isux.tencent.com/web-app-rem.html/)
 	最还有一套快速切换px ,rem 为单位的解决烦啊
