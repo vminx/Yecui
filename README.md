@@ -244,7 +244,8 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 ### 统一语义理解和命名
 - 布局（.g-）
-<table>
+
+<table class="am-table am-table-bd am-table-striped">
   <thead>
   <tr>
     <th>语义</th>
@@ -259,21 +260,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
     <tr> <th>尾部</th> <th>foot</th> <th>ft</th> </tr> 
     <tr> <th>主栏</th> <th>main</th> <th>mn</th> </tr> 
     <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
-    <tr> <th>侧栏</th> <th>mainc</th> <th>mnc</th> </tr> 
-    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
-    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
-    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
+    <tr> <th>侧栏</th> <th>side</th> <th>sd</th> </tr> 
+    <tr> <th>侧栏子容器</th> <th>sidec</th> <th>sdc</th> </tr> 
+    <tr> <th>盒容器</th> <th>wrap/box</th> <th>wrap/box</th> </tr> 
     </tbody>
 </table>
-	- 文档doc `doc`
-	- 头部head `hd`
-	- 主体 head `hd`
-	- 头部head `hd`
-	- 头部head `hd`
-	- 头部head `hd`
-	- 头部head `hd`
-	- 头部head `hd`
-	- 头部head `hd`
+
+
 ## 移动端开发说明
 #### 单位的使用
 rem是否能替代px 作为基础单位  
