@@ -45,36 +45,38 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 ##关于命名空间
 按照模块分配命名空间
 一般模块分类
-- ui 
+- `ui` 
 ```css
 	/*常用系统组件 包括 */
+	.ui-navbar{} 	 			/* 导航条 */
+	.ui-header{} 	 			/* 页眉 */
+	.ui-footer{} 	 			/* 页脚 */
+	.ui-titbar{} 	 			/* 标题栏 */
+	.ui-menu{} 	 				/* 菜单 */
 	.ui-button{} 	 			/* 按钮 */
-	.ui-tabs{} 					/* 按钮 */
-	.ui-form{} 					/* 按钮 */
-	.ui-alert{} 				/* 按钮 */
-	.ui-dropdown{} 				/* 按钮 */
-	.ui-slider{} 				/* 按钮 */
-	.ui-select{} 				/* 按钮 */
-	.ui-share{} 				/* 按钮 */
-	.ui-breadcrumb{} 			/* 按钮 */
-	.ui-close{} 				/* 按钮 */
-	.ui-forms{} 				/* 按钮 */
-	.ui-icon{} 					/* 按钮 */
-	.ui-list{} 					/* 按钮 */
-	.ui-nav{} 					/* 按钮 */
-	.ui-pagination{} 			/* 按钮 */
-	.ui-step{} 					/* 按钮 */
-	.ui-table{} 				/* 按钮 */
+	.ui-tabs{} 					/* tab切换 */
+	.ui-forms{} 				/* 表单 */
+	.ui-alert{} 				/* 提示信息 */
+	.ui-dropdown{} 				/* 下拉框 */
+	.ui-slider{} 				/* 滑动内容 */
+	.ui-select{} 				/* 选择器 */
+	.ui-share{} 				/* 分享 */
+	.ui-breadcrumb{} 			/* 面包屑 */
+	.ui-close{} 				/* 关闭 */
+	.ui-icon{} 					/* 图标 */
+	.ui-list{} 					/* 列表 */
+	.ui-pages{} 				/* 分页 */
+	.ui-step{} 					/* 步进条 */
+	.ui-table{} 				/* 表格 */
 ```
-- fn 
-```javascript
+- `fn` 
+```css
 	/*功能类的组件 包括 */
-	.fn-Variables{}
-	.fn-Utility{}
-	.fn-grid{}
-	.fn-animation{}
-	.fn-Base{}
-	.fn-Mixins{}
+	.fn-variables{} 			/* less变量 */
+	.fn-utility{} 				/* 公用 */
+	.fn-grid{} 					/* 布局 */
+	.fn-animation{} 			/* 动画 */
+	.fn-mixins{} 				/* 混合函数 */
 ```
 
 
