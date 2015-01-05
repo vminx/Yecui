@@ -2,6 +2,7 @@
 
 
 yecui 是基于公司内部项目构建的一个跨屏前端框架和前端规范。
+先阶段移动优先
 框架-简单地说，就是一些事先写好的css，你只需要给你的html元素加上一些特定的类，就可以快速的得到一些想要的效果。
 ## 项目开发
 - 大中型项目,页面开发套PHP壳,公共页面维护方便
@@ -40,6 +41,29 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 - 基础框架（reset +  function + iconfont + 栅格）
 - 通用模块（符合 yeps 规范的样式模块）
 - 页面样式（继承通用模块,开发人员进一步开发）
+
+##关于命名空间
+按照模块分配命名空间
+一般模块分类
+	//
+- ui 
+```
+	常用系统组件 包括 
+	Button, tabs, form, alert, Dropdown ,slider ,select ,
+	share ,Breadcrumb, Close, Forms,  Icon, list ,
+	Nav ,Pagination ,step ,table
+```
+- fn 
+```
+功能类的组件 包括 
+- Variables, 
+- Utility, 
+- grid , 
+- animation, 
+- Base, 
+- Mixins
+```
+
 
 ## CSS书写规范 
 
@@ -110,8 +134,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	     *property: value;    /* IE6-7 */
 	}
 ```
-9. 避免不必要的 CSS 选择符嵌套
-
+9. 避免不必要的 CSS 选择符嵌套,选择符嵌套在必要的情况下一般不超过三层；选择符叠加一般不多于两个。
+```
+	/* 不推荐 */
+	.ui.form.input .fields.error .field .ui.selection.dropdown .menu .item:hover {
+	    ...
+	}
+```
 10. ID和class的命名尽可能短，并符合语义。
 ```
 	/* 不推荐 */
