@@ -245,35 +245,14 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 ### 统一语义理解和命名
 - 布局（.g-）
 	- [doc] - `doc` - 文档 
-	- [doc] - `doc` - 头部 
-	- [doc] - `doc` - 主体 
-	- [doc] - `doc` - 尾部 
-	- [doc] - `doc` - 主栏 
-	- [doc] - `doc` - 栏子容器 
-	- [doc] - `doc` - 侧栏 
-	- [doc] - `doc` - 栏子容器 
-	- [doc] - `doc` - 盒容器 
-	<table>
-  <thead>
-  <tr>
-    <th>语义</th>
-    <th>命名</th>
-    <th>简写</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr> <th>文档</th> <th>doc</th> <th>doc</th> </tr> 
-    <tr> <th>头部</th> <th>head</th> <th>hd</th> </tr> 
-    <tr> <th>主体</th> <th>body</th> <th>bd</th> </tr> 
-    <tr> <th>尾部</th> <th>foot</th> <th>ft</th> </tr> 
-    <tr> <th>主栏</th> <th>main</th> <th>mn</th> </tr> 
-    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
-    <tr> <th>侧栏</th> <th>side</th> <th>sd</th> </tr> 
-    <tr> <th>侧栏子容器</th> <th>sidec</th> <th>sdc</th> </tr> 
-    <tr> <th>盒容器</th> <th>wrap/box</th> <th>mnc</th> </tr> 
-    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
-    </tbody>
-</table>
+	- [head] - `hd` - 头部 
+	- [body] - `bd` - 主体 
+	- [foot] - `ft` - 尾部 
+	- [main] - `mn` - 主栏 
+	- [mainc] - `mnc` - 栏子容器 
+	- [side] - `sd` - 侧栏 
+	- [sidec] - `sdc` - 栏子容器 
+	- [wrap/box] - `wrap/box` - 盒容器 
 
 
 ## 移动端开发说明
