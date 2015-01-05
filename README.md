@@ -79,6 +79,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 		</div>
 	```
 	- 针对这四类屏幕设备定义各自的类,显示不同的效果
+
 	```html
 		<div class="g-row">
 		  <div class="g-col-xs-12 g-col-sm-6 col-md-8">.g-col-xs-12 .g-col-sm-6 .col-md-8</div>
@@ -92,6 +93,53 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 		  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
 		</div>
 	```
+	- 列偏移
+
+	```html
+		<div class="row">
+		    <div class="col-md-4">.col-md-4</div>
+			<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+			<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+		</div>
+	```
+	- Less mixin 和变量
+		变量
+		通过变量来定义列数、槽（gutter）宽、媒体查询阈值（用于确定合适让列浮动）。我们使用这些变量生成预定义的栅格类，如上所示，还有如下所示的定制 mixin。
+
+		```css
+			@grid-columns:              12;
+			@grid-gutter-width:         30px;
+			@grid-float-breakpoint:     768px;
+		```
+
+		mixin 用来和栅格变量一同使用，为每个列（column）生成语义化的 CSS 代码。指向 [mixin.less]()
+
+		```less
+			// 部分代码
+			.make-row(@gutter: @grid-gutter-width) {
+			  // Then clear the floated columns
+			  .clearfix();
+
+			  @media (min-width: @screen-sm-min) {
+			    margin-left:  (@gutter / -2);
+			    margin-right: (@gutter / -2);
+			  }
+
+			  // Negative margin nested rows out to align the content of columns
+			  .row {
+			    margin-left:  (@gutter / -2);
+			    margin-right: (@gutter / -2);
+			  }
+			}
+
+		```
+
 	###等分布局
 	###辅助布局
 
