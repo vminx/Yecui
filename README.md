@@ -255,6 +255,43 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	- `wrap/box` - [wrap/box] 盒容器
 
 - 模块（.m-）、元件（.u-）
+	- `doc` - [doc] 导航
+	- `hd` - [head] 头部
+	- `bd` - [body] 主体
+	- `ft` - [foot] 尾部
+	- `mn` - [main] 主栏
+	- `mnc` - [mainc] 栏子容器
+	- `sd` - [side] 侧栏
+	- `sdc` - [sidec] 栏子容器
+	- `wrap/box` - [wrap/box] 盒容器
+
+	- 子导航	subnav	`snav`
+	- 面包屑	crumb	`crm`
+	- 菜单	menu	`menu`
+	- 选项卡	tab	`tab`
+	- 标题区	head/title	`hd/tt`
+	- 内容区	body/content	`bd/ct`
+	- 列表	list	`lst`
+	- 表格	table	`tb`
+	- 表单	form	`fm`
+	- 热点	hot	`hot`
+	- 排行	top	`top`
+	- 登录	login	`log`
+	- 标志	logo	`logo`
+	- 广告	advertise	`ad`
+	- 搜索	search	`sch`
+	- 幻灯	slide	`sld`
+	- 提示	tips	`tips`
+	- 帮助	help	`help`
+	- 新闻	news	`news`
+	- 下载	download	`dld`
+	- 注册	regist	`reg`
+	- 投票	vote	`vote`
+	- 版权	copyright	`cprt`
+	- 结果	result	`rst`
+	- 标题	title	`tt`
+	- 按钮	button	`btn`
+	- 输入	input	`ipt`
 
 ## 移动端开发说明
 #### 单位的使用
