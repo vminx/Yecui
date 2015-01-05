@@ -52,7 +52,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 - Normalize.css
 	为了增强跨浏览器表现的一致性，我们使用了 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 - 布局 `grid`：栅格系统借鉴 Bootstrap  12栅格布局。
-	参见 [grid 基本使用](gride.md)
+	参见 [grid 基本使用](grid.md)
 	#####.g-row
 
 	表示一行，用于包裹.g-col-{{number}}。一行内的栅格数不要超过 12
