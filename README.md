@@ -47,47 +47,56 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 建议使用 - 来做命名空间上的区隔，最小化两个模块之间的命名冲突。
 #####这种模块化的命名方式会很好地避免样式之间的冲突，特别推荐在团队中使用。参见 [网易前端框架NEC-分类方法](http://nec.netease.com/standard/css-sort.html)
-1. 重置`reset`和默认`base``tags`：消除默认样式和浏览器差异，并设置部分标签的初始样式，以减少后面的重复劳动！你可以根据你的网站需求设置！
-2. 统一处理：建议在这个位置统一调用背景图（这里指多个布局或模块或元件共用的图）和清除浮动（这里指通用性较高的布局、模块、元件内的清除）等统一设置处理的样式！
-3. 布局 `grid` `.g-`：将页面分割为几个大块，通常有头部、主体、主栏、侧栏、尾部等！
-4. 模块 `module` `.m-`：通常是一个语义化的可以重复使用的较大的整体！比如导航、登录、注册、各种列表、评论、搜索等！
-5. 元件 `unit` `.u-`：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！
-6. 功能 `function` `.f-`：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！
-7. 皮肤 `skin` `.s-`：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！
-8. 状态 `.z-`：为状态类样式加入前缀，统一标识，方便识别，她只能组合使用或作为后代出现（.u-ipt.z-dis{}，.m-list li.z-sel{}），具体详见命名规则的扩展相关项。
 
-#####框架现有功能
+#####现有功能
+- Normalize.css
+	为了增强跨浏览器表现的一致性，我们使用了 Normalize.css，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
+- 布局 `grid`：栅格系统借鉴 Bootstrap  12栅格布局。
+	参见 [grid 基本使用](gride.md)
+	#####.g-row
 
-- `grid模块` 
+	表示一行，用于包裹.g-col-{{number}}。一行内的栅格数不要超过 12
+
+	#####.g-col-{{number}}
+
+	表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
+	```html
+		<div class="g-row">
+		    <div class="g-col-5">ui-grid-5</div>
+		    <div class="g-col-15">ui-grid-15</div>
+		    <div class="g-col-5">ui-grid-5</div>
+		</div>
+	```
+
+- 模块 `module`：通常是一个语义化的可以重复使用的较大的整体！比如导航、登录、注册、各种列表、评论、搜索等！
 ```css
-	.g-{}						/* 导航条 */
+	.m-navbar{}					/* 导航条 */
+	.m-header{} 	 			/* 页眉 */
+	.m-footer{} 	 			/* 页脚 */
+	.m-titbar{} 	 			/* 标题栏 */
+	.m-menu{} 	 				/* 菜单 */
+	.m-tabs{} 					/* tab切换 */
+	.m-forms{} 					/* 表单 */
+	.m-alert{} 					/* 提示信息 */
+	.m-dropdown{} 				/* 下拉框 */
+	.m-slider{} 				/* 滑动内容 */
+	.m-share{} 					/* 分享 */
+	.m-breadcrumb{} 			/* 面包屑 */
+	.m-list{} 					/* 列表 */
+	.m-step{} 					/* 步进条 */
+	.m-table{} 					/* 表格 */
 ```
 
-- `ui模块` 
+- 元件 `unit`：通常是一个不可再分的较为小巧的个体，通常被重复用于各种模块中！比如按钮、输入框、loading、图标等！
 ```css
-	/*常用系统组件 包括 */
-	.ui-navbar{} 	 			/* 导航条 */
-	.ui-header{} 	 			/* 页眉 */
-	.ui-footer{} 	 			/* 页脚 */
-	.ui-titbar{} 	 			/* 标题栏 */
-	.ui-menu{} 	 				/* 菜单 */
-	.ui-button{} 	 			/* 按钮 */
-	.ui-tabs{} 					/* tab切换 */
-	.ui-forms{} 				/* 表单 */
-	.ui-alert{} 				/* 提示信息 */
-	.ui-dropdown{} 				/* 下拉框 */
-	.ui-slider{} 				/* 滑动内容 */
-	.ui-select{} 				/* 选择器 */
-	.ui-share{} 				/* 分享 */
-	.ui-breadcrumb{} 			/* 面包屑 */
-	.ui-close{} 				/* 关闭 */
-	.ui-icon{} 					/* 图标 */
-	.ui-list{} 					/* 列表 */
-	.ui-pages{} 				/* 分页 */
-	.ui-step{} 					/* 步进条 */
-	.ui-table{} 				/* 表格 */
+	.u-button{} 	 			/* 按钮 */
+	.u-select{} 				/* 选择器 */
+	.u-close{} 					/* 关闭 */
+	.u-icon{} 					/* 图标 */
+	.u-pages{} 					/* 分页 */
+	
 ```
-- `fn模块` 
+- 功能 `function`：为方便一些常用样式的使用，我们将这些使用率较高的样式剥离出来，按需使用，通常这些选择器具有固定样式表现，比如清除浮动等！不可滥用！
 ```css
 	.fn-clear{} 				/* 清除浮动 */
 	.fn-hide{} 					/* 隐藏元素 */
@@ -97,15 +106,16 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	.fn-clamp{} 				/* 多行移除省略 */
 	.fn-rmb{} 					/* 金钱样式 */
 	.fn-linear{} 				/* 简单渐变 */
-
-	/*功能类的组件 包括 */
-	.fn-variables{} 			/* less变量 */
-	.fn-utility{} 				/* 公用 */
-	.fn-grid{} 					/* 布局 */
-	.fn-animation{} 			/* 动画 */
-	.fn-mixins{} 				/* 混合函数 */
 ```
 
+- 皮肤 `skin`：如果你需要把皮肤型的样式抽离出来，通常为文字色、背景色（图）、边框色等，非换肤型网站通常只提取文字色！非换肤型网站不可滥用此类！
+```css
+	.s-{}  /* 1.0 版本不支持皮肤 */
+```
+- 状态 `zhuangtai`：为状态类样式加入前缀，统一标识，方便识别，她只能组合使用或作为后代出现（.u-ipt.z-dis{}，.m-list li.z-sel{}），具体详见命名规则的扩展相关项。
+```css
+	.z-{}
+```
 #### 最佳选择器写法（模块）
 ```css
 	/* 这是某个模块 */
@@ -251,3 +261,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 rem是否能替代px 作为基础单位  
 - 参见 [webapp rem的变革](http://isux.tencent.com/web-app-rem.html)
 - 最好有一套快速切换px ,rem 为单位的解决方案
+
+#参考、使用的项目
+
+[amazeui](https://github.com/allmobilize/amazeui)
+
+[Bootstrap](http://www.bootcss.com/)
+
+[aliceui](https://github.com/aliceui/aliceui.org)
+
+[nec](http://nec.netease.com/)
