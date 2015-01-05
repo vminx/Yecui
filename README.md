@@ -244,16 +244,17 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 ### 统一语义理解和命名
 - 布局（.g-）
-	- [doc] - `doc` - 文档 
-	- [head] - `hd` - 头部 
-	- [body] - `bd` - 主体 
-	- [foot] - `ft` - 尾部 
-	- [main] - `mn` - 主栏 
-	- [mainc] - `mnc` - 栏子容器 
-	- [side] - `sd` - 侧栏 
-	- [sidec] - `sdc` - 栏子容器 
-	- [wrap/box] - `wrap/box` - 盒容器 
+	- `doc` - 文档 [doc]
+	- `hd` - 头部 [head]
+	- `bd` - 主体 [body]
+	- `ft` - 尾部 [foot]
+	- `mn` - 主栏 [main]
+	- `mnc` - 栏子容器 [mainc]
+	- `sd` - 侧栏 [side]
+	- `sdc` - 栏子容器 [sidec]
+	- `wrap/box` - 盒容器 [wrap/box]
 
+- 模块（.m-）、元件（.u-）
 
 ## 移动端开发说明
 #### 单位的使用
