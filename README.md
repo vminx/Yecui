@@ -46,14 +46,14 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 ##关于命名空间
 
 建议使用 - 来做命名空间上的区隔，最小化两个模块之间的命名冲突。
-#####这种模块化的命名方式会很好地避免样式之间的冲突，特别推荐在团队中使用。参见 [网易前端框架NEC-分类方法](http://nec.netease.com/standard/css-sort.html)
+这种模块化的命名方式会很好地避免样式之间的冲突，特别推荐在团队中使用。参见 [网易前端框架NEC-分类方法](http://nec.netease.com/standard/css-sort.html)
 
 #####现有功能
 
 - css reset
 	为了增强跨浏览器表现的一致性，我们使用了 [Normalize.css](https://github.com/necolas/normalize.css)
 
-- 布局 `grid`：栅格系统借鉴 Bootstrap  12栅格系统 
+- 布局 `grid`：借鉴了 Bootstrap的栅格系统 
 	具体使用参见 [bootstrap栅格系统](http://v3.bootcss.com/css/#grid)
 	###基础布局
 	#####布局容器
@@ -62,7 +62,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 	#####.g-row 替代 .row
 
-	表示一行，用于包裹.g-col-{{number}}。一行内的栅格数不要超过 12
+	表示一行，用于包裹.g-col-{xs,sm,md,lg}-{number}。一行内的栅格数不要超过 12
 
 	#####.g-col-{xs,sm,md,lg}-{number} 替代 .col-{number}
 	- xs 超小屏幕 手机 (<768px)
@@ -70,7 +70,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	- md 中等屏幕 桌面显示器 (≥992px)
 	- lg 大屏幕 大桌面显示器 (≥1200px)
 
-	表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
+	- number表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
 	```html
 		<div class="g-row">
 		    <div class="g-col-5">ui-grid-5</div>
