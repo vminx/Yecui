@@ -45,6 +45,7 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
 
 1. 多人开发,推荐竖版写法,方便修改维护
+
 	- .yp-title {
 		position: relative;
 		top: 100px;
