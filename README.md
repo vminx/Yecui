@@ -244,6 +244,24 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 ### 统一语义理解和命名
 - 布局（.g-）
+<table class="am-table am-table-bd am-table-striped">
+  <thead>
+  <tr>
+    <th>语义</th>
+    <th>命名</th>
+    <th>简写</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+	    <th>语义</th>
+	    <th>命名</th>
+	    <th>简写</th>    
+    </tr>
+    <tr> <th>文档</th> <th>doc</th> <th>doc</th> </tr> 
+    <tr> <th>头部</th> <th>head</th> <th>hd</th> </tr> 
+    </tbody>
+</table>
 	- 文档doc `doc`
 	- 头部head `hd`
 	- 主体 head `hd`
