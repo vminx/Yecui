@@ -15,21 +15,22 @@ yeps 是基于公司内部项目构建的一个跨屏前端框架和前端规范
 	|	|	|	├── yeps.css		//yeps 组件库
 	|	|	|	└── solution.css	//基于各产品个性解决方案
 	|	|	├── img/
-	|	|	|	├──...				//基础ui图片
+	|	|	|	├── ...				//基础ui图片
+	|	|	|	├── fonts/			//基础ui图片
 	|	|	|	└── project/		//项目专有图片
 	|	|	├── js/
 	|	|	|	├── app/			//各页面具体js
 	|	|	|	├── lib/			//js框架
-	|	|	|	└── common/			//通用js
+	|	|	|	└── common/		//通用js
 	|	|	└── less/
 	|	|		├── view/			//less编译文件
-	|	|		└── widget/			//yeps 组件
+	|	|		└── widget/		//yeps 组件
 	|	├── mock/
 	|	├── page/
-	|	|	├── layout/				//公共模块
+	|	|	├── layout/			//公共模块
 	|	|	├── tmpl/				//模板文件
 	|	|	├── view/				//主体页面
-	|	|	└── widget/				//页面组件
+	|	|	└── widget/			//页面组件
 	└── tool/
 ```
 ## 模块组织规范
@@ -43,7 +44,7 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 
 参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
 
-1. 多人开发,推荐竖版写法,方便修改维护
+. 多人开发,推荐竖版写法,方便修改维护
 ```
 	.yp-title {
 		position: relative;
@@ -53,7 +54,7 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 	}
 ```
 
-2. 统一采用” - “对class中的字母分隔
+. 统一采用” - “对class中的字母分隔
 ```
 	.yp-title {
 		font-weight: bold;
