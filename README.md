@@ -49,33 +49,33 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 - ui 
 ```css
 	/*常用系统组件 包括 */
-	ui-button{} /* 按钮 */
-	ui-tabs{}
-	ui-form{}
-	ui-alert{}
-	ui-dropdown{}
-	ui-slider{}
-	ui-select{}
-	ui-share{}
-	ui-breadcrumb{}
-	ui-close{}
-	ui-forms{}
-	ui-icon{}
-	ui-list{}
-	ui-nav{}
-	ui-pagination{}
-	ui-step{}
-	ui-table{}
+	.ui-button{} 	 		/* 按钮 */
+	.ui-tabs{} 				/* 按钮 */
+	.ui-form{} 				/* 按钮 */
+	.ui-alert{} 				/* 按钮 */
+	.ui-dropdown{} 				/* 按钮 */
+	.ui-slider{} 				/* 按钮 */
+	.ui-select{} 				/* 按钮 */
+	.ui-share{} 				/* 按钮 */
+	.ui-breadcrumb{} 				/* 按钮 */
+	.ui-close{} 				/* 按钮 */
+	.ui-forms{} 				/* 按钮 */
+	.ui-icon{} 				/* 按钮 */
+	.ui-list{} 				/* 按钮 */
+	.ui-nav{} 				/* 按钮 */
+	.ui-pagination{}
+	.ui-step{} 				/* 按钮 */			
+	.ui-table{} 				/* 按钮 */			
 ```
 - fn 
 ```javascript
 	/*功能类的组件 包括 */
-	fn-Variables{}
-	fn-Utility{}
-	fn-grid{}
-	fn-animation{}
-	fn-Base{}
-	fn-Mixins{}
+	.fn-Variables{}
+	.fn-Utility{}
+	.fn-grid{}
+	.fn-animation{}
+	.fn-Base{}
+	.fn-Mixins{}
 ```
 
 
