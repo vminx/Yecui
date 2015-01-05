@@ -245,7 +245,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 ### 统一语义理解和命名
 - 布局（.g-）
 
-<table class="am-table am-table-bd am-table-striped">
+<table width="300">
   <thead>
   <tr>
     <th>语义</th>
