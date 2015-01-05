@@ -246,6 +246,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 - .布局（.g-）
 	- 文档doc `doc`
 	- 头部head `hd`
+	- 主体 [head] `hd`
+	- 头部head `hd`
+	- 头部head `hd`
+	- 头部head `hd`
+	- 头部head `hd`
+	- 头部head `hd`
+	- 头部head `hd`
 ## 移动端开发说明
 #### 单位的使用
 rem是否能替代px 作为基础单位  
