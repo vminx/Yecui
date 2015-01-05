@@ -45,27 +45,21 @@ yeps 的样式模块组织方式追求扁平化的方式，分为三个层级：
 参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
 
 1. 多人开发,推荐竖版写法,方便修改维护
-```
 	.yp-title {
 		position: relative;
 		top: 100px;
 		left: 100px;
 		font-weight: bold;
 	}
-```
 
 2. 统一采用” - “对class中的字母分隔
-```
 	.yp-title {
 		font-weight: bold;
 	}
-```
 3. 在紧跟属性名的冒号后,和属性名和{之间 使用一个空格
-```
 	.hotel-content {
     	font-weight: bold;
 	}
-```
 4. 多选择器规则之间（必须）换行
 ```
 	a.btn,
