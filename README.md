@@ -244,8 +244,8 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 ### 统一语义理解和命名
 - 布局（.g-）
-
-<table width="300">
+	-`doc`___文档___`doc`
+<table>
   <thead>
   <tr>
     <th>语义</th>
@@ -262,7 +262,8 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
     <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
     <tr> <th>侧栏</th> <th>side</th> <th>sd</th> </tr> 
     <tr> <th>侧栏子容器</th> <th>sidec</th> <th>sdc</th> </tr> 
-    <tr> <th>盒容器</th> <th>wrap/box</th> <th>wrap/box</th> </tr> 
+    <tr> <th>盒容器</th> <th>wrap/box</th> <th>mnc</th> </tr> 
+    <tr> <th>主栏子容器</th> <th>mainc</th> <th>mnc</th> </tr> 
     </tbody>
 </table>
 
