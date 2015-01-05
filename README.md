@@ -222,7 +222,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 ```
 
 11.使用单引号,省略url引用中的引号，其他需要引号的地方使用单引号。
-```
+```css
 	.m-box{background:url(bg.png);}
 	.m-box:after{content:'.';}
 ```
@@ -240,13 +240,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 - 常用状态有：hover, current, selected, disabled, focus, blur, checked, success, error 等
 - 相同语义的不同类命名
 	方法：直接加数字或字母区分即可（如：.m-list、.m-list2、.m-list3等，都是列表模块，但是是完全不一样的模块）。
+	其他举例：.f-fw0、.f-fw1、.s-fc0、.s-fc1、.m-logo2、.m-logo3、u-btn、u-btn2等等。
 
-其他举例：.f-fw0、.f-fw1、.s-fc0、.s-fc1、.m-logo2、.m-logo3、u-btn、u-btn2等等。
 ### 统一语义理解和命名
-- .布局（.g-）
+- 布局（.g-）
 	- 文档doc `doc`
 	- 头部head `hd`
-	- 主体 [head] `hd`
+	- 主体 head `hd`
 	- 头部head `hd`
 	- 头部head `hd`
 	- 头部head `hd`
