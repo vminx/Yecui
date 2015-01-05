@@ -244,9 +244,10 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 
 ### 统一语义理解和命名
 - 参见 [常用命名,简写](className.md)
+- 参见 [html标签](htmlTag.md)
 
 ## 移动端开发说明
 #### 单位的使用
 rem是否能替代px 作为基础单位  
-- 推荐阅读 [webapp rem的变革](http://isux.tencent.com/web-app-rem.html)
+- 参见 [webapp rem的变革](http://isux.tencent.com/web-app-rem.html)
 - 最好有一套快速切换px ,rem 为单位的解决方案
