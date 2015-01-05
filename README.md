@@ -70,12 +70,26 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	- md 中等屏幕 桌面显示器 (≥992px)
 	- lg 大屏幕 大桌面显示器 (≥1200px)
 
-	- number表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
+	- number 表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
 	```html
 		<div class="g-row">
 		    <div class="g-col-5">ui-grid-5</div>
 		    <div class="g-col-15">ui-grid-15</div>
 		    <div class="g-col-5">ui-grid-5</div>
+		</div>
+	```
+	- 针对这四类屏幕设备定义各自的类,显示不同的效果
+	```html
+		<div class="g-row">
+		  <div class="g-col-xs-12 g-col-sm-6 col-md-8">.g-col-xs-12 .g-col-sm-6 .col-md-8</div>
+		  <div class="g-col-xs-6 g-col-md-4">.g-col-xs-6 .g-col-md-4</div>
+		</div>
+		<div class="g-row">
+		  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
+		  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
+		  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+		  <div class="clearfix visible-xs-block"></div>
+		  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
 		</div>
 	```
 	###等分布局
