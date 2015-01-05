@@ -47,21 +47,35 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 一般模块分类
 	//
 - ui 
-```
-	常用系统组件 包括 
-	Button, tabs, form, alert, Dropdown ,slider ,select ,
-	share ,Breadcrumb, Close, Forms,  Icon, list ,
-	Nav ,Pagination ,step ,table
+```css
+	/*常用系统组件 包括 */
+	ui-button{} /* 按钮 */
+	ui-tabs{}
+	ui-form{}
+	ui-alert{}
+	ui-dropdown{}
+	ui-slider{}
+	ui-select{}
+	ui-share{}
+	ui-breadcrumb{}
+	ui-close{}
+	ui-forms{}
+	ui-icon{}
+	ui-list{}
+	ui-nav{}
+	ui-pagination{}
+	ui-step{}
+	ui-table{}
 ```
 - fn 
-```
-功能类的组件 包括 
-- Variables, 
-- Utility, 
-- grid , 
-- animation, 
-- Base, 
-- Mixins
+```javascript
+	/*功能类的组件 包括 */
+	fn-Variables{}
+	fn-Utility{}
+	fn-grid{}
+	fn-animation{}
+	fn-Base{}
+	fn-Mixins{}
 ```
 
 
@@ -70,7 +84,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 参考 [google的html、css代码规范](http://www.cnblogs.com/2050/archive/2012/04/26/2470947.html)
 
 1. 多人开发,推荐竖版写法,方便修改维护
-```
+```css
 	.yp-title {
 		position: relative;
 		top: 100px;
@@ -79,19 +93,19 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	}
 ```
 2. 统一采用” - “对class中的字母分隔
-```
+```css
 	.yp-title {
 		font-weight: bold;
 	}
 ```
 3. 在紧跟属性名的冒号后,和属性名和{之间 使用一个空格
-```
+```css
 	.hotel-content {
     	font-weight: bold;
 	}
 ```
 4. 多选择器规则之间（必须）换行
-```
+```css
 	a.btn,
 	input.btn,
 	input[type="button"] {
@@ -99,13 +113,13 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	}
 ```
 5. 如果css属性的值为0,则后面不要带上单位。除非真的是需要。
-```
+```css
 	.obj {
 	    left: 0;    
 	}
 ```
 6. 推荐使用css书写顺序,按照这样的顺序书写可见提升浏览器渲染dom的性能
-```
+```css
 	.hotel-content {
 	     /* 定位 */
 	     display: block;
@@ -124,7 +138,7 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 7. 小图片（必须）sprite 合并
 
 8. IE Hack List
-```
+```css
 	selector {
 	     property: value;     /* 所有浏览器 */ 
 	     property: value\9;   /* 所有IE浏览器 */ 
@@ -135,14 +149,14 @@ yecui 的样式模块组织方式追求扁平化的方式，分为三个层级�
 	}
 ```
 9. 避免不必要的 CSS 选择符嵌套,选择符嵌套在必要的情况下一般不超过三层；选择符叠加一般不多于两个。
-```
+```css
 	/* 不推荐 */
 	.ui.form.input .fields.error .field .ui.selection.dropdown .menu .item:hover {
 	    ...
 	}
 ```
 10. ID和class的命名尽可能短，并符合语义。
-```
+```css
 	/* 不推荐 */
 	.navigation {}
 	.atr {}
