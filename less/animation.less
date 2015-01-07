@@ -1,0 +1,62 @@
+// Name:                     Animation
+//
+// Description:              Useful CSS3 animations
+//
+// Component:                `.am-*`
+//
+// Modifiers:                `.am-start`
+//
+// Used by:                   Dropdown
+//
+// =============================================================================
+
+/* ==========================================================================
+   Component: Aniamtion
+ ============================================================================ */
+
+[class*="am-"] {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+
+/* start */
+.am-arrow-start {
+  animation: am-arrow-start 1.5s infinite;
+}
+
+// 加载动画-钢琴
+.am-loading-piano {
+	animation: am-loading-piano 1.2s infinite;
+}
+
+
+/* Keyframes
+ ============================================================================ */
+
+/* start箭头动画 */
+@-webkit-keyframes am-arrow-start {
+	0%, 30% { 
+		opacity: 0;
+		transform: translate(0, 10px); 
+	}
+	60% { 
+		opacity: 1; 
+		transform: translate(0, 0); 
+	}
+	100% { 
+		opacity: 0; 
+		transform: translate(0, -8px); 
+	}
+}
+
+// 加载样式-钢琴动画
+@-webkit-keyframes am-loading-piano {
+	0%, 40%, 100% {
+		transform: scaleY(0.4)
+	}
+	20% {
+		transform: scaleY(1.0)
+	}
+}

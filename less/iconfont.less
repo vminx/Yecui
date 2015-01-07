@@ -1,0 +1,51 @@
+//
+// iconfont
+// 基于淘宝公共字体图标服务 |  http://www.iconfont.cn/
+//
+//example
+// <a href="#"><span class="iconfont iconfont-star"></span> Star</a>
+//
+// Variables
+// =============================================================================
+@icon-font-path:          "../fonts/";
+@icon-font-name:          "iconfont";
+@icon-font-svg-id:        "iconfont";
+
+/* ==========================================================================
+   Component: liveapp
+ ============================================================================ */
+ @font-face {
+  font-family: 'iconfont';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff2') format('woff2'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}
+
+// Catchall baseclass
+.iconfont {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'iconfont';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Individual icons
+.iconfont-asterisk               { &:before { content: "\2a"; } }
+.iconfont-plus                   { &:before { content: "\2b"; } }
+.iconfont-euro,
+.iconfont-eur                    { &:before { content: "\20ac"; } }
+.iconfont-minus                  { &:before { content: "\2212"; } }
+.iconfont-cloud                  { &:before { content: "\2601"; } }
+.iconfont-envelope               { &:before { content: "\2709"; } }
+.iconfont-pencil                 { &:before { content: "\270f"; } }
+.iconfont-glass                  { &:before { content: "\e001"; } }
+.iconfont-music                  { &:before { content: "\e002"; } }
+.iconfont-search                 { &:before { content: "\e003"; } }

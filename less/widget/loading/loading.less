@@ -1,0 +1,87 @@
+// Name:            loading
+//
+// Description:     加载动画
+//
+// Component:       `.ui-loading`
+//
+// Modifiers:       none
+//
+// Uses             none
+//
+// Used by:         none
+//          
+// States:			none
+//          
+// TODO: 1. 
+//       2. 
+//
+// Variables
+// =============================================================================
+@body-bg:#000;
+@page-bg:#fff;
+@bg-position-x:'center';
+@bg-position-y:'top';
+// Mixins
+// =============================================================================
+
+
+/* ==========================================================================
+   Component: loading
+ ============================================================================ */
+
+.ui-loading {
+	position: absolute;
+	z-index: 11;
+	background: rgba(0, 0, 0, .5);
+	width: 100%;
+	height: 100%;
+	img {
+		width: 60%;
+		position: absolute;
+		left: 20%;
+		top: 20%
+	}
+	.ui-loading-piano {
+		top: 45%;
+		left: 30%;
+		border-radius: 10px;
+		width: 40%;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+		margin: 0 auto;
+		position: absolute;
+		color: #FFF;
+	}
+	.piano-key {
+	margin: 0px auto;
+	width: 50px;
+	height: 60px;
+	text-align: center;
+	font-size: 10px;
+	}
+	.piano-key > div {
+		.am-loading-piano;
+		background-color: #fff;
+		opacity: .8;
+		height: 100%;
+		width: 6px;
+		display: inline-block;
+	}
+	.piano-key .key2 {
+		-webkit-animation-delay: -1.1s;
+		animation-delay: -1.1s;
+	}
+	.piano-key .key3 {
+		-webkit-animation-delay: -1.0s;
+		animation-delay: -1.0s;
+	}
+	.piano-key .key4 {
+		-webkit-animation-delay: -0.9s;
+		animation-delay: -0.9s;
+	}
+	.piano-key .key5 {
+		-webkit-animation-delay: -0.8s;
+		animation-delay: -0.8s;
+	}
+}
