@@ -7,9 +7,19 @@
 
 # 使用说明
 
+- 基础结构
+
+```html
+		<div class="ui-header ui-header-default ui-header-fixed">
+			<div class="ui-header-left ui-header-nav"></div>
+			<div class="ui-header-title"></div>
+			<div class="ui-header-right ui-header-nav"></div>
+		</div>	
+```
+
 - 默认主题 `图标+标题`
 
-	```html
+```html
 		<!-- Header-default 图标+标题 -->
 		<header class="ui-header ui-header-default ui-header-fixed">
 			<div class="ui-header-left ui-header-nav">
@@ -26,11 +36,11 @@
 				</a>
 			</div>
 		</header>
-	```
+```
 
 - 默认主题 `图片图标`
 
-	```html
+```html
 		<!-- Header-default 图片图标 -->
 		<header class="ui-header ui-header-default ui-header-fixed">
 			<div class="ui-header-left ui-header-nav">
@@ -47,11 +57,11 @@
 				</a>
 			</div>
 		</header>
-	```
+```
 
 - 默认主题 `图标文字`
 
-	```html
+```html
 		<!-- Header-default 图标文字 -->
 		<header class="ui-header ui-header-default ui-header-fixed">
 			<div class="ui-header-left ui-header-nav">
@@ -70,11 +80,11 @@
 				</a>
 			</div>
 		</header>
-	```
+```
 
 - 默认主题 `多图标`
 
-	```html
+```html
 		<!-- Header-default 多图标 -->
 		<header class="ui-header ui-header-default ui-header-fixed">
 			<div class="ui-header-left ui-header-nav">
@@ -97,7 +107,7 @@
 				</a>
 			</div>
 		</header>
-	```
+```
 
 ```less
 	//在yecui里引入该组件的less文件
