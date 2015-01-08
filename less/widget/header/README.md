@@ -6,25 +6,27 @@
 
 
 # 使用说明
-	- 默认主题 图标+标题
-```html
-	<!-- Header-default 图标+标题 -->
-	<header class="ui-header ui-header-default ui-header-fixed">
-		<div class="ui-header-left ui-header-nav">
-			<a href="#" class="">
-				<i class="ui-icons ui-icons-home"></i>
-			</a>
-		</div>
-		<h1 class="ui-header-title">
-			图标
-		</h1>
-		<div class="ui-header-right ui-header-nav">
-			<a href="#" class="">
-				<i class="ui-icons ui-icons-down"></i>
-			</a>
-		</div>
-	</header>
-```
+
+- 默认主题 图标+标题
+
+	```html
+		<!-- Header-default 图标+标题 -->
+		<header class="ui-header ui-header-default ui-header-fixed">
+			<div class="ui-header-left ui-header-nav">
+				<a href="#" class="">
+					<i class="ui-icons ui-icons-home"></i>
+				</a>
+			</div>
+			<h1 class="ui-header-title">
+				图标
+			</h1>
+			<div class="ui-header-right ui-header-nav">
+				<a href="#" class="">
+					<i class="ui-icons ui-icons-down"></i>
+				</a>
+			</div>
+		</header>
+	```
 ```html
 	<!-- Header-default 图片图标 -->
 	<header class="ui-header ui-header-default ui-header-fixed">
