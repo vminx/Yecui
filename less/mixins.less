@@ -1,19 +1,45 @@
 // Name:                Mixins
 //
-// Description:         Less mixins for Amaze UI
+// Description:         Less mixins
 //
-// - Box-Model
-// - Typographic
-// - Visual
-// - CSS3 Vendor Prefixes - NOT RECOMMENDED, USE AutoPrefixer
-// - Flex Box
-// - Utilities
-// - COMPONENTS
-//
-// =============================================================================
+// 结构说明
+/*
+//----------------------------------------------------------------------------
+// - 盒模型              18
+    .clearfix           清除浮动
+    .center-block       居中 相当于margin:0 auto
+    .size(px;px)        宽高不同
+    .square(px)         宽高相等的正方形
+    .resizable          (none|both|horizontal|vertical)
+                        规定用户是否可以调整元素尺寸
+    .scrollable         元素滚动回弹效果'暂时只支持safair'
+// - 排版                72
+    .text-overflow(display)       单行文字截取
+    .text-hide                    就隐藏文字
+    .line-clamp(num,line-height)  多行文字截取,(行数,行高)
+// - Visual             117
+    .tab-focus                    焦点状态
+    .border-[t|r|b|l]-radius(px)  边框圆角[top|right|bottom|left](圆角大小)
+    .opacity(num)                 透明度
+// - Flex Box           159
+    .flexbox(flex|inline-flex)  弹性布局父元素
+    .flex(num)弹性布局子元素
+    >>>TODO 其他flex以后完善,感觉作用不大,就是加了前缀
+// - 箭头               317
+    .caret-[d|u|l|r](px,color)                              三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
+    .arrow(color,px,px,deg)                                 箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
+    .angle-base                                 
+    .angle-[u|d|l|r]-variant(color,color,px)                带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
+// - 元件               493
+// - 公共的             634
+// - 渐变               709
+// - CSS3 前缀          814
+// - 其他               1010
+//---------------------------------------------------------------------------
+*/
 
 // =============================================================================
-// Box Model
+// 盒模型
 // =============================================================================
 
 // Micro clear fix
@@ -64,9 +90,12 @@
 }
 
 
+
+
 // =============================================================================
-// Typographic
+// 排版
 // =============================================================================
+
 
 // Text overflow
 // Requires inline-block or block for proper styling
@@ -96,7 +125,7 @@
 // http://dropshado.ws/post/1015351370/webkit-line-clamp
 // -----------------------------------------------------------------------------
 
-.am-line-clamp(@lines, @line-height: 1.3em) {
+.line-clamp(@lines, @line-height: 1.3em) {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -148,420 +177,6 @@
 .opacity(@opacity) {
   opacity: @opacity;
 }
-
-// GRADIENTS
-// -----------------------------------------------------------------------------
-
-// Horizontal gradient, from left to right
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
-// Color stops are not available in IE9 and below.
-.gradient-horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-  background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
-  background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
-  background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
-  background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
-  background-repeat: repeat-x;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down
-}
-
-// Vertical gradient, from top to bottom
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
-// Color stops are not available in IE9 and below.
-.gradient-vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-  background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
-  background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Safari 5.1+, Chrome 10+
-  background-image: -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
-  background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
-  background-repeat: repeat-x;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down
-}
-
-.gradient-directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
-  background-repeat: repeat-x;
-  background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1+, Chrome 10+
-  background-image: -moz-linear-gradient(@deg, @start-color, @end-color); // FF 3.6+
-  background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10
-}
-
-.gradient-horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-  background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
-  background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
-  background-image: -moz-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
-  background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
-  background-repeat: no-repeat;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
-}
-
-.gradient-vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
-  background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
-  background-image: -moz-linear-gradient(top, @start-color, @mid-color @color-stop, @end-color);
-  background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
-  background-repeat: no-repeat;
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
-}
-
-//放射状
-.gradient-radial(@inner-color: #555; @outer-color: #333) {
-  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
-  background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
-  background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
-  background-image: radial-gradient(circle, @inner-color, @outer-color);
-  background-repeat: no-repeat;
-}
-
-.gradient-striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
-  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @color), color-stop(.75, @color), color-stop(.75, transparent), to(transparent));
-  background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-  background-image: -moz-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-  background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-}
-
-// Legacy aliases
-#gradient {
-  .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    .gradient-horizontal(@start-color; @end-color; @start-percent; @end-percent);
-  }
-
-  .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    .gradient-vertical(@start-color; @end-color; @start-percent; @end-percent);
-  }
-
-  .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
-    .gradient-directional(@start-color; @end-color; @deg);
-  }
-
-  .horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    .gradient-horizontal-3c(@start-color; @mid-color; @color-stop; @end-color);
-  }
-
-  .vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    .gradient-vertical-3c(@start-color; @mid-color; @color-stop; @end-color);
-  }
-
-  //放射状
-  .radial(@inner-color: #555; @outer-color: #333) {
-    .gradient-radial(@inner-color; @outer-color);
-  }
-
-  .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
-    .gradient-striped(@color; @angle);
-  }
-}
-
-// Reset filters for IE
-//
-// When you need to remove a gradient background, do not forget to use this to
-// reset the IE filter for IE9 and below.
-// -----------------------------------------------------------------------------
-
-.reset-filter() {
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
-}
-
-
-// Retina images
-// Short retina mixin for setting background-image and -size
-// -----------------------------------------------------------------------------
-.retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) {
-  background-image: url("@{file-1x}");
-  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-    background-image: url("@{file-2x}");
-    background-size: @width-1x @height-1x;
-  }
-}
-
-// Responsive image
-// Keep images from scaling beyond the width of their parents.
-// -----------------------------------------------------------------------------
-.img-responsive(@display: block) {
-  display: @display;
-  max-width: 100%; // Part 1: Set a maximum relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
-}
-
-
-
-// =============================================================================
-// CSS3 Vendor Prefixes
-// =============================================================================
-
-// Try to use Autoprefixer replace these mixins
-
-// - Animations
-// - Backface visibility
-// - Box shadow
-// - Box sizing
-// - Content columns
-// - Hyphens
-// - Placeholder text
-// - Transformations
-// - Transitions
-// - User Select
-
-
-// Animations
-// -----------------------------------------------------------------------------
-.animation(@animation) {
-  -webkit-animation: @animation;
-  animation: @animation;
-}
-.animation-name(@name) {
-  -webkit-animation-name: @name;
-  animation-name: @name;
-}
-
-.animation-duration(@duration) {
-  -webkit-animation-duration: @duration;
-  animation-duration: @duration;
-}
-
-.animation-timing-function(@timing-function) {
-  -webkit-animation-timing-function: @timing-function;
-  animation-timing-function: @timing-function;
-}
-
-.animation-delay(@delay) {
-  -webkit-animation-delay: @delay;
-  animation-delay: @delay;
-}
-
-.animation-iteration-count(@iteration-count) {
-  -webkit-animation-iteration-count: @iteration-count;
-  animation-iteration-count: @iteration-count;
-}
-
-.animation-direction(@direction) {
-  -webkit-animation-direction: @direction;
-  animation-direction: @direction;
-}
-
-.animation-fill-mode(@fill-mode) {
-  -webkit-animation-fill-mode: @fill-mode;
-  animation-fill-mode: @fill-mode;
-}
-
-
-// Backface visibility
-// Prevent browsers from flickering when using CSS 3D transforms.
-// Default value is `visible`, but can be changed to `hidden`
-// -----------------------------------------------------------------------------
-.backface-visibility(@visibility) {
-  -webkit-backface-visibility: @visibility;
-  -moz-backface-visibility: @visibility;
-  backface-visibility: @visibility;
-}
-
-
-// Box shadows
-// -----------------------------------------------------------------------------
-
-.box-shadow(@shadow) {
-  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1 & bb7.0
-  box-shadow: @shadow;
-}
-
-
-// Box sizing
-// -----------------------------------------------------------------------------
-.box-sizing(@boxmodel) {
-  -webkit-box-sizing: @boxmodel;
-  -moz-box-sizing: @boxmodel;
-  box-sizing: @boxmodel;
-}
-
-
-// Content Columns
-// -----------------------------------------------------------------------------
-.content-columns(@column-count; @column-gap: @grid-gutter-width) {
-  -webkit-column-count: @column-count;
-  -moz-column-count: @column-count;
-  column-count: @column-count;
-  -webkit-column-gap: @column-gap;
-  -moz-column-gap: @column-gap;
-  column-gap: @column-gap;
-}
-
-
-// Optional hyphenation
-// -----------------------------------------------------------------------------
-.hyphens(@mode: auto) {
-  word-wrap: break-word;
-  -webkit-hyphens: @mode;
-  -moz-hyphens: @mode;
-  -ms-hyphens: @mode; // IE10+
-  -o-hyphens: @mode;
-  hyphens: @mode;
-}
-
-
-// Placeholder text
-// -----------------------------------------------------------------------------
-.placeholder(@color: @input-color-placeholder) {
-  // Firefox
-  &::-moz-placeholder {
-    color: @color;
-    opacity: 1;
-  }
-
-  // Internet Explorer 10+
-  &:-ms-input-placeholder {
-    color: @color;
-  }
-
-  // Safari and Chrome
-  &::-webkit-input-placeholder {
-    color: @color;
-  }
-}
-
-
-// Transformations
-// -----------------------------------------------------------------------------
-
-.scale(@ratio) {
-  -webkit-transform: scale(@ratio);
-  -ms-transform: scale(@ratio); // IE9 only
-  -o-transform: scale(@ratio);
-  transform: scale(@ratio);
-}
-.scale(@ratioX; @ratioY) {
-  -webkit-transform: scale(@ratioX, @ratioY);
-  -ms-transform: scale(@ratioX, @ratioY); // IE9 only
-  -o-transform: scale(@ratioX, @ratioY);
-  transform: scale(@ratioX, @ratioY);
-}
-.scaleX(@ratio) {
-  -webkit-transform: scaleX(@ratio);
-  -ms-transform: scaleX(@ratio); // IE9 only
-  -o-transform: scaleX(@ratio);
-  transform: scaleX(@ratio);
-}
-.scaleY(@ratio) {
-  -webkit-transform: scaleY(@ratio);
-  -ms-transform: scaleY(@ratio); // IE9 only
-  -o-transform: scaleY(@ratio);
-  transform: scaleY(@ratio);
-}
-
-.skew(@x; @y) {
-  -webkit-transform: skew(@x, @y);
-  -ms-transform: skewX(@x) skewY(@y); // IE9+
-  transform: skew(@x, @y);
-}
-
-.translate(@x: 0; @y: 0) {
-  -webkit-transform: translate(@x, @y);
-  -ms-transform: translate(@x, @y); // IE9+
-  transform: translate(@x, @y);
-}
-
-.translateX(@x: 0) {
-  -webkit-transform: translateX(@x);
-  -ms-transform: translateX(@x); // IE9+
-  transform: translateX(@x);
-}
-
-.translateY(@y: 0) {
-  -webkit-transform: translateY(@y);
-  -ms-transform: translateY(@y); // IE9+
-  transform: translateY(@y);
-}
-
-.translate3d(@x:0; @y:0; @z:0) {
-  -webkit-transform: translate3d(@x,@y,@z);
-  -ms-transform: translate3d(@x,@y,@z);
-  transform: translate3d(@x,@y,@z);
-}
-
-.rotate(@degrees) {
-  -webkit-transform: rotate(@degrees);
-  -ms-transform: rotate(@degrees); // IE9+
-  transform: rotate(@degrees);
-}
-
-.rotateX(@degrees) {
-  -webkit-transform: rotateX(@degrees);
-  -ms-transform: rotateX(@degrees); // IE9+
-  transform: rotateX(@degrees);
-}
-
-.rotateY(@degrees) {
-  -webkit-transform: rotateY(@degrees);
-  -ms-transform: rotateY(@degrees); // IE9+
-  transform: rotateY(@degrees);
-}
-
-.perspective(@perspective) {
-  -webkit-perspective: @perspective;
-  -moz-perspective: @perspective;
-  perspective: @perspective;
-}
-
-.perspective-origin(@perspective) {
-  -webkit-perspective-origin: @perspective;
-  -moz-perspective-origin: @perspective;
-  perspective-origin: @perspective;
-}
-
-.transform-origin(@origin) {
-  -webkit-transform-origin: @origin;
-  -ms-transform-origin: @origin;
-  transform-origin: @origin;
-}
-
-.transform(@tramsform) {
-  -webkit-transform: @tramsform;
-  -ms-transform: @tramsform;
-  transform: @tramsform;
-}
-
-// Transitions
-// -----------------------------------------------------------------------------
-.transition(@transition) {
-  -webkit-transition: @transition;
-  transition: @transition;
-}
-
-.transition-property(@transition-property) {
-  -webkit-transition-property: @transition-property;
-  transition-property: @transition-property;
-}
-
-.transition-delay(@transition-delay) {
-  -webkit-transition-delay: @transition-delay;
-  transition-delay: @transition-delay;
-}
-
-.transition-duration(@transition-duration) {
-  -webkit-transition-duration: @transition-duration;
-  transition-duration: @transition-duration;
-}
-
-.transition-timing-function(@timing-function) {
-  -webkit-transition-timing-function: @timing-function;
-  transition-timing-function: @timing-function;
-}
-
-.transition-transform(@transition) {
-  -webkit-transition: -webkit-transform @transition;
-  -moz-transition: -moz-transform @transition;
-  -o-transition: -o-transform @transition;
-  transition: transform @transition;
-}
-
-
-// User select
-// For selecting text on the page
-// Formal syntax: none | text | all | element
-// -----------------------------------------------------------------------------
-.user-select(@select) {
-  -webkit-user-select: @select;
-  -moz-user-select: @select;
-  -ms-user-select: @select; // IE10+
-  user-select: @select;
-}
-
 
 
 // =============================================================================
@@ -723,10 +338,11 @@
 
 
 // =============================================================================
-// Caret
-// NOTE: If using ::before or ::after, `content: ""` is required
+// 创建一个 三角形 或 箭头  元素
+// 注意: 如果使用伪类元素如:before,after, `content: ""` 是必须的
 // =============================================================================
 
+// 创建一个 border 三角形 
 // Caret - down
 // -----------------------------------------------------------------------------
 .caret-down(@size: 6px; @color:#222) {
@@ -785,12 +401,13 @@
 
 
 // CSS Arrow Mixin
+// 创建一个 箭头 > 元素
 // -----------------------------------------------------------------------------
 //
-// @param:  45deg (default) - right
-//          135deg - down
-//          -45deg - up
-//          -135deg -left
+// 箭头的方向:  45deg (default) - right
+//             135deg - down
+//             -45deg - up
+//             -135deg -left
 // ------------------------------------------------------------------------
 
 .arrow(@color:#DDD; @width:6px; @border-width: 2px; @deg: 45deg) {
@@ -802,10 +419,102 @@
   transform: rotate(@deg);
 }
 
+// 带边框边框的三角形  angle-***-variant需要和 .angle-base 配合使用
+// -----------------------------------------------------------------------------
 
+.angle-base() {
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border: 8px dashed transparent;
+    z-index: 1;
+  }
+}
+
+.angle-up-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  &:before,
+  &:after {
+    border-bottom-style: solid;
+    border-width: 0 @border-width @border-width;
+  }
+
+  &:before {
+    border-bottom-color: @border-color;
+    bottom: 0;
+  }
+
+  &:after {
+    border-bottom-color: @bg-color;
+    bottom: -1px;
+  }
+}
+
+.angle-down-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  bottom: -(@border-width + 1);
+
+  &:before,
+  &:after {
+    border-top-style: solid;
+    border-width: @border-width @border-width 0;
+  }
+
+  &:before {
+    border-top-color: @border-color;
+    bottom: 0;
+  }
+
+  &:after {
+    border-top-color: @bg-color;
+    bottom: 1px;
+  }
+}
+
+.angle-left-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  left: -(@border-width + 1);
+
+  &:before,
+  &:after {
+    border-right-style: solid;
+    border-width: @border-width @border-width @border-width 0;
+  }
+
+  &:before {
+    border-right-color: @border-color;
+    left: 0;
+  }
+
+  &:after {
+    border-right-color: @bg-color;
+    left: 1px;
+  }
+}
+
+.angle-right-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  right: 0;
+
+  &:before,
+  &:after {
+    border-left-style: solid;
+    border-width: @border-width 0 @border-width @border-width;
+  }
+
+  &:before {
+    border-left-color: @border-color;
+    left: 0;
+  }
+
+  &:after {
+    border-left-color: @bg-color;
+    left: -1px;
+  }
+}
 
 // =============================================================================
-// COMPONENT MIXINS
+// 元件 MIXINS
 // =============================================================================
 
 // Button variants
@@ -946,98 +655,424 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+// 公共的
+// Backface visibility
+// 属性定义当元素不面向屏幕时是否可见。
+// 如果在旋转元素不希望看到其背面时，该属性很有用。
+// -----------------------------------------------------------------------------
+.backface-visibility(@visibility) {
+  -webkit-backface-visibility: @visibility;
+  -moz-backface-visibility: @visibility;
+  backface-visibility: @visibility;
+}
 
-// angle
+
+// Box shadows
+// -----------------------------------------------------------------------------
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1 & bb7.0
+  box-shadow: @shadow;
+}
+
+
+// Box sizing
+// -----------------------------------------------------------------------------
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+  -moz-box-sizing: @boxmodel;
+  box-sizing: @boxmodel;
+}
+
+
+// Content Columns
+// -----------------------------------------------------------------------------
+.content-columns(@column-count; @column-gap: @grid-gutter-width) {
+  -webkit-column-count: @column-count;
+  -moz-column-count: @column-count;
+  column-count: @column-count;
+  -webkit-column-gap: @column-gap;
+  -moz-column-gap: @column-gap;
+  column-gap: @column-gap;
+}
+
+
+// Optional hyphenation
+// -----------------------------------------------------------------------------
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: @mode;
+  -moz-hyphens: @mode;
+  -ms-hyphens: @mode; // IE10+
+  -o-hyphens: @mode;
+  hyphens: @mode;
+}
+
+
+// Placeholder text
+// -----------------------------------------------------------------------------
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1;
+  }
+
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+}
+
+
+// 渐变
+// -----------------------------------------------------------------------------
+
+// Horizontal gradient, from left to right
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+.gradient-horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+  background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
+  background-image: -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+  background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down
+}
+
+// Vertical gradient, from top to bottom
+// Creates two color stops, start and end, by specifying a color and position for each color stop.
+// Color stops are not available in IE9 and below.
+.gradient-vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+  background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+  background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // Safari 5.1+, Chrome 10+
+  background-image: -moz-linear-gradient(top, @start-color @start-percent, @end-color @end-percent); // FF 3.6+
+  background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down
+}
+
+.gradient-directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1+, Chrome 10+
+  background-image: -moz-linear-gradient(@deg, @start-color, @end-color); // FF 3.6+
+  background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10
+}
+
+.gradient-horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+  background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+  background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+  background-image: -moz-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+  background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+  background-repeat: no-repeat;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+.gradient-vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop, @mid-color), to(@end-color));
+  background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+  background-image: -moz-linear-gradient(top, @start-color, @mid-color @color-stop, @end-color);
+  background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+  background-repeat: no-repeat;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color), argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+//放射状
+.gradient-radial(@inner-color: #555; @outer-color: #333) {
+  background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
+  background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+  background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
+  background-image: radial-gradient(circle, @inner-color, @outer-color);
+  background-repeat: no-repeat;
+}
+
+.gradient-striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, @color), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, @color), color-stop(.75, @color), color-stop(.75, transparent), to(transparent));
+  background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+}
+
+// Legacy aliases
+#gradient {
+  .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    .gradient-horizontal(@start-color; @end-color; @start-percent; @end-percent);
+  }
+
+  .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    .gradient-vertical(@start-color; @end-color; @start-percent; @end-percent);
+  }
+
+  .directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
+    .gradient-directional(@start-color; @end-color; @deg);
+  }
+
+  .horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    .gradient-horizontal-3c(@start-color; @mid-color; @color-stop; @end-color);
+  }
+
+  .vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+    .gradient-vertical-3c(@start-color; @mid-color; @color-stop; @end-color);
+  }
+
+  //放射状
+  .radial(@inner-color: #555; @outer-color: #333) {
+    .gradient-radial(@inner-color; @outer-color);
+  }
+
+  .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
+    .gradient-striped(@color; @angle);
+  }
+}
+
+
+
+
+
 // =============================================================================
-// TODO: 分隔成小块
+// CSS3 自动前缀
+// =============================================================================
 
-.angle-base() {
-  &:before,
-  &:after {
-    position: absolute;
-    display: block;
-    content: "";
-    width: 0;
-    height: 0;
-    border: 8px dashed transparent;
-    z-index: 1;
+// Try to use Autoprefixer replace these mixins
+
+// - Animations
+// - Backface visibility
+// - Box shadow
+// - Box sizing
+// - Content columns
+// - Hyphens
+// - Placeholder text
+// - Transformations
+// - Transitions
+// - User Select
+
+
+// Animations
+// -----------------------------------------------------------------------------
+.animation(@animation) {
+  -webkit-animation: @animation;
+  animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+  animation-name: @name;
+}
+
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+  animation-duration: @duration;
+}
+
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+  animation-timing-function: @timing-function;
+}
+
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+  animation-iteration-count: @iteration-count;
+}
+
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+  animation-direction: @direction;
+}
+
+.animation-fill-mode(@fill-mode) {
+  -webkit-animation-fill-mode: @fill-mode;
+  animation-fill-mode: @fill-mode;
+}
+
+
+
+
+// Transformations
+// -----------------------------------------------------------------------------
+
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+  -ms-transform: scale(@ratio); // IE9 only
+  -o-transform: scale(@ratio);
+  transform: scale(@ratio);
+}
+.scale(@ratioX; @ratioY) {
+  -webkit-transform: scale(@ratioX, @ratioY);
+  -ms-transform: scale(@ratioX, @ratioY); // IE9 only
+  -o-transform: scale(@ratioX, @ratioY);
+  transform: scale(@ratioX, @ratioY);
+}
+.scaleX(@ratio) {
+  -webkit-transform: scaleX(@ratio);
+  -ms-transform: scaleX(@ratio); // IE9 only
+  -o-transform: scaleX(@ratio);
+  transform: scaleX(@ratio);
+}
+.scaleY(@ratio) {
+  -webkit-transform: scaleY(@ratio);
+  -ms-transform: scaleY(@ratio); // IE9 only
+  -o-transform: scaleY(@ratio);
+  transform: scaleY(@ratio);
+}
+
+.skew(@x; @y) {
+  -webkit-transform: skew(@x, @y);
+  -ms-transform: skewX(@x) skewY(@y); // IE9+
+  transform: skew(@x, @y);
+}
+
+.translate(@x: 0; @y: 0) {
+  -webkit-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y); // IE9+
+  transform: translate(@x, @y);
+}
+
+.translateX(@x: 0) {
+  -webkit-transform: translateX(@x);
+  -ms-transform: translateX(@x); // IE9+
+  transform: translateX(@x);
+}
+
+.translateY(@y: 0) {
+  -webkit-transform: translateY(@y);
+  -ms-transform: translateY(@y); // IE9+
+  transform: translateY(@y);
+}
+
+.translate3d(@x:0; @y:0; @z:0) {
+  -webkit-transform: translate3d(@x,@y,@z);
+  -ms-transform: translate3d(@x,@y,@z);
+  transform: translate3d(@x,@y,@z);
+}
+
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees); // IE9+
+  transform: rotate(@degrees);
+}
+
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+  -ms-transform: rotateX(@degrees); // IE9+
+  transform: rotateX(@degrees);
+}
+
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+  -ms-transform: rotateY(@degrees); // IE9+
+  transform: rotateY(@degrees);
+}
+
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+  -moz-perspective: @perspective;
+  perspective: @perspective;
+}
+
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+  -moz-perspective-origin: @perspective;
+  perspective-origin: @perspective;
+}
+
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+  -ms-transform-origin: @origin;
+  transform-origin: @origin;
+}
+
+.transform(@tramsform) {
+  -webkit-transform: @tramsform;
+  -ms-transform: @tramsform;
+  transform: @tramsform;
+}
+
+// Transitions
+// -----------------------------------------------------------------------------
+.transition(@transition) {
+  -webkit-transition: @transition;
+  transition: @transition;
+}
+
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+  transition-property: @transition-property;
+}
+
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+  transition-delay: @transition-delay;
+}
+
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+  transition-duration: @transition-duration;
+}
+
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+  transition-timing-function: @timing-function;
+}
+
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+  -moz-transition: -moz-transform @transition;
+  -o-transition: -o-transform @transition;
+  transition: transform @transition;
+}
+
+
+// User select
+// For selecting text on the page
+// Formal syntax: none | text | all | element
+// -----------------------------------------------------------------------------
+.user-select(@select) {
+  -webkit-user-select: @select;
+  -moz-user-select: @select;
+  -ms-user-select: @select; // IE10+
+  user-select: @select;
+}
+
+
+// Reset filters for IE
+//
+// When you need to remove a gradient background, do not forget to use this to
+// reset the IE filter for IE9 and below.
+// -----------------------------------------------------------------------------
+
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+
+// Retina images
+// Short retina mixin for setting background-image and -size
+// -----------------------------------------------------------------------------
+.retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+  @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
   }
 }
 
-.angle-up-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
-  &:before,
-  &:after {
-    border-bottom-style: solid;
-    border-width: 0 @border-width @border-width;
-  }
-
-  &:before {
-    border-bottom-color: @border-color;
-    bottom: 0;
-  }
-
-  &:after {
-    border-bottom-color: @bg-color;
-    bottom: -1px;
-  }
+// Responsive image
+// Keep images from scaling beyond the width of their parents.
+// -----------------------------------------------------------------------------
+.img-responsive(@display: block) {
+  display: @display;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
 
-.angle-down-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
-  bottom: -(@border-width + 1);
 
-  &:before,
-  &:after {
-    border-top-style: solid;
-    border-width: @border-width @border-width 0;
-  }
 
-  &:before {
-    border-top-color: @border-color;
-    bottom: 0;
-  }
-
-  &:after {
-    border-top-color: @bg-color;
-    bottom: 1px;
-  }
-}
-
-.angle-left-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
-  left: -(@border-width + 1);
-
-  &:before,
-  &:after {
-    border-right-style: solid;
-    border-width: @border-width @border-width @border-width 0;
-  }
-
-  &:before {
-    border-right-color: @border-color;
-    left: 0;
-  }
-
-  &:after {
-    border-right-color: @bg-color;
-    left: 1px;
-  }
-}
-
-.angle-right-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
-  right: 0;
-
-  &:before,
-  &:after {
-    border-left-style: solid;
-    border-width: @border-width 0 @border-width @border-width;
-  }
-
-  &:before {
-    border-left-color: @border-color;
-    left: 0;
-  }
-
-  &:after {
-    border-left-color: @bg-color;
-    left: -1px;
-  }
-}
