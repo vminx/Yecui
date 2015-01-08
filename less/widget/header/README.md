@@ -6,7 +6,7 @@
 
 
 # 使用说明
-
+	- 默认主题 图标+标题
 ```html
 	<!-- Header-default 图标+标题 -->
 	<header class="ui-header ui-header-default ui-header-fixed">
@@ -27,7 +27,7 @@
 ```
 ```html
 	<!-- Header-default 图片图标 -->
-	<header data-widget="header" class="ui-header ui-header-default ui-header-fixed" style="top:100px">
+	<header class="ui-header ui-header-default ui-header-fixed">
 		<div class="ui-header-left ui-header-nav">
 			<a href="#" class="">
 				<i class="ui-icons ui-icons-home"></i>
@@ -45,7 +45,7 @@
 ```
 ```html
 	<!-- Header-default 图标文字 -->
-	<header data-widget="header" class="ui-header ui-header-default ui-header-fixed" style="top:200px">
+	<header class="ui-header ui-header-default ui-header-fixed">
 		<div class="ui-header-left ui-header-nav">
 			<a href="#" class="">
 				<span class="ui-header-nav-title">首页</span>
@@ -65,7 +65,7 @@
 ```
 ```html
 	<!-- Header-default 多图标 -->
-	<header data-widget="header" class="ui-header ui-header-default ui-header-fixed" style="top:300px">
+	<header class="ui-header ui-header-default ui-header-fixed">
 		<div class="ui-header-left ui-header-nav">
 			<a href="#" class="">
 				<i class="ui-icons ui-icons-home"></i>
