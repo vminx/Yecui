@@ -8,25 +8,25 @@
 # 使用说明
 
 ```html
-	<div id="J_loading" class="ui-loading">
-		<div class="ui-loading-box ui-loading-box-piano">
-			<div class="piano-key">
-				<div class="key1"></div>
-				<div class="key2"></div>
-				<div class="key3"></div>
-				<div class="key4"></div>
-				<div class="key5"></div>
-			</div>
+	<!-- 默认主题 -->
+	<header class="ui-header ui-header-default ui-header-fixed">
+		<div class="ui-header-left ui-header-nav">
+			<a href="#" class="">
+				<i class="ui-icons ui-icons-home"></i>
+			</a>
 		</div>
-	</div>
+		<h1 class="ui-header-title">
+			图标
+		</h1>
+		<div class="ui-header-right ui-header-nav">
+			<a href="#" class="">
+				<i class="ui-icons ui-icons-down"></i>
+			</a>
+		</div>
+	</header>
 ```
 
 ```less
 	//在yecui里引入该组件的less文件
-	@import "widget/loading/loading.less";
-```
-
-```html
-	//页面里引入该组件的js文件
-	<script type="text/javascript" src="js/ui.loading.js"></script>
+	@import "widget/loading/header.default.less";
 ```
