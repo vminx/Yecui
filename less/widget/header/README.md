@@ -7,7 +7,7 @@
 
 # 使用说明
 
-- ####基础结构
+- 基础结构
 
 ```html
 <div class="ui-header ui-header-default ui-header-fixed">
@@ -17,7 +17,7 @@
 </div>	
 ```
 
-- ####默认主题 `图标+标题`
+- 默认主题 `图标+标题`
 
 ```html
 <!-- Header-default 图标+标题 -->
@@ -38,7 +38,7 @@
 </header>
 ```
 
-- ####默认主题 `图片图标`
+- 默认主题 `图片图标`
 
 ```html
 <!-- Header-default 图片图标 -->
@@ -59,7 +59,7 @@
 </header>
 ```
 
-- ####默认主题 `图标文字`
+- 默认主题 `图标文字`
 
 ```html
 <!-- Header-default 图标文字 -->
@@ -82,7 +82,7 @@
 </header>
 ```
 
-- ####默认主题 `多图标`
+- 默认主题 `多图标`
 
 ```html
 <!-- Header-default 多图标 -->
