@@ -16,10 +16,20 @@
   top: 30%;
   position: absolute;
 }
-.ui-liveapp .ui-liveapp-page .ui-liveapp-page1 {
-  background: #f1f1f1;
+.ui-liveapp .ui-liveapp-page.ui-liveapp-page1 {
+  background: #fff;
 }
-.ui-liveapp .ui-liveapp-page .ui-liveapp-page2 {
+.ui-liveapp .ui-liveapp-page.ui-liveapp-page2 {
   background: #ff0;
+}
+.ui-header-default {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #c3c3c3;
+}
+.ui-header-default .ui-header-nav > a {
+  color: #000;
+}
+.ui-liveapp {
+  top: 48px;
 }
 /*# sourceMappingURL=app.css.map */

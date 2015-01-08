@@ -1,5 +1,6 @@
 <h1><a href="#" title="yep-ui 统一语义理解和命名"></h1>
-
+- 常用命名
+	- 默认 default           `def`
 - 布局（.g-）
 	- 文档 doc					`doc`
 	- 头部 head				`hd`

@@ -35,5 +35,6 @@
 ```
 
 ```html
+	//页面里引入该组件的js文件
 	<script type="text/javascript" src="js/ui.liveapp.js"></script>
 ```

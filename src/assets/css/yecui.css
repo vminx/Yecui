@@ -633,6 +633,13 @@ select {
   -webkit-overflow-scrolling: touch;
   resize: vertical;
 }
+/* Position */
+.f-fixed {
+  position: fixed !important;
+}
+.f-static {
+  position: static !important;
+}
 /* Border-radius*/
 .f-square {
   border-radius: 0;
@@ -1346,10 +1353,10 @@ select {
  ============================================================================ */
 @font-face {
   font-family: 'iconfont';
-  src: url('../fonts/iconfont.eot');
-  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../fonts/iconfont.woff2') format('woff2'), url('../fonts/iconfont.woff') format('woff'), url('../fonts/iconfont.ttf') format('truetype'), url('../fonts/iconfont.svg#iconfont') format('svg');
+  src: url('http://at.alicdn.com/t/font_1420623582_202513.eot');
+  src: url('http://at.alicdn.com/t/font_1420623582_202513.eot?#iefix') format('embedded-opentype'), url('http://at.alicdn.com/t/font_1420623582_202513.woff') format('woff'), url('http://at.alicdn.com/t/font_1420623582_202513.ttf') format('truetype'), url('http://at.alicdn.com/t/font_1420623582_202513.svg#iconfont') format('svg');
 }
-.iconfont {
+.ui-icons {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -1360,36 +1367,17 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.iconfont-asterisk:before {
-  content: "\2a";
+.ui-icons-home:before {
+  content: "\e600";
 }
-.iconfont-plus:before {
-  content: "\2b";
+.ui-icons-back:before {
+  content: "\e601";
 }
-.iconfont-euro:before,
-.iconfont-eur:before {
-  content: "\20ac";
+.ui-icons-more:before {
+  content: "\e602";
 }
-.iconfont-minus:before {
-  content: "\2212";
-}
-.iconfont-cloud:before {
-  content: "\2601";
-}
-.iconfont-envelope:before {
-  content: "\2709";
-}
-.iconfont-pencil:before {
-  content: "\270f";
-}
-.iconfont-glass:before {
-  content: "\e001";
-}
-.iconfont-music:before {
-  content: "\e002";
-}
-.iconfont-search:before {
-  content: "\e003";
+.ui-icons-down:before {
+  content: "\e603";
 }
 /* ==========================================================================
    Component: Aniamtion
@@ -1443,6 +1431,114 @@ select {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
   }
+}
+/**
+  * Header Theme: default
+  */
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+.ui-header {
+  position: relative;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  padding: 0 10px;
+}
+.ui-header h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ui-header .ui-header-title {
+  margin: 0 30%;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  display: block;
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ui-header .ui-header-title img {
+  margin-top: 12px;
+  height: 25px;
+  vertical-align: top;
+}
+.ui-header .ui-header-nav {
+  position: absolute;
+  top: 0;
+}
+.ui-header .ui-header-nav img {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+}
+.ui-header .ui-header-left {
+  left: 10px;
+}
+.ui-header .ui-header-right {
+  right: 10px;
+}
+.ui-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1010;
+}
+.ui-with-fixed-header {
+  padding-top: 49px;
+}
+.ui-header-default {
+  background-color: #0e90d2;
+}
+.ui-header-default .ui-header-title {
+  color: #ffffff;
+}
+.ui-header-default .ui-header-title a {
+  color: #ffffff;
+}
+.ui-header-default .ui-icons {
+  font-size: 20px;
+}
+.ui-header-default .ui-header-nav {
+  color: #eeeeee;
+}
+.ui-header-default .ui-header-nav > a {
+  display: inline-block;
+  min-width: 36px;
+  text-align: center;
+  color: #eeeeee;
+}
+.ui-header-default .ui-header-nav > a + a {
+  margin-left: 5px;
+}
+.ui-header-default .ui-header-nav .ui-btn {
+  margin-top: 9px;
+  height: 31px;
+  padding: 0 0.5em;
+  line-height: 30px;
+  font-size: 14px;
+  vertical-align: top;
+}
+.ui-header-default .ui-header-nav .ui-btn .ui-icon {
+  font-size: inherit;
+}
+.ui-header-default .ui-header-nav .ui-btn-default {
+  color: #999999;
+}
+.ui-header-default .ui-header-nav-title,
+.ui-header-default .ui-header-nav-title + .ui-icon {
+  font-size: 14px;
 }
 /* ==========================================================================
    Component: liveapp
@@ -1516,8 +1612,8 @@ select {
  ============================================================================ */
 .ui-loading {
   position: absolute;
-  z-index: 11;
-  background: rgba(0, 0, 0, 0.5);
+  z-index: 1030;
+  background: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100%;
 }
@@ -1527,7 +1623,7 @@ select {
   left: 20%;
   top: 20%;
 }
-.ui-loading .ui-loading-piano {
+.ui-loading .ui-loading-box {
   top: 45%;
   left: 30%;
   border-radius: 10px;
@@ -1539,14 +1635,14 @@ select {
   position: absolute;
   color: #FFF;
 }
-.ui-loading .piano-key {
+.ui-loading .ui-loading-box-piano .piano-key {
   margin: 0px auto;
   width: 50px;
   height: 60px;
   text-align: center;
   font-size: 10px;
 }
-.ui-loading .piano-key > div {
+.ui-loading .ui-loading-box-piano .piano-key > div {
   -webkit-animation: am-loading-piano 1.2s infinite;
   animation: am-loading-piano 1.2s infinite;
   background-color: #fff;
@@ -1555,19 +1651,19 @@ select {
   width: 6px;
   display: inline-block;
 }
-.ui-loading .piano-key .key2 {
+.ui-loading .ui-loading-box-piano .piano-key .key2 {
   -webkit-animation-delay: -1.1s;
   animation-delay: -1.1s;
 }
-.ui-loading .piano-key .key3 {
+.ui-loading .ui-loading-box-piano .piano-key .key3 {
   -webkit-animation-delay: -1s;
   animation-delay: -1s;
 }
-.ui-loading .piano-key .key4 {
+.ui-loading .ui-loading-box-piano .piano-key .key4 {
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
 }
-.ui-loading .piano-key .key5 {
+.ui-loading .ui-loading-box-piano .piano-key .key5 {
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
 }

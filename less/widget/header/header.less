@@ -1,0 +1,83 @@
+// Header 基础样式
+//
+// Description: 顶部栏目
+//
+//模块基本结构
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+//
+//
+// Variables
+// =============================================================================
+@ui-header-position:relative;
+@ui-header-width:100%;
+@ui-header-height:60px;
+@ui-header-background:rgba(255, 255, 255, 0.8);
+@ui-header-height: 49px;
+
+.ui-header {
+	position: 		@ui-header-position;
+	width: 			@ui-header-width;
+	height: 		@ui-header-height;
+  	line-height: 	@ui-header-height;
+  	padding: 		0 10px;
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .ui-header-title {
+    margin: 0 30%;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    .text-overflow();
+
+    img {
+      margin-top: 12px;
+      height: 25px;
+      vertical-align: top;
+    }
+  }
+
+  .ui-header-nav {
+    position: absolute;
+    top: 0;
+    img {
+      height: 16px;
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+
+  .ui-header-left {
+    left: 10px;
+  }
+
+  .ui-header-right {
+    right: 10px;
+  }
+
+}
+
+.ui-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: @z-index-header-fixed;
+}
+
+.ui-with-fixed-header {
+  padding-top: @ui-header-height;
+}
+
