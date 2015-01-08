@@ -4,18 +4,14 @@
 @import "header.less";
 
 .ui-header-default {
-  @header-bg: @global-primary;
-  @header-title-color: @white;
-  @header-title-link-color: @header-title-color;
-  @header-nav-color: @gray-lighter;
 
-  background-color: @header-bg;
+  background-color: @header-def-bg;
 
   .ui-header-title {
-    color: @header-title-color;
+    color: @header-def-title-color;
 
     a {
-      color: @header-title-link-color;
+      color: @header-def-title-link-color;
     }
   }
 
@@ -24,13 +20,13 @@
   }
 
   .ui-header-nav {
-    color: @header-nav-color;
+    color: @header-def-nav-color;
 
     > a {
       display: inline-block;
       min-width: 36px;
       text-align: center;
-      color: @header-nav-color;
+      color: @header-def-nav-color;
 
       & + a {
         margin-left: 5px;

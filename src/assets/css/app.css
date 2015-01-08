@@ -29,6 +29,13 @@
 .ui-header-default .ui-header-nav > a {
   color: #000;
 }
-.ui-liveapp {
-  top: 0px;
+.ui-menu {
+  top: 49px;
 }
+.ui-menu .ui-menu-nav {
+  background: #3390e3;
+}
+.ui-menu .ui-menu-nav > .nav-item > a {
+  color: #fff;
+}
+/*# sourceMappingURL=app.css.map */

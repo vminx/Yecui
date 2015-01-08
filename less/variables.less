@@ -4,7 +4,7 @@
 //
 // =============================================================================
 
-@ns: ~"am-";
+// @ns: ~"am-";
 
 // Global variables
 // =============================================================================
@@ -69,20 +69,11 @@
 // Font family
 // -----------------------------------------------------------------------------
 
-// FreeSans: Ships with many Linux distros, including Ubuntu
-// Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
-//        Arial to get picked up by the browser, even though neither is available
-//        in Chrome OS.
-// Droid Sans: Ships with all versions of Android.
-// Roboto: Android new font-family from Android ISC
-// Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
-// Helvetica Neue: iOS & OS X 10.10 UI font (not Lucida Grande any more)
-//                 http://morrick.me/archives/6873
-// http://www.kendraschaefer.com/2012/06/chinese-standard-web-fonts-the-ultimate-guide-to-css-font-family-declarations-for-web-design-in-simplified-chinese/
-
-// Helvetica
-
-// apple.com: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana,
+// FreeSans: 附带许多Linux发行版,包括Ubuntu
+// Droid Sans: 老版 Android 字体
+// Roboto:新版 Android 字体
+// Helvetica, Arial, sans-serif:OS X 和 Windows 的通用字体.
+// Helvetica Neue: iOS & OS X 10.10 UI 字体
 
 @font-family-sans-serif: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
 
@@ -232,9 +223,9 @@
 // Widgets
 @z-index-navbar:            @global-z-index + 10;
 @z-index-gotop-fixed:       @global-z-index + 40;
-@z-index-menu:              @global-z-index + 50;
-@z-index-header-fixed:      @global-z-index + 10;					//Yecui used 顶栏
-@z-index-loading:     		@global-z-index + 30;					//Yecui used 加载动画遮罩
+@z-index-header-fixed:      @global-z-index + 10;					//Yecui header 顶栏
+@z-index-menu:      		@global-z-index + 20;					//Yecui menu 顶栏
+@z-index-loading:     		@global-z-index + 30;					//Yecui loading 加载动画遮罩
 
 
 // =============================================================================
@@ -253,42 +244,56 @@
 // =============================================================================
 
 @base-background:							@global-background;
-@base-font-family:					  @font-family-sans-serif;
-@base-font-weight:						normal;
+@base-font-family:					  		@font-family-sans-serif;
+@base-font-weight:							normal;
 @base-font-size:							@global-font-size;
-@base-line-height:						@global-line-height;
-@base-text-color:						  @gray-dark;
+@base-line-height:							@global-line-height;
+@base-text-color:						  	@gray-dark;
 
 // em element
-@base-em-color:									#D05;
+@base-em-color:								#D05;
 
 // ins element
 @base-ins-background:						#ffa;
-@base-ins-color:								@gray-dark;
+@base-ins-color:							@gray-dark;
 
 // mark element
-@base-mark-background:					#ffa;
-@base-mark-color:								@gray-dark;
+@base-mark-background:						#ffa;
+@base-mark-color:							@gray-dark;
 
 // selection
-@base-selection-background:			@global-primary;
-@base-selection-color:					@white;
+@base-selection-background:					@global-primary;
+@base-selection-color:						@white;
 
-@base-margin-vertical:					@global-spacing;
-
+@base-margin-vertical:						@global-spacing;
+	
 // h1 - h6 element
-@base-heading-font-weight:				  600;
-@base-heading-margin-top:						2em;
+@base-heading-font-weight:					600;
+@base-heading-margin-top:					2em;
 
 // hr
-@base-hr-border:								@gray-lighter;
+@base-hr-border:							@gray-lighter;
 
 // blockquote
-@base-blockquote-border:						  @global-border;
-@base-blockquote-small-color:					@gray-light;
-@base-blockquote-font-size:						1.6rem; // 16px
-@base-blockquote-line-height:					1.5; // 22px
+@base-blockquote-border:					@global-border;
+@base-blockquote-small-color:				@gray-light;
+@base-blockquote-font-size:					1.6rem; // 16px
+@base-blockquote-line-height:				1.5; // 22px
 
+
+// =============================================================================
+// Header
+// =============================================================================
+	@ui-header-position:relative;
+	@ui-header-width:100%;
+	@ui-header-height:60px;
+	@ui-header-background:rgba(255, 255, 255, 0.8);
+	@ui-header-height: 49px;
+	// default
+	@header-def-bg: 					@global-primary;
+	@header-def-title-color: 			@white;
+	@header-def-title-link-color: 		@header-def-title-color;
+	@header-def-nav-color: 				@gray-lighter;
 
 // =============================================================================
 // Buttons

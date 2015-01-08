@@ -1,0 +1,84 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+@import "menu.less";
+
+@menu-one-top:                  0;
+@menu-one-width:                100%;
+@menu-one-height:               50px;
+@menu-one-bg:                   @gray-lighter;
+@menu-one-acolor:               @gray-dark;
+@menu-one-boxshadow:            0 3px 3px rgba(0, 0, 0, 0.1);
+@menu-one-nav2-bg:              @global-primary;
+@menu-one-nav2-acolor:          @white;
+@menu-one-nav2-width:           25%;
+
+  .ui-menu-one {
+    position:   absolute;
+    top:        @menu-one-top;
+    width:      @menu-one-width;
+
+    //提取共性
+    .ui-menu-nav,
+    .ui-menu-nav2{
+        a {
+            .text-overflow();
+            display:            block;
+            text-align:         center;
+            font-size:          1.4rem;
+        }
+    }
+
+    .ui-menu-nav {
+        .flexbox;
+        height:                 @menu-one-height;
+        background:             @menu-one-bg;
+        box-shadow:             @menu-one-boxshadow;
+
+        > .nav-item {
+            .flex(1);
+            > a {
+                height:         @menu-one-height;
+                line-height:    @menu-one-height;
+                color:          @menu-one-acolor;
+            }
+        }
+        .z-active > a{
+            position: relative;
+        }
+        .z-active > a:before{
+            .caret-up(6px,@menu-one-nav2-bg);
+            content: '';
+            bottom: 0;
+            left: 50%;
+            margin-left: -10px;
+            position: absolute;
+
+        }
+
+    }
+    .ui-menu-nav2{
+        position:               absolute;
+        top:                    @menu-one-height;
+        left:                   0;
+        width:                  100%;
+        background:             @menu-one-nav2-bg;
+        margin:                 0;
+        padding:                0;
+        .clearfix();
+
+        > .nav-item{
+            float:              left;
+            width:              @menu-one-nav2-width;
+
+            > a{
+                height:         @menu-one-height - 10;
+                line-height:    @menu-one-height - 10;
+                color:          @menu-one-nav2-acolor;
+            }
+        }
+    }
+}
+
+// TODO: 需要新增一个滑动的模式
