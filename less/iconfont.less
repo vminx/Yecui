@@ -3,14 +3,13 @@
 // 基于淘宝公共字体图标服务 |  http://www.ui-icon.cn/
 //
 //example
-// <a href="#"><span class="iconfont iconfont-star"></span> Star</a>
+// <a href="#"><span class="ui-icons ui-icons-home"></span> Star</a>
 //
 // Variables
 // =============================================================================
 @icon-font-path:          "../fonts/";
 @icon-font-name:          "iconfont";
 @icon-font-svg-id:        "iconfont";
-
 /* ==========================================================================
    Component: liveapp
  ============================================================================ */
@@ -25,7 +24,7 @@ src: url('http://at.alicdn.com/t/font_1420623582_202513.eot');
 }
 
 // Catchall baseclass
-.ui-icons {
+.icons {
   position: relative;
   top: 1px;
   display: inline-block;
@@ -38,7 +37,7 @@ src: url('http://at.alicdn.com/t/font_1420623582_202513.eot');
 }
 
 // Individual icons
-.ui-icons-home                   { &:before { content: "\e600"; } }
-.ui-icons-back                   { &:before { content: "\e601"; } }
-.ui-icons-more                   { &:before { content: "\e602"; } }
-.ui-icons-down                   { &:before { content: "\e603"; } }
+.icons-home                   { &:before { content: "\e600"; } }
+.icons-back                   { &:before { content: "\e601"; } }
+.icons-more                   { &:before { content: "\e602"; } }
+.icons-down                   { &:before { content: "\e603"; } }

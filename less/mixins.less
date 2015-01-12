@@ -1,11 +1,12 @@
 // Name:                Mixins
 //
-// Description:         Less mixins
+// Description:         Less mixins 主要用于 less里的混合,您用它能够定义一堆属性，然后轻松的在多个样式集中重用
 //
 // 结构说明
 /*
 //----------------------------------------------------------------------------
 // - 盒模型              18
+
     .clearfix           清除浮动
     .center-block       居中 相当于margin:0 auto
     .size(px;px)        宽高不同
@@ -13,28 +14,41 @@
     .resizable          (none|both|horizontal|vertical)
                         规定用户是否可以调整元素尺寸
     .scrollable         元素滚动回弹效果'暂时只支持safair'
+
+
 // - 排版                72
-    .text-overflow(display)       单行文字截取
-    .text-hide                    就隐藏文字
-    .line-clamp(num,line-height)  多行文字截取,(行数,行高)
+
+    .text-overflow(display|inline-block)        单行文字截取
+    .text-hide                                  就隐藏文字
+    .line-clamp(num,line-height)                多行文字截取,(行数,行高)
+
 // - Visual             117
+
     .tab-focus                    焦点状态
     .border-[t|r|b|l]-radius(px)  边框圆角[top|right|bottom|left](圆角大小)
     .opacity(num)                 透明度
+
 // - Flex Box           159
+
     .flexbox(flex|inline-flex)  弹性布局父元素
     .flex(num)弹性布局子元素
     >>>TODO 其他flex以后完善,感觉作用不大,就是加了前缀
+
 // - 箭头               317
+
     .caret-[d|u|l|r](px,color)                              三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
     .arrow(color,px,px,deg)                                 箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
     .angle-base                                 
     .angle-[u|d|l|r]-variant(color,color,px)                带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
+
 // - 元件               493
 // - 公共的             634
 // - 渐变               709
 // - CSS3 前缀          814
 // - 其他               1010
+
+  .retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) 需要做retina适应的背景图
+
 //---------------------------------------------------------------------------
 */
 
@@ -74,6 +88,12 @@
   .size(@size; @size);
 }
 
+.cricle(@size) {
+  border-radius: 1000px;
+  width: @size;
+  height: @size;
+}
+
 // Resize anything
 // -----------------------------------------------------------------------------
 .resizable(@direction) {
@@ -88,8 +108,6 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-
-
 
 
 // =============================================================================
