@@ -1,0 +1,48 @@
+/**
+  * Header Theme: horizbar
+  说明:横条
+  */
+
+// Slide default Styles
+// =============================================================================
+
+    @slide-hor-hd-height:             5px;                          // hd高度
+    @slide-hor-hd-bg:                 rgba(51, 51, 51, 0.5);        //默认条背景色
+    @slide-hor-hd-active-bg:          @global-primary;              //高亮条背景色
+
+// =============================================================================
+  .ui-slide.ui-slide-horizbar{
+    .ui-slide-hd {
+        width: 100%;
+        height: @slide-hor-hd-height;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        text-align: center;
+        
+        ul {
+            .flexbox;
+            overflow: hidden;
+            height: @slide-hor-hd-height;
+            background: @slide-hor-hd-bg;
+
+            .z-active {
+                background: @slide-hor-hd-active-bg;
+            }
+        }
+
+        li {
+            .flex(1);
+        }
+    }
+
+    .ui-slide-bd {
+
+        li img {
+            width: @slide-img-width;
+        }
+
+    }
+}
+
+
