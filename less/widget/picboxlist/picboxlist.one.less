@@ -1,0 +1,91 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+
+
+
+//mixins
+
+    @ui-picbox-width: 100px;                //tab栏目高度
+    @ui-picbox-spacing: 10px;               //间距
+    @ui-picbox-tit-line:2;                  //标题行数
+    @ui-picbox-tit-lh:24px;                 //标题行高
+    @ui-picbox-tit-fs:14px;                 //标题大小
+    @ui-picbox-price-fs:18px;                 //价格大小
+    @z-picbox-arr-size:8px;                     //箭头大小
+.ui-picboxlist-one {
+     
+    .pblist-item{
+        .flexbox();
+
+        &.z-arr{
+            position: relative;
+            .pblist-d{
+                padding-right:  @ui-picbox-spacing + @z-picbox-arr-size;
+            } 
+             &:after{
+                right: @ui-picbox-spacing;
+                content: '';
+                position: absolute;
+                top:50%;
+                margin-top: -@z-picbox-arr-size/2;
+                .arrow(@gray,@z-picbox-arr-size,2px,45deg);
+            }
+        }
+
+
+        .pblist-p{
+            width:  @ui-picbox-width;
+            img{width: 100%;}
+        }
+        .pblist-d{
+            .flex(1);
+            height: @ui-picbox-width;
+            overflow: hidden;
+            margin-left: @ui-picbox-spacing;
+            .d-tit{
+               
+                // height: 45px;
+                display: block;
+
+                h3{
+                    font-size: @ui-picbox-tit-fs;
+                    font-weight: 300;
+                    color: @gray;
+                    .line-clamp(@ui-picbox-tit-line,@ui-picbox-tit-lh);
+                }
+            }
+            .d-price{
+                margin-top:  @ui-picbox-spacing/2;
+                .text-overflow();
+                .h{
+                    font-size: @ui-picbox-price-fs;
+                    font-style: normal;
+                    color:@global-primary;
+                }
+                del{
+                    font-size: @ui-picbox-tit-fs;
+                    color:@gray-light;
+                }
+            }
+            .d-main{
+                margin-top: @ui-picbox-spacing/2;
+                h4{
+                    font-size: @ui-picbox-tit-fs;
+                    color:@gray-light;
+                    font-weight: 300;
+                }
+            }
+            //垂直居中文字
+            .align-center{
+                display: flex ;
+                height: 100%;
+                align-items:center;
+                // justify-content:center;//水平居中
+            }
+       }
+    }
+}
+
+// TODO: 

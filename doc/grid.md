@@ -27,3 +27,94 @@
 - 类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。
 - 通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。
 - 如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
+
+###基础布局
+#####布局容器
+
+保留 bootstrap `container`  `container-fluid` 命名 
+
+#####.g-row 替代 .row
+
+表示一行，用于包裹.g-col-{xs,sm,md,lg}-{number}。一行内的栅格数不要超过 12
+
+#####.g-col-{xs,sm,md,lg}-{number} 替代 .col-{number}
+- xs 超小屏幕 手机 (<768px)
+- sm 小屏幕 平板 (≥768px)
+- md 中等屏幕 桌面显示器 (≥992px)
+- lg 大屏幕 大桌面显示器 (≥1200px)
+
+- number 表示区域跨越了多少列。数字从 1 到 12，例如g-col-8。
+
+```html
+	<div class="g-row">
+	    <div class="g-col-5">ui-grid-5</div>
+	    <div class="g-col-15">ui-grid-15</div>
+	    <div class="g-col-5">ui-grid-5</div>
+	</div>
+```
+
+- 针对这四类屏幕设备定义各自的类,显示不同的效果
+
+```html
+<div class="g-row">
+  <div class="g-col-xs-12 g-col-sm-6 col-md-8">.g-col-xs-12 .g-col-sm-6 .col-md-8</div>
+  <div class="g-col-xs-6 g-col-md-4">.g-col-xs-6 .g-col-md-4</div>
+</div>
+<div class="g-row">
+  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
+  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="g-col-xs-6 g-col-sm-4">.g-col-xs-6 .g-col-sm-4</div>
+</div>
+```
+- 列偏移
+
+```html
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+	<div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+</div>
+<div class="row">
+	<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+	<div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+</div>
+```
+- Less mixin 和变量
+#####变量
+> 通过变量来定义列数、槽（gutter）宽、媒体查询阈值（用于确定合适让列浮动）。我们使用这些变量生成预定义的栅格类，如上所示，还有如下所示的定制 mixin。
+
+```less
+	@grid-columns:              12;
+	@grid-gutter-width:         30px;
+	@grid-float-breakpoint:     768px;
+```
+
+#####mixin 
+> 用来和栅格变量一同使用，为每个列（column）生成语义化的 CSS 代码。指向 [mixin.less]()
+
+```less
+	// 部分代码
+	.make-row(@gutter: @grid-gutter-width) {
+	  // Then clear the floated columns
+	  .clearfix();
+
+	  @media (min-width: @screen-sm-min) {
+	    margin-left:  (@gutter / -2);
+	    margin-right: (@gutter / -2);
+	  }
+
+	  // Negative margin nested rows out to align the content of columns
+	  .row {
+	    margin-left:  (@gutter / -2);
+	    margin-right: (@gutter / -2);
+	  }
+	}
+
+```
+
+###等分布局
+###辅助布局
