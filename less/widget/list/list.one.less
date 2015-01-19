@@ -1,0 +1,99 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+
+
+
+//mixins
+    
+    @ui-list-li-m:0 0 0 15px;                       //列表每列的margin
+
+    @ui-list-thumb-s:100px;                         //图文列表-图片尺寸设置size
+    @ui-list-thumb-m:10px 10px 10px 0;              //图文列表-图片间距margin
+
+
+    @ui-picbox-spacing: 10px;                       //间距
+    @ui-picbox-tit-line:2;                          //标题行数
+    @ui-picbox-tit-lh:24px;                         //标题行高
+    @ui-picbox-tit-fs:14px;                         //标题大小
+    @ui-picbox-price-fs:18px;                       //价格大小
+
+    @z-picbox-link-s:8px;                           //箭头大小
+    @z-picbox-link-r:10px;                          //箭头距右距离
+
+
+.ui-list-one {
+    > li{
+        margin:  @ui-list-li-m;
+    }
+
+    .ui-list-item{
+        .flexbox();
+
+        &.ui-list-link{
+            position: relative;
+            .ui-list-d{
+                padding-right: (@z-picbox-link-r+(@z-picbox-link-s/2))*2;
+            } 
+             &:after{
+                right: @z-picbox-link-r;
+                content: '';
+                position: absolute;
+                top:50%;
+                margin-top: -@z-picbox-link-s/2;
+                .arrow(@gray,@z-picbox-link-s,2px,45deg);
+            }
+        }
+
+
+        .ui-list-p{
+            width:  @ui-list-thumb-s;
+            margin:  @ui-list-thumb-m;
+            position: relative;
+            img{width: 100%;}
+        }
+
+        .ui-list-d{
+            .flex(1);
+            // height: @ui-picbox-width;
+            overflow: hidden;
+            margin-left: @ui-picbox-spacing;
+            .align-center();
+
+            > h4{
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: @ui-picbox-tit-fs;
+                font-weight: 300;
+                color: @gray;
+                .line-clamp(@ui-picbox-tit-line,@ui-picbox-tit-lh);
+            }
+            > p{
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                line-height: 22px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 100%;
+                color: gray;
+            }
+            //垂直居中文字
+            .align-center(){
+                -webkit-box-flex: 1;
+                box-flex: 1;
+                padding-right: 20px;
+                display: box;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-box-pack: center;
+            }
+       }
+    }
+}
+
+// TODO: 

@@ -7,100 +7,55 @@
   <link rel="stylesheet" type="text/css" href="../yecui.css">
 </head>
 <body>
-	<label for="" class="f-block f-text-center">
-		<br>
-		slide主题:
-		<select class="select-area" style="width:200px;height:50px;">
-			<option value="ui-slide-horizbar">横条</option>
-			<option value="ui-slide-num">带数字圆点</option>
-			<option value="ui-slide-btn">左右按钮圆点</option>
-		</select>
-		<br>
-		<br>
-	</label>
+	<!--  图文列表 -->
+	<ul class="ui-list ui-list-one">
+		<li>
+			<a href="" class="ui-list-item ui-list-link">
+				<div class="ui-list-p">
+					<img src="img/pic.jpg" alt="">
+				</div>
+				<div class="ui-list-d">
+					<h4>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</h4>
+					<p>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="" class="ui-list-item">
+				<div class="ui-list-p">
+					<img src="img/pic.jpg" alt="">
+				</div>
+				<div class="ui-list-d">
+					<h4>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</h4>
+				</div>
+			</a>
+		</li>
+	</ul>
 
-	<!-- 说明: 使用主题前需要给ui-slide填上Id作为包裹'  -->
 
-	<!-- Slider-default" -->
-	<div data-am-widget="slider" id="J_slide" class="ui-slide ui-slide-horizbar">
-		<div class="ui-slide-hd">
-			<ul></ul>
-		</div>
-		<div class="ui-slide-bd">
-			<ul>
-				<li><a href="#"><img src="img/tb1.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb2.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- Slider-circle" -->
-	<div data-am-widget="slider" id="" class="ui-slide ui-slide-num">
-		<div class="ui-slide-hd">
-			<ul></ul>
-		</div>
-		<div class="ui-slide-bd">
-			<ul>
-				<li><a href="#"><img src="img/tb1.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb2.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb3.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb1.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb2.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- Slider-arrow" -->
-	<div data-am-widget="slider" id="" class="ui-slide ui-slide-btn">
-		<a class="prev" href="javascript:void(0)"></a>
-		<a class="next" href="javascript:void(0)"></a>
-		<div class="ui-slide-hd">
-			<ul></ul>
-		</div>
-		<div class="ui-slide-bd">
-			<ul>
-				<li><a href="#"><img src="img/tb1.jpg" /></a></li>
-				<li><a href="#"><img src="img/tb2.jpg" /></a></li>
-			</ul>
-		</div>
-	</div>
-
+	<ul class="ui-list ui-list-a rowavg-sm-2">
+		<li>
+			<a href="" class="ui-list-item">
+				<div class="ui-list-p">
+					<img src="img/pic.jpg" alt="">
+				</div>
+				<div class="ui-list-d">
+					<h4>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</h4>
+					<p>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</p>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="" class="ui-list-item">
+				<div class="ui-list-p">
+					<img src="img/pic.jpg" alt="">
+				</div>
+				<div class="ui-list-d">
+					<h4>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</h4>
+					<p>婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服婴幼儿外出两件套装男女宝宝秋冬款纯棉棉服</p>
+				</div>
+			</a>
+		</li>
+	</ul>
 </body>
-
-
-<!-- 本模块需要引用 TouchSlide 库 -->
-<script type="text/javascript" src="../../../js/lib/TouchSlide.js"></script>
-<script type="text/javascript" src="ui.slide.js"></script>
-
-
-
-
-<!-- 以下demo控制 不需要引用 -->
-<script type="text/javascript" src="../../../js/lib/zepto.js"></script>
-<script>
-	function slideRefresh () {
-		TouchSlide({ 
-				slideCell:"#J_slide",
-				titCell:".ui-slide-hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-				mainCell:".ui-slide-bd ul", 
-				effect:"leftLoop", 
-				autoPlay:true,//自动播放
-				autoPage:true //自动分页
-			});
-	}
-	function init () {
-		$('.ui-slide-horizbar').attr('id', 'J_slide').show();
-		$('.ui-slide-num').attr('id', '').hide()
-		$('.ui-slide-btn').attr('id', '').hide()
-	}
-	$(function  () {
-		init ();
-	})
-  	$(".select-area").change(function () {
-  		var pVal = $(this).val();
-  		$('.'+ pVal).attr('id','J_slide').show().siblings('.ui-slide').attr('id', '').hide();
-  		slideRefresh();
-    });
-</script>
-
 </html>

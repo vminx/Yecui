@@ -3069,6 +3069,199 @@ select {
   -ms-flex-align: center;
   align-items: center;
 }
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+.ui-list a:hover,
+.ui-list a:focus {
+  outline: none;
+}
+.ui-list,
+.ui-list li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ui-list {
+  display: block;
+}
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+.ui-list-one > li {
+  margin: 0 0 0 15px;
+}
+.ui-list-one .ui-list-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+}
+.ui-list-one .ui-list-item.ui-list-link {
+  position: relative;
+}
+.ui-list-one .ui-list-item.ui-list-link .ui-list-d {
+  padding-right: 28px;
+}
+.ui-list-one .ui-list-item.ui-list-link:after {
+  right: 10px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: #555555 solid;
+  border-width: 2px 2px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ui-list-one .ui-list-item .ui-list-p {
+  width: 100px;
+  margin: 10px 10px 10px 0;
+  position: relative;
+}
+.ui-list-one .ui-list-item .ui-list-p img {
+  width: 100%;
+}
+.ui-list-one .ui-list-item .ui-list-d {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  margin-left: 10px;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  padding-right: 20px;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+}
+.ui-list-one .ui-list-item .ui-list-d > h4 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555555;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 48px;
+}
+.ui-list-one .ui-list-item .ui-list-d > p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: gray;
+}
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+.ui-list-a {
+  padding: 10px;
+  padding-left: 0;
+}
+.ui-list-a > li {
+  display: block;
+  padding-left: 10px;
+}
+.ui-list-a .ui-list-item {
+  display: block;
+}
+.ui-list-a .ui-list-item.ui-list-link {
+  position: relative;
+}
+.ui-list-a .ui-list-item.ui-list-link .ui-list-d {
+  padding-right: 18px;
+}
+.ui-list-a .ui-list-item.ui-list-link:after {
+  right: 10px;
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: #555555 solid;
+  border-width: 2px 2px 0 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ui-list-a .ui-list-item .ui-list-p {
+  width: 100%;
+}
+.ui-list-a .ui-list-item .ui-list-p img {
+  width: 100%;
+}
+.ui-list-a .ui-list-item .ui-list-d {
+  height: 100px;
+  overflow: hidden;
+}
+.ui-list-a .ui-list-item .ui-list-d > h4 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555555;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 48px;
+}
+.ui-list-a .ui-list-item .ui-list-d > p {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: gray;
+}
+.ui-list-a .ui-list-item .ui-list-d .align-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex ;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 /*  
 
 <div id="J_slide" class="ui-slide ui-slide-default">
