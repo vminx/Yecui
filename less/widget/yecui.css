@@ -675,6 +675,25 @@ select {
 /* ==========================================================================
    Component: Utility
  ============================================================================ */
+.f-body-bg {
+  background: #eeeeee;
+}
+.f-bd-t {
+  border: 0;
+  border-top: 1px solid #dddddd;
+}
+.f-bd-r {
+  border: 0;
+  border-right: 1px solid #dddddd;
+}
+.f-bd-b {
+  border: 0;
+  border-bottom: 1px solid #dddddd;
+}
+.f-bd-l {
+  border: 0;
+  border-left: 1px solid #dddddd;
+}
 .f-scrollable-horizontal {
   width: 100%;
   overflow-y: hidden;
@@ -3096,7 +3115,7 @@ select {
   说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
   */
 .ui-list-one > li {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
 }
 .ui-list-one .ui-list-item {
   display: -webkit-box;
@@ -3142,10 +3161,10 @@ select {
   -webkit-box-flex: 1;
   flex: 1;
   overflow: hidden;
-  margin-left: 10px;
+  margin-left: 0;
+  padding-right: 10px;
   -webkit-box-flex: 1;
   box-flex: 1;
-  padding-right: 20px;
   display: box;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -3182,52 +3201,28 @@ select {
   * Header Theme: default
   说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
   */
-.ui-list-a {
+.ui-list-a1 {
   padding: 10px;
   padding-left: 0;
 }
-.ui-list-a > li {
-  display: block;
+.ui-list-a1 .ui-list-item {
   padding-left: 10px;
-}
-.ui-list-a .ui-list-item {
   display: block;
 }
-.ui-list-a .ui-list-item.ui-list-link {
-  position: relative;
-}
-.ui-list-a .ui-list-item.ui-list-link .ui-list-d {
-  padding-right: 18px;
-}
-.ui-list-a .ui-list-item.ui-list-link:after {
-  right: 10px;
-  content: '';
-  position: absolute;
-  top: 50%;
-  margin-top: -4px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: #555555 solid;
-  border-width: 2px 2px 0 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.ui-list-a .ui-list-item .ui-list-p {
+.ui-list-a1 .ui-list-p {
   width: 100%;
 }
-.ui-list-a .ui-list-item .ui-list-p img {
+.ui-list-a1 .ui-list-p img {
   width: 100%;
 }
-.ui-list-a .ui-list-item .ui-list-d {
-  height: 100px;
+.ui-list-a1 .ui-list-d {
+  height: auto;
   overflow: hidden;
 }
-.ui-list-a .ui-list-item .ui-list-d > h4 {
+.ui-list-a1 .ui-list-d > h4 {
   display: block;
   margin: 0;
-  padding: 0;
+  margin: 5px 0 0 0;
   font-size: 14px;
   font-weight: 300;
   color: #555555;
@@ -3236,10 +3231,10 @@ select {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  line-height: 24px;
-  max-height: 48px;
+  line-height: 20px;
+  max-height: 40px;
 }
-.ui-list-a .ui-list-item .ui-list-d > p {
+.ui-list-a1 .ui-list-d > p {
   display: block;
   margin: 0;
   padding: 0;
@@ -3250,17 +3245,6 @@ select {
   text-overflow: ellipsis;
   max-width: 100%;
   color: gray;
-}
-.ui-list-a .ui-list-item .ui-list-d .align-center {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex ;
-  height: 100%;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 /*  
 

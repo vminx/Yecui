@@ -1,0 +1,66 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+
+
+
+//参数
+
+    @ui-listA-width: 100px;                //tab栏目高度
+    @ui-listA-spacing: 10px;               //间距
+
+    @ui-listA-tit-line:2;                  //标题行数
+    @ui-listA-tit-lh:20px;                 //标题行高
+    @ui-listA-tit-fs:14px;                 //标题大小
+    
+    @z-listA-arr-size:8px;                 //箭头大小
+    @ui-listA-d-h: auto;                   //文字区域高度
+
+.ui-list-a1 {
+    padding: @ui-listA-spacing;
+    padding-left: 0;
+    
+    .ui-list-item{
+        padding-left: @ui-listA-spacing;
+        display: block;
+    }
+    //图片区域
+    .ui-list-p{
+        width:  100%;
+        img{width: 100%;}
+    }
+
+    //文字区域
+    .ui-list-d{
+        height: @ui-listA-d-h;
+        overflow: hidden;
+
+        //标题
+         > h4{
+            display: block;
+            margin: 0;
+            margin: 5px 0 0 0;
+            font-size: @ui-listA-tit-fs;
+            font-weight: 300;
+            color: @gray;
+            .line-clamp(@ui-listA-tit-line,@ui-listA-tit-lh);
+        }
+
+        //内容
+        > p{
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            line-height: 22px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            color: gray;
+        }
+   }
+}
+
+// TODO: 
