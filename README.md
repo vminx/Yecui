@@ -1,6 +1,6 @@
 <h1><a href="#" title="yep-ui 官网"></h1>
 
-#Yecui CSS框架
+#Yecui CSS脚手架
 
 Yecui 是基于公司内部项目构建的一个移动端框架。
 Yecui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的模块,方便快速建立项目的通用模型,和辅助模型

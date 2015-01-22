@@ -1,0 +1,101 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+
+
+
+//参数
+    
+    @ui-listF-ul-m:0 0 20px 0;                     //列表(ul)的(margin)
+    @ui-listF-li-m:0 0 0 10px;                     //每列(li)的(margin)
+    @ui-listF-fr-w:50px;                     //固定右侧的宽度
+    @ui-listF-thumb-s:60px;                       //图文列表-图片尺寸设置(size)
+    @ui-listF-thumb-m:10px 10px 10px 0;            //图文列表-图片间距(margin)
+    @ui-listF-spacing: 10px;                       //间距
+
+    @ui-listF-tit-line:2;                          //标题行数
+    @ui-listF-tit-lh:24px;                         //标题行高
+    @ui-listF-tit-fs:14px;                         //标题大小
+
+    @z-listF-link-s:8px;                           //箭头大小
+    @z-listF-link-r:10px;                          //箭头距右距离
+
+
+.ui-list-fun {
+    background: #fff;
+    margin:  @ui-listF-ul-m;
+
+    .ui-list-item{
+        .flexbox();
+        margin:  @ui-listF-li-m;
+    }
+        //创建箭头
+    .ui-list-link{
+        position: relative;
+
+        .ui-list-d{
+            padding-right: (@z-listF-link-r+(@z-listF-link-s/2))*2;
+        }
+         &:after{
+            right: @z-listF-link-r;
+            content: '';
+            position: absolute;
+            top:50%;
+            margin-top: -@z-listF-link-s/2;
+            .arrow(@gray,@z-listF-link-s,2px,45deg);
+        }
+    }
+
+    //图片区域
+    .ui-list-p{
+        width:  @ui-listF-thumb-s;
+        margin:  @ui-listF-thumb-m;
+        position: relative;
+        img{width: 100%;}
+    }
+    
+    //文字区域
+    .ui-list-d{
+        .flex(1);
+        padding: @ui-listF-spacing;
+        overflow: hidden;
+        margin-left: 0;
+        .mx-center();
+   }
+   //右侧固定
+    .ui-list-dr{
+        width: @ui-listF-fr-w;
+        background: @global-primary;
+        color: #fff;
+        font-size: 14px;
+        .mx-center-center;
+   } 
+   //文字区域-标题
+   .ui-list-dt{
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: @ui-listF-tit-fs;
+        font-weight: 300;
+        color: @gray;
+        .line-clamp(@ui-listF-tit-line,@ui-listF-tit-lh);
+    }
+    
+    //文字区域-内容
+    .ui-list-dc{
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        line-height: 22px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        color: gray;
+    }
+    
+}
+
+// TODO: 

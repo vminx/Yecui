@@ -29,19 +29,26 @@
 
 .ui-list,
 .ui-list li{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    .mx-reset-box();
 }
 // =============================================================================
 
 .ui-list {
     display: block;
-   .ui-list-p{}
-    .ui-list-d{
-        .d-tit{}
-        .d-price{}
-        .d-main{}
+   .ui-list-p{}                 //图片模块        (picture)
+   .ui-list-d{                  //文字模块        (doc)
+        .ui-list-dt{}           //文字模块标题     (title)
+        .ui-list-dc{}           //文字模块内容     (content)
    }
 }
-
+.ui-list-tt{
+    .mx-reset-box();
+    font-size: 16px;
+    line-height: 40px;
+    margin-left: 10px;
+    color: @global-primary;
+    font-weight: bold;
+}
+.ui-list-active{
+  &:active{background: #f1f1f1;}
+}
