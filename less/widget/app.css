@@ -1,0 +1,75 @@
+/*
+//----------------------------------------------------------------------------
+// - 盒模型              18
+
+    .clearfix           清除浮动
+    .center-block       居中 相当于margin:0 auto
+    .size(px;px)        宽高不同
+    .square(px)         宽高相等的正方形
+    .resizable          (none|both|horizontal|vertical)
+                        规定用户是否可以调整元素尺寸
+    .scrollable         元素滚动回弹效果'暂时只支持safair'
+
+
+// - 排版                72
+
+    .text-overflow(display|inline-block)        单行文字截取
+    .text-hide                                  就隐藏文字
+    .line-clamp(num,line-height)                多行文字截取,(行数,行高)
+
+// - Visual             117
+
+    .tab-focus                    焦点状态
+    .border-[t|r|b|l]-radius(px)  边框圆角[top|right|bottom|left](圆角大小)
+    .opacity(num)                 透明度
+
+// - Flex Box           159
+
+    .flexbox(flex|inline-flex)  弹性布局父元素
+    .flex(num)弹性布局子元素
+    >>>TODO 其他flex以后完善,感觉作用不大,就是加了前缀
+
+// - 箭头               317
+
+    .caret-[d|u|l|r](px,color)                              三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
+    .arrow(color,px,px,deg)                                 箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
+    .angle-base                                 
+    .angle-[u|d|l|r]-variant(color,color,px)                带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
+
+// - 元件               493
+// - 公共的             634
+// - 渐变               709
+// - CSS3 前缀          814
+// - 其他               1010
+
+  .retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) 需要做retina适应的背景图
+
+//---------------------------------------------------------------------------
+*/
+.mx-reset-box {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mx-reset-font {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
+.order-submit {
+  font-size: 12px;
+}
+.order-submit img {
+  background: #f1f1f1;
+}
+.order-submit .ui-list-text li,
+.order-submit .ui-list-one .ui-list-item {
+  border-bottom: 1px solid #dddddd;
+}
+.order-submit .ui-list-text li:last-child,
+.order-submit .ui-list-one li:last-child {
+  border: 0;
+}
+.order-submit .ui-list-tt {
+  color: #333333;
+}

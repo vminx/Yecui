@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="../yecui.css">
+</head>
+<body class="f-body-bg">
+
+	<h2 class="ui-list-tt">表单输入项 / ui-form-text</h2>
+	<ul class="ui-form ui-form-one">
+		<li class="ui-form-item">
+			<label>用户名</label>
+			<input type="text" placeholder="请输入用户名">
+		</li>
+		<li class="ui-form-item ui-form-item-textarea">
+			<label>地址</label>
+			<textarea name="" placeholder="详细地址"></textarea>
+		</li>
+		<li class="ui-form-item">
+			<label>选项</label>
+			<!-- 需要独立包裹一个容器,为使用伪类 -->
+			<div class="ui-select">
+				<select name="select" id="">
+					<option value="请选择">请选择</option>
+					<option value="上海">上海</option>
+					<option value="北京">北京</option>
+				</select>
+			</div>
+		</li>
+		<li class="ui-form-item">
+			<span>开关按钮</span>
+			<label for="#" class="ui-switch">
+	            <input type="checkbox">
+	        </label>
+		</li>
+	</ul>
+
+	<ul class="ui-form ui-form-one">
+		<li class="ui-form-item">
+			<label for="#" class="ui-radio">
+                <input type="radio" name="radio">单选按钮
+            </label>
+		</li>
+		<li class="ui-form-item">
+			<label for="#" class="ui-radio">
+                <input type="radio" name="radio">单选按钮
+            </label>
+		</li>
+		<li class="ui-form-item">
+			<label for="#" class="ui-checkbox">
+                <input type="checkbox" name="checkbox"><span>复选按钮</span>
+            </label>
+		</li>
+	</ul>
+
+	
+</body>
+</html>

@@ -32,10 +32,8 @@
         //创建箭头
     .ui-list-link{
         position: relative;
+        padding-right: (@z-list-link-r+(@z-list-link-s/2))*2;
 
-        .ui-list-d{
-            padding-right: (@z-list-link-r+(@z-list-link-s/2))*2;
-        }
          &:after{
             right: @z-list-link-r;
             content: '';
@@ -68,7 +66,6 @@
         display: block;
         margin: 0;
         padding: 0;
-        font-size: @ui-list-tit-fs;
         font-weight: 300;
         color: @gray;
         .line-clamp(@ui-list-tit-line,@ui-list-tit-lh);
@@ -79,13 +76,11 @@
         display: block;
         margin: 0;
         padding: 0;
-        font-size: 12px;
-        line-height: 22px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         max-width: 100%;
-        color: gray;
+        color: @gray;
     }
     
 }
