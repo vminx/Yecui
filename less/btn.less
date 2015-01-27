@@ -1,0 +1,193 @@
+// Name:            btn 按钮元件
+//
+// Description:     
+//
+//                  Breakpoint:
+//                    sm: <= 640px
+//                    md: 641px <= 1024px
+//                    lg: >1024px
+//
+// Component:       `.btn`
+//
+//
+// =============================================================================
+
+
+/* ==========================================================================
+   Component: btn
+
+   .btn               默认大小
+      .btn-default    默认颜色
+      .btn-primary    主色按钮
+      .btn-second     次色按钮
+      .btn-danger     警告色
+   .btn-s             小号按钮
+   .btn-lg            一整块大小 block
+
+ ============================================================================ */
+// 按钮颜色
+    @btn-color:     lighten(@white,10%);
+    @btn-primary:   @global-primary;
+    @btn-second:    lighten(@btn-primary, 23.5%);
+    @btn-danger:    #f75549;
+// 设置按钮
+  @btn-radius:0px;
+  @btn-border:ture;
+
+  @btn-s-p:0 10px;    //小号 padding
+  @btn-s-h:25px;      //小号 height
+  @btn-s-fz:1.2rem;     //小号 font-size
+
+  @btn-fz:1.6rem;     //小号 font-size
+  @btn-p:0 13px;    //默认 padding
+  @btn-h:30px;      //默认 height
+// Mixins
+// =============================================================================
+
+.btn{
+    display: inline-block;
+    height: @btn-h;
+    line-height: @btn-h;
+    border: none;
+    border: 1px solid darken(@btn-color,20%);
+    text-align: center;
+    padding: @btn-p;
+    position: relative;
+    font-size: @btn-fz;
+    background-color: @btn-color;
+    border-radius: @btn-radius;
+    vertical-align: top;
+    color: #00a5e0;
+    
+}
+/* ==========================================================================
+
+    按钮尺寸
+
+ ============================================================================ */
+.btn-lg{
+    .btn;
+    font-size: 18px;
+    height: 44px;
+    line-height: 42px;
+    display: block;
+    width: 100%;  
+    border-radius: 5px;
+}
+
+.btn-progress{
+    width: 55px;
+    padding: 0;
+    overflow: hidden;
+    .btn-inner{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        overflow: hidden;
+        background-image: -webkit-gradient(linear,left top, left bottom, color-stop(0.5, #1fbaf3), to(#18b4ed));
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+        span{
+            display: inline-block;
+            color: #fff;
+            position: absolute;
+            width: 55px;
+            left: 0;
+        }
+    }
+}
+
+.btn-s{
+    .btn;
+    font-size:      @btn-s-fz;
+    padding:        @btn-s-p;
+    height:         @btn-s-h;
+    line-height:    @btn-s-h;
+}
+
+/* ==========================================================================
+
+    按钮类型
+
+ ============================================================================ */
+
+.btn:not(.disabled):not(:disabled):active,
+.btn.active,
+.btn-s:not(.disabled):not(:disabled):active,
+.btn-s.active,
+.btn-lg:not(.disabled):not(:disabled):active,
+.btn-lg.active{
+    background: #f2f2f2;
+    color: rgba(0,165,224,.5);
+    background-clip: padding-box;
+}
+
+// primary
+// =============================================================================
+.btn-primary{
+    background-color: @btn-primary;
+    border-color: darken(@btn-primary,5%);
+    color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.btn-primary:not(.disabled):not(:disabled):active,.btn-primary.active{
+    background: darken(@btn-primary,5%);
+    color: rgba(255,255,255,.5);
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+}
+
+// second
+// =============================================================================
+.btn-second{
+    background-color: @btn-second;
+    border-color: darken(@btn-second,5%);;
+    color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.btn-second:not(.disabled):not(:disabled):active,.btn-second.active{
+    background: darken(@btn-second,5%);
+    color: rgba(255,255,255,.5);
+    background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+}
+
+// danger
+// =============================================================================
+.btn-danger{
+    background-color: @btn-danger;
+    color: #fff;
+    border-color: darken(@btn-danger, 10%);
+    background-clip: padding-box;
+}
+.btn-danger:not(.disabled):not(:disabled):active,.btn-danger.active{
+    background: lighten(@btn-danger, 5%);
+    color: rgba(255,255,255,.5);
+    background-clip: padding-box;
+}
+
+// disabled
+// =============================================================================
+.btn.disabled,.btn:disabled,.btn-s.disabled,.btn-s:disabled,.btn-lg.disabled,.btn-lg:disabled{
+    border:1px solid #cacccd;
+    color: #ccc;
+    background-color: #fefefe;
+    background-clip: padding-box;
+}
+
+
+
+@media @screen {
+  .make-avg-grid(sm);
+}
+
+@media @medium-up {
+  .make-avg-grid(md);
+}
+
+@media @large-up {
+  .make-avg-grid(lg);
+}

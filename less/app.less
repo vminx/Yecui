@@ -3,10 +3,12 @@
 @import "mixins.less";
 
 .order-submit{
-	font-size: 16px;
 	img{background: #f1f1f1;}
+	font-size: 1.4rem;
 	//改变框架默认属性
-	.ui-list-text li,.ui-list-one .ui-list-item{.mx-bd-b()}
+	.ui-list-text, 
+	.ui-list-one {margin-bottom: 0;}
+	.ui-list-text li,.ui-list-one .ui-list-item{.mx-bd-b();}
 	.ui-list-text li:last-child,.ui-list-one li:last-child{border: 0;}
 	.ui-list-tt{color: @gray-dark}
 }

@@ -57,10 +57,14 @@
   font-style: normal;
 }
 .order-submit {
-  font-size: 16px;
+  font-size: 1.4rem;
 }
 .order-submit img {
   background: #f1f1f1;
+}
+.order-submit .ui-list-text,
+.order-submit .ui-list-one {
+  margin-bottom: 0;
 }
 .order-submit .ui-list-text li,
 .order-submit .ui-list-one .ui-list-item {
