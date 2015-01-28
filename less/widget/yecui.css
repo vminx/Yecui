@@ -2061,20 +2061,23 @@ img {
       .btn-danger     警告色
    .btn-s             小号按钮
    .btn-lg            一整块大小 block
+   .btn-group         一排一组按钮
 
  ============================================================================ */
 .btn {
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 33px;
   border: none;
-  border: 1px solid #cccccc;
+  border-width: 1px ;
+  border-style: solid ;
+  border-color: #cccccc;
   text-align: center;
-  padding: 0 13px;
+  padding: 0 15px;
   position: relative;
   font-size: 1.6rem;
   background-color: #ffffff;
-  border-radius: 0px;
+  border-radius: 3px;
   vertical-align: top;
   color: #00a5e0;
 }
@@ -2085,24 +2088,25 @@ img {
  ============================================================================ */
 .btn-lg {
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 33px;
   border: none;
-  border: 1px solid #cccccc;
+  border-width: 1px ;
+  border-style: solid ;
+  border-color: #cccccc;
   text-align: center;
-  padding: 0 13px;
+  padding: 0 15px;
   position: relative;
   font-size: 1.6rem;
   background-color: #ffffff;
-  border-radius: 0px;
   vertical-align: top;
   color: #00a5e0;
-  font-size: 18px;
-  height: 44px;
-  line-height: 42px;
+  font-size: 1.8rem;
+  height: 42px;
+  line-height: 44px;
   display: block;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 .btn-progress {
   width: 55px;
@@ -2128,22 +2132,24 @@ img {
 }
 .btn-s {
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 33px;
   border: none;
-  border: 1px solid #cccccc;
+  border-width: 1px ;
+  border-style: solid ;
+  border-color: #cccccc;
   text-align: center;
-  padding: 0 13px;
+  padding: 0 15px;
   position: relative;
   font-size: 1.6rem;
   background-color: #ffffff;
-  border-radius: 0px;
+  border-radius: 3px;
   vertical-align: top;
   color: #00a5e0;
   font-size: 1.2rem;
   padding: 0 10px;
   height: 25px;
-  line-height: 25px;
+  line-height: 23px;
 }
 /* ==========================================================================
 
@@ -2163,6 +2169,8 @@ img {
 }
 .btn-primary {
   background-color: #0e90d2;
+  border-width: 1px ;
+  border-style: solid ;
   border-color: #0c80ba;
   color: #fff;
   -webkit-background-clip: padding-box;
@@ -2172,11 +2180,13 @@ img {
 .btn-primary.active {
   background: #0c80ba;
   color: rgba(255, 255, 255, 0.5);
-  background-clip: padding-box;
   -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .btn-second {
   background-color: #63c4f5;
+  border-width: 1px ;
+  border-style: solid ;
   border-color: #4bbbf3;
   color: #fff;
   -webkit-background-clip: padding-box;
@@ -2186,13 +2196,15 @@ img {
 .btn-second.active {
   background: #4bbbf3;
   color: rgba(255, 255, 255, 0.5);
-  background-clip: padding-box;
   -webkit-background-clip: padding-box;
+  background-clip: padding-box;
 }
 .btn-danger {
   background-color: #f75549;
+  border-width: 1px ;
+  border-style: solid ;
+  border-color: #f63e31;
   color: #fff;
-  border-color: #f52718;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
@@ -3428,6 +3440,13 @@ img {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.ui-form-one .btn.btn-primary {
+  height: 100%;
+  width: 200px;
+  line-height: 44px;
+  border-color: 0;
+  border-radius: 0;
 }
 .ui-form-one .ui-form-item-textarea {
   height: 65px;
