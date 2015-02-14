@@ -1,9 +1,9 @@
 <h1><a href="#" title="yep-ui 官网"></h1>
 
-#Yecui CSS脚手架
+#Yep-ui CSS脚手架
 
-Yecui 是基于公司内部项目构建的一个移动端框架。
-Yecui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的模块,方便快速建立项目的通用模型,和辅助模型
+Yep-ui 是基于公司内部项目构建的一个移动端框架。
+Yep-ui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的模块,方便快速建立项目的通用模型,和辅助模型
 
 
 	
@@ -17,7 +17,7 @@ Yecui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的�
 	|	├── assets/
 	|	|	├── css/
 	|	|	|	├── base.css		//css reset + function 通用解决方案
-	|	|	|	├── yeps.css		//yecui 组件文件
+	|	|	|	├── yeps.css		//Yep-ui 组件文件
 	|	|	|	└── solution.css	//基于各产品个性解决方案
 	|	|	├── img/
 	|	|	|	├── ...				//基础ui图片
@@ -32,7 +32,7 @@ Yecui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的�
 	|	|	|	└── common/			//通用js
 	|	|	└── less/
 	|	|		├── view/			//less编译文件
-	|	|		└── widget/			//yecui 组件库
+	|	|		└── widget/			//Yep-ui 组件库
 	|	├── mock/
 	|	├── page/
 	|	|	├── layout/				//公共模块
@@ -43,9 +43,9 @@ Yecui 提供统一的HTML,CSS规范,和开发流程,并且提供一些基础的�
 ```
 ## 模块组织规范
 
-yecui 的样式模块组织方式追求扁平化的方式，分为三个层级：
+Yep-ui 的样式模块组织方式追求扁平化的方式，分为三个层级：
 - 基础框架（reset +  function + iconfont + 栅格）
-- 通用模块（符合 yecui 规范的样式模块）
+- 通用模块（符合 Yep-ui 规范的样式模块）
 - 页面样式（继承通用模块,开发人员进一步开发）
 
 ##关于命名空间
