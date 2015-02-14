@@ -4,7 +4,19 @@
 //
 // Component:                `.am-*`
 //
-// Modifiers:                `.am-start`
+// Modifiers:                `.am-fade`       -----渐显
+//                           `.am-scale-up`   -----至上放大
+//                           `.am-scale-down` -----至上放下
+//                           `.am-slide-top`  -----至上滑动
+//                           `.am-slide-bottom`----至下滑动
+//                           `.am-slide-left` -----至左滑动
+//                           `.am-slide-right`-----至右滑动
+//                           `.am-slide-shake`-----弹性滑动
+//                           `.am-spin`       -----旋转
+//                           `.am-left-spring`-----向左回弹
+//                           `.am-right-spring`----向右回弹
+
+
 //
 // Used by:                   Dropdown
 //
@@ -13,29 +25,375 @@
 /* ==========================================================================
    Component: Aniamtion
  ============================================================================ */
+@time: .5s;
+@delay: 0s;
 
 [class*="am-"] {
-  animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
 
 
+
+.am-common(@fun:ease-out,@mode:both) {
+  animation-timing-function: @fun;
+  animation-fill-mode: @mode;
+}
+
 /* start */
-.am-arrow-start {
-  animation: am-arrow-start 1.5s infinite;
+.am-arrow-start(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-arrow-start;
+  animation-duration: @time;
+  animation-delay: @delay;
 }
 
 // 加载动画-钢琴
-.am-loading-piano {
-	animation: am-loading-piano 1.2s infinite;
+.am-loading-piano(@time:1.2s,@delay:0s) {
+	.am-common();
+  animation-name: am-loading-piano;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+/* Fade */
+.am-fade(@time:.5s,@delay:0s) {
+  animation-name: am-fade;
+  animation-duration: @time;
+  animation-timing-function: linear;
+  animation-delay: @delay;
+}
+
+/* Scale */
+
+.am-scale(@time:.5s,@delay:0s,@iteration:1) {
+  .am-common();
+  animation-name: am-scale;
+  animation-duration: @time;
+  animation-delay: @delay;
+  animation-iteration-count: @iteration;
+}
+
+.am-scale-heart(@time:.5s,@delay:0s,@iteration:1) {
+  .am-common();
+  animation-name: am-scale-heart;
+  animation-duration: @time;
+  animation-delay: @delay;
+  animation-iteration-count: @iteration;
+}
+
+.am-scale-up(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-scale-up;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-scale-down(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-scale-down;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+/* Slide */
+.am-slide-top(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-slide-top;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-slide-bottom(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-slide-bottom;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-slide-left(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-slide-left;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-slide-right(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-slide-right;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-slide-top-fixed(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-slide-top-fixed;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+/* Shake */
+.am-shake(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-name: am-shake;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+/* Spin */
+.am-spin(@time:.5s,@delay:0s) {
+  .am-common();
+  animation: am-spin 2s infinite linear;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+/* Spring */
+.am-left-spring(@time:.5s,@delay:0s) {
+  .am-common();
+  animation: am-left-spring .3s ease-in-out;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-right-spring(@time:.5s,@delay:0s) {
+  .am-common();
+  animation: am-right-spring .3s ease-in-out;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+// Modifiers
+// =============================================================================
+.am-reverse(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-direction: reverse;
+  animation-duration: @time;
+  animation-delay: @delay;
+}
+
+.am-paused(@time:.5s,@delay:0s) {
+  .am-common();
+  animation-play-state: paused !important;
+  animation-duration: @time;
+  animation-delay: @delay;
 }
 
 
 /* Keyframes
  ============================================================================ */
 
-/* start箭头动画 */
+/* Fade */
+@keyframes am-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Scale up */
+@keyframes am-scale {
+  0% {
+    opacity: 0;
+    transform-origin:50% 50%;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform-origin:50% 50%;
+    transform: scale(1);
+  }
+}
+@keyframes am-scale-heart {
+  0% {
+    transform-origin:50% 50%;
+    transform: scale(1);
+  }
+  50% {
+    transform-origin:50% 50%;
+    transform: scale(1.1);
+  }
+  100% {
+    transform-origin:50% 50%;
+    transform: scale(1);
+  }
+}
+@keyframes am-scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scale down */
+@keyframes am-scale-down {
+  0% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide top */
+@keyframes am-slide-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide bottom */
+@keyframes am-slide-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide left */
+@keyframes am-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide right */
+@keyframes am-slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Shake */
+@keyframes am-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-9px);
+  }
+  20% {
+    transform: translateX(8px);
+  }
+  30% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+  70% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+}
+
+/* Slide top fixed */
+@keyframes am-slide-top-fixed {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide bottom fixed */
+@keyframes am-slide-bottom-fixed {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Spin */
+@keyframes am-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+/* Spring */
+@keyframes am-right-spring {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes am-left-spring {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
 @-webkit-keyframes am-arrow-start {
 	0%, 30% { 
 		opacity: 0;
@@ -51,7 +409,6 @@
 	}
 }
 
-// 加载样式-钢琴动画
 @-webkit-keyframes am-loading-piano {
 	0%, 40%, 100% {
 		transform: scaleY(0.4)

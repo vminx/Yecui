@@ -1,0 +1,161 @@
+@import url(../../animation.less);
+/**
+*
+* 变量
+** 1.设置默认字体大小
+** 2.每份rem的大小
+*
+**/
+	@global-font-size:20; /*1*/
+	@rem:0.1/(0.1*@global-font-size+0rem); /*2*/
+
+/**
+* 循环函数 设置 media screen <html> fontsize 
+* min-20px max-40px
+**/
+	.for-media-fontsize(@n, @i: 1) when (@i =< @n) {
+	 @w:((320)/@n*@i);
+	 @fz:(@global-font-size+@i*(@global-font-size/@n));
+   @media only screen and (min-width:(@w+320px) ) {font-size: (@fz+0px) !important;}
+  .for-media-fontsize(@n, (@i + 1));
+}
+
+/**
+* 通用混合函数
+**/
+	.wh(@width,@height){
+		width: @width;
+		height: @height;
+	}
+	.box(@top,@right,@bottom,@left){
+		top:@top;
+		right:@right;
+		bottom:@bottom;
+		left:@left;
+	}
+
+/**
+* resets
+**/
+body,html,ul,ol,section,header,footer{margin: 0;padding: 0;}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/**
+* start
+**/
+html {
+	height: 100%;
+  font-size : @global-font-size+0px;
+  //开始循环
+  .for-media-fontsize(10);	//设置media粒度
+}
+
+body{height: 100%;margin: 0;}
+
+/**
+* 加载遮罩
+**/
+.mask{
+  position: fixed;.wh(100%;100%);background: rgba(0, 0, 0, .8);z-index: 100;
+  .loading{
+  	&:before{
+  		.wh(20px;20px);
+  		content: '';
+  		display: inline-block;
+  		-webkit-animation: rotate 1s steps(12) infinite;
+			background: url(img/loading_sprite_white.png);
+			-webkit-background-size: auto 20px;
+			@-webkit-keyframes rotate{from{background-position:0 0}to{background-position:-240px 0}}
+  	}
+  	.wh(200px;90px);
+  	.box(50%;none;none;50%);
+  		position: absolute;
+	  	margin-top: -45px;
+	  	margin-left: -100px;
+			text-align: center;
+  	
+		color: #fff;
+  }
+}
+
+/**
+* 统一的元素
+**/
+.active-footer,
+.act-denglong,
+.act-tit,
+.act-btn,
+.act-btn,
+.act-note{
+	position: absolute;
+}
+
+/**
+* 正文开始
+**/
+.active-wrap{
+	.wh(100%;100%);
+	.box(none;none;0;0);
+	min-height: 400*@rem;
+	min-width: 280*@rem;
+	max-width: 640px;
+	margin: 0 auto;
+	position: relative;
+	background-image: url(img/bg.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #220a09;
+}
+
+.active-footer{
+	// 动画需要
+	display: none;
+	.am-slide-bottom;
+	.wh(100%;274*@rem/2);
+	.box(none;none;0;0);
+	background-image: url(img/ft-bg.png);
+	background-size: cover;
+	background-position: left bottom;
+	background-repeat: no-repeat;
+}
+
+.act-denglong{
+	// 动画需要
+	display: none;
+	.am-slide-top;
+	.wh(120*@rem;245*@rem);
+	.box(0;none;none;0);
+	background: url(img/denglong.png);
+	background-size: cover;
+}
+.act-tit{
+	// 动画需要
+	display: none;
+	.am-slide-top;
+	.wh(407/2*@rem;368/2*@rem;);
+	.box(0;0;none;none);
+	background: url(img/tit.png);
+	background-size: cover;
+}
+.act-btn{
+	//动画需要
+	display: none;
+	.am-scale-heart(1s,0s,infinite);
+	.wh(111*@rem;111*@rem);
+	.box(50%;none;none;50%);
+	background: url(img/btn.png);
+	background-size: cover;
+	z-index: 1;
+	margin-left: -55*@rem;
+	margin-top: -40*@rem;
+	a{display: block;.wh(100%,100%)}
+}
+.act-note{
+	.box(none;40*@rem;40*@rem;none);
+	color: #fff;
+	font-size: .7rem;
+	span{color: #ff5123;}
+}

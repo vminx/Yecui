@@ -4,7 +4,7 @@
 	/* 
 	** 页面切换的效果控制 
 	*/
-var Msize = $(".m-liveapp-page").size(), 	//页面的数目
+var Msize = $(".ui-liveapp-page").size(), 	//页面的数目
 	page_n			= 1,			//初始页面位置
 	initP			= null,			//初值控制值
 	moveP			= null,			//每次获取到的值
@@ -53,8 +53,8 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 		page_h >= m_h ? v_h = page_h : v_h = m_h ;
 		
 		//设置各种模块页面的高度，扩展到整个屏幕高度
-		$(".m-liveapp-page").height(v_h); 	
-		$(".m-liveapp").height(v_h);
+		$(".ui-liveapp-page").height(v_h); 	
+		$(".ui-liveapp").height(v_h);
 		
 	};
 	init_pageH();
@@ -67,9 +67,9 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 */
 	//绑定事件
 	function changeOpen(e){
-		$(".m-liveapp-page").on('mousedown touchstart',page_touchstart);
-		$(".m-liveapp-page").on('mousemove touchmove',page_touchmove);
-		$(".m-liveapp-page").on('mouseup touchend mouseout',page_touchend);
+		$(".ui-liveapp-page").on('mousedown touchstart',page_touchstart);
+		$(".ui-liveapp-page").on('mousemove touchmove',page_touchmove);
+		$(".ui-liveapp-page").on('mouseup touchend mouseout',page_touchend);
 	};
 	
 
@@ -122,13 +122,13 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 				//向下移动
 					if(indexP){								
 						newM = page_n - 1 ;
-						$(".m-liveapp-page").eq(newM-1).addClass("active").css("top",-v_h);
+						$(".ui-liveapp-page").eq(newM-1).addClass("active").css("top",-v_h);
 						move = true ;
 					}else{
 						if(canmove){
 							move = true;
 							newM = Msize;
-							$(".m-liveapp-page").eq(newM-1).addClass("active").css("top",-v_h);
+							$(".ui-liveapp-page").eq(newM-1).addClass("active").css("top",-v_h);
 						}
 						else move = false;
 					}
@@ -141,7 +141,7 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 					}else{
 						newM = 1 ;
 					}
-					$(".m-liveapp-page").eq(newM-1).addClass("active").css("top",v_h);
+					$(".ui-liveapp-page").eq(newM-1).addClass("active").css("top",v_h);
 					move = true ;
 				} 
 			}
@@ -164,7 +164,7 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 					// $(".m-liveapp-page").eq(newM-2).animate({scale: scale,perspective:'400px',rotateX:+rox+'deg',origin:'0px'},0,'');
 					// $('.m-liveapp-page').css({'origin':'50% 0%'})
 
-					var topV = parseInt($(".m-liveapp-page").eq(newM-1).css("top"));
+					var topV = parseInt($(".ui-liveapp-page").eq(newM-1).css("top"));
 					var scale=1 - Math.abs((topV-v_h)*0.2/$(window).height());//缩放时的变量
 					var ta=(topV-v_h)/5;//缩放时固定头部的变量
 					//正在滑动时的状态
@@ -174,15 +174,15 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 						var ta=Math.abs(topVab-v_h)/5;//缩放时固定头部的变量[ta值 0-96 ]
 						var scale=1-Math.abs((topVab-v_h)*0.2/$(window).height());//缩放时的变量[1-0.8]
 						//被切换页
-						$(".m-liveapp-page").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
+						$(".ui-liveapp-page").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
 						//下一页
-						$(".m-liveapp-page").eq(newM-1).css({'top':topV+moveP-initP});	
+						$(".ui-liveapp-page").eq(newM-1).css({'top':topV+moveP-initP});	
 					}else{
 					//当向上移动
 						//被切换页
-						$(".m-liveapp-page").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
+						$(".ui-liveapp-page").eq(page_n-1).animate({scale: scale,translate:'0,'+ta+'px'},0,'');
 						//展示 的页面
-						$(".m-liveapp-page").eq(newM-1).css({'top':topV+moveP-initP});	
+						$(".ui-liveapp-page").eq(newM-1).css({'top':topV+moveP-initP});	
 					}
 
 					//查看变量
@@ -222,13 +222,13 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 					taX="-96px"
 				
 				//上一页的消失状态
-				$(".m-liveapp-page").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease')
+				$(".ui-liveapp-page").eq(page_n-1).animate({'top':0,scale: 0.8,translate:'0,'+taX},500,'ease')
 
 				//当前页自动完成动画
-				$(".m-liveapp-page").eq(newM-1).animate({'top':0,scale: 1,translate:'0,0px'},300,"easeOutSine",function(){
+				$(".ui-liveapp-page").eq(newM-1).animate({'top':0,scale: 1,translate:'0,0px'},300,"easeOutSine",function(){
 					
 					//上一页状态初始化(该页已经不可见)
-					$(".m-liveapp-page").eq(page_n-1).animate({'top':0,scale: 1,translate:'0,0px'},0)
+					$(".ui-liveapp-page").eq(page_n-1).animate({'top':0,scale: 1,translate:'0,0px'},0)
 					
 					//切换成功回调的函数
 					success();
@@ -239,14 +239,14 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 			//返回页面(移动失败)
 			}else if (Math.abs(moveP) >=5){	//页面退回去
 				var an_time=100;//动画时间
-				position ? $(".m-liveapp-page").eq(newM-1).animate({'top':-v_h},an_time,"easeOutSine") : $(".m-liveapp-page").eq(newM-1).animate({'top':v_h},an_time,"easeOutSine");
+				position ? $(".ui-liveapp-page").eq(newM-1).animate({'top':-v_h},an_time,"easeOutSine") : $(".m-liveapp-page").eq(newM-1).animate({'top':v_h},an_time,"easeOutSine");
 				
 				//上一页状态初始化
-				$(".m-liveapp-page").eq(page_n-1).animate({scale: 1,translate:'0,0'},an_time,'ease');
+				$(".ui-liveapp-page").eq(page_n-1).animate({scale: 1,translate:'0,0'},an_time,'ease');
 				
 				//延迟去除active 弹回去有动画效果
 				setTimeout(function(){
-					$(".m-liveapp-page").eq(newM-1).removeClass("active");
+					$(".ui-liveapp-page").eq(newM-1).removeClass("active");
 				},an_time);
 
 				start = true;
@@ -266,8 +266,8 @@ var Msize = $(".m-liveapp-page").size(), 	//页面的数目
 		** 切换成功回调的函数
 		*/							
 		//修改完成后的状态
-		$(".m-liveapp-page").eq(page_n-1).removeClass("show active").addClass("hide");
-		$(".m-liveapp-page").eq(newM-1).removeClass("active hide").addClass("show");
+		$(".ui-liveapp-page").eq(page_n-1).removeClass("show active").addClass("hide");
+		$(".ui-liveapp-page").eq(newM-1).removeClass("active hide").addClass("show");
 		
 		// 滑动成功加载多面的图片
 		//lazy_bigP();
