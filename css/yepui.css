@@ -1000,8 +1000,8 @@ img {
 ============================================================================= */
 @font-face {
   font-family: 'iconfont';
-  src: url('../../fonts/iconfont.eot?v=1.0.1');
-  src: url('../../fonts/iconfont.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../../fonts/iconfont.woff?v=1.0.1') format('woff'), url('../../fonts/iconfont.ttf?v=1.0.1') format('truetype'), url('../../fonts/iconfont.svg?v=1.0.1#fontawesomeregular') format('svg');
+  src: url('../fonts/iconfont.eot?v=1.0.1');
+  src: url('../fonts/iconfont.eot?#iefix&v=1.0.1') format('embedded-opentype'), url('../fonts/iconfont.woff?v=1.0.1') format('woff'), url('../fonts/iconfont.ttf?v=1.0.1') format('truetype'), url('../fonts/iconfont.svg?v=1.0.1#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -3502,6 +3502,10 @@ img {
   line-height: 24px;
   max-height: 24px;
 }
+.ui-list-text .ui-list-dt .dt-note {
+  color: #999999;
+  margin-left: 5px;
+}
 .ui-list-text .ui-list-dc {
   display: block;
   margin: 0;
@@ -3794,7 +3798,7 @@ img {
 }
 .ui-select select {
   width: 100%;
-  height: 100%;
+  height: 44px;
   border: 0;
   background: 0 0;
   -webkit-appearance: none;
@@ -3861,11 +3865,12 @@ img {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-.ui-form-one .btn.btn-primary {
+.ui-form-one .btn {
+  border-left: 1px solid #dddddd;
   height: 100%;
   width: 200px;
   line-height: 44px;
-  border-color: 0;
+  border-width: 0px 0px 0px 1px;
   border-radius: 0;
 }
 .ui-form-one .ui-form-item-textarea {
@@ -4215,4 +4220,276 @@ img {
 .ui-loading .ui-loading-box-piano .piano-key .key5 {
   -webkit-animation-delay: -0.8s;
           animation-delay: -0.8s;
+}
+/**
+*
+* 变量
+** 1.设置默认字体大小
+** 2.每份rem的大小
+*
+**/
+/*1*/
+/*2*/
+/**
+* 循环函数 设置 media screen <html> fontsize 
+* min-20px max-40px
+**/
+/**
+* 通用混合函数
+**/
+/**
+* resets
+**/
+body,
+html,
+ul,
+ol,
+section,
+header,
+footer {
+  margin: 0;
+  padding: 0;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/**
+* start
+**/
+html#html {
+  height: 100%;
+  font-size: 20px;
+}
+@media only screen and (min-width: 352px) {
+  html#html {
+    font-size: 22px !important;
+  }
+}
+@media only screen and (min-width: 384px) {
+  html#html {
+    font-size: 24px !important;
+  }
+}
+@media only screen and (min-width: 416px) {
+  html#html {
+    font-size: 26px !important;
+  }
+}
+@media only screen and (min-width: 448px) {
+  html#html {
+    font-size: 28px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html#html {
+    font-size: 30px !important;
+  }
+}
+@media only screen and (min-width: 512px) {
+  html#html {
+    font-size: 32px !important;
+  }
+}
+@media only screen and (min-width: 544px) {
+  html#html {
+    font-size: 34px !important;
+  }
+}
+@media only screen and (min-width: 576px) {
+  html#html {
+    font-size: 36px !important;
+  }
+}
+@media only screen and (min-width: 608px) {
+  html#html {
+    font-size: 38px !important;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html#html {
+    font-size: 40px !important;
+  }
+}
+html#html body {
+  height: 100%;
+  margin: 0;
+}
+/**
+* 加载遮罩
+**/
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.mask .loading {
+  width: 200px;
+  height: 90px;
+  top: 50%;
+  right: none;
+  bottom: none;
+  left: 50%;
+  position: absolute;
+  margin-top: -45px;
+  margin-left: -100px;
+  text-align: center;
+  color: #fff;
+}
+.mask .loading:before {
+  width: 20px;
+  height: 20px;
+  content: '';
+  display: inline-block;
+  -webkit-animation: rotate 1s steps(12) infinite;
+  background: url(../images/active/loading_sprite_white.png);
+  -webkit-background-size: auto 20px;
+}
+@-webkit-keyframes rotate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -240px 0;
+  }
+}
+/**
+* 统一的元素
+**/
+.active-footer,
+.act-denglong,
+.act-tit,
+.act-btn,
+.act-btn,
+.act-note {
+  position: absolute;
+}
+/**
+* 正文开始
+**/
+.active-wrap {
+  width: 100%;
+  height: 100%;
+  top: none;
+  right: none;
+  bottom: 0;
+  left: 0;
+  min-height: 20rem;
+  min-width: 14rem;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  background-image: url(../images/active/bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #220a09;
+}
+.active-footer {
+  display: none;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: am-slide-bottom;
+          animation-name: am-slide-bottom;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 100%;
+  height: 6.85rem;
+  top: none;
+  right: none;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/active/ft-bg.png);
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+.act-denglong {
+  display: none;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: am-slide-top;
+          animation-name: am-slide-top;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 6rem;
+  height: 12.25rem;
+  top: 0;
+  right: none;
+  bottom: none;
+  left: 0;
+  background: url(../images/active/denglong.png);
+  background-size: cover;
+}
+.act-tit {
+  display: none;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: am-slide-top;
+          animation-name: am-slide-top;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  width: 10.175rem;
+  height: 9.2rem;
+  top: 0;
+  right: 0;
+  bottom: none;
+  left: none;
+  background: url(../images/active/tit.png);
+  background-size: cover;
+}
+.act-btn {
+  display: none;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: am-scale-heart;
+          animation-name: am-scale-heart;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  width: 5.55rem;
+  height: 5.55rem;
+  top: 50%;
+  right: none;
+  bottom: none;
+  left: 50%;
+  background: url(../images/active/btn.png);
+  background-size: cover;
+  z-index: 1;
+  margin-left: -2.75rem;
+  margin-top: -2rem;
+}
+.act-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.act-note {
+  top: none;
+  right: 2rem;
+  bottom: 2rem;
+  left: none;
+  color: #fff;
+  font-size: .7rem;
+}
+.act-note span {
+  color: #ff5123;
 }

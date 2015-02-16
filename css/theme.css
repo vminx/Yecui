@@ -46,3 +46,44 @@
 
 //---------------------------------------------------------------------------
 */
+.mx-reset-box {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mx-reset-font {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+*
+* header
+*
+**
+.ui-header-default {
+  height: 50px;
+  line-height: 50px;
+}
+
+
+/**
+*
+* list
+*
+**/
+.ui-list-text,
+.ui-list-one {
+  margin-bottom: 0;
+}
+.ui-list-text li,
+.ui-list-one .ui-list-item {
+  border-bottom: 1px solid #dddddd;
+}
+.ui-list-text li:last-child,
+.ui-list-one li:last-child {
+  border: 0;
+}
+.ui-list-tt {
+  color: #333333;
+}

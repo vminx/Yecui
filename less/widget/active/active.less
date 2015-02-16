@@ -1,4 +1,3 @@
-@import url(../../animation.less);
 /**
 *
 * 变量
@@ -6,8 +5,8 @@
 ** 2.每份rem的大小
 *
 **/
-	@global-font-size:20; /*1*/
-	@rem:0.1/(0.1*@global-font-size+0rem); /*2*/
+	@active-font-size:20; /*1*/
+	@rem:0.1/(0.1*@active-font-size+0rem); /*2*/
 
 /**
 * 循环函数 设置 media screen <html> fontsize 
@@ -15,7 +14,7 @@
 **/
 	.for-media-fontsize(@n, @i: 1) when (@i =< @n) {
 	 @w:((320)/@n*@i);
-	 @fz:(@global-font-size+@i*(@global-font-size/@n));
+	 @fz:(@active-font-size+@i*(@active-font-size/@n));
    @media only screen and (min-width:(@w+320px) ) {font-size: (@fz+0px) !important;}
   .for-media-fontsize(@n, (@i + 1));
 }
@@ -46,14 +45,14 @@ body,html,ul,ol,section,header,footer{margin: 0;padding: 0;}
 /**
 * start
 **/
-html {
+html#html {
 	height: 100%;
-  font-size : @global-font-size+0px;
+  font-size : @active-font-size+0px;
   //开始循环
   .for-media-fontsize(10);	//设置media粒度
 }
 
-body{height: 100%;margin: 0;}
+html#html body {height: 100%;margin: 0;}
 
 /**
 * 加载遮罩
@@ -66,7 +65,7 @@ body{height: 100%;margin: 0;}
   		content: '';
   		display: inline-block;
   		-webkit-animation: rotate 1s steps(12) infinite;
-			background: url(img/loading_sprite_white.png);
+			background: url(../images/active/loading_sprite_white.png);
 			-webkit-background-size: auto 20px;
 			@-webkit-keyframes rotate{from{background-position:0 0}to{background-position:-240px 0}}
   	}
@@ -104,7 +103,7 @@ body{height: 100%;margin: 0;}
 	max-width: 640px;
 	margin: 0 auto;
 	position: relative;
-	background-image: url(img/bg.jpg);
+	background-image: url(../images/active/bg.jpg);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-color: #220a09;
@@ -116,7 +115,7 @@ body{height: 100%;margin: 0;}
 	.am-slide-bottom;
 	.wh(100%;274*@rem/2);
 	.box(none;none;0;0);
-	background-image: url(img/ft-bg.png);
+	background-image: url(../images/active/ft-bg.png);
 	background-size: cover;
 	background-position: left bottom;
 	background-repeat: no-repeat;
@@ -128,7 +127,7 @@ body{height: 100%;margin: 0;}
 	.am-slide-top;
 	.wh(120*@rem;245*@rem);
 	.box(0;none;none;0);
-	background: url(img/denglong.png);
+	background: url(../images/active/denglong.png);
 	background-size: cover;
 }
 .act-tit{
@@ -137,7 +136,7 @@ body{height: 100%;margin: 0;}
 	.am-slide-top;
 	.wh(407/2*@rem;368/2*@rem;);
 	.box(0;0;none;none);
-	background: url(img/tit.png);
+	background: url(../images/active/tit.png);
 	background-size: cover;
 }
 .act-btn{
@@ -146,7 +145,7 @@ body{height: 100%;margin: 0;}
 	.am-scale-heart(1s,0s,infinite);
 	.wh(111*@rem;111*@rem);
 	.box(50%;none;none;50%);
-	background: url(img/btn.png);
+	background: url(../images/active/btn.png);
 	background-size: cover;
 	z-index: 1;
 	margin-left: -55*@rem;

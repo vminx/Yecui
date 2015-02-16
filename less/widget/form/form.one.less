@@ -10,7 +10,7 @@
     @ui-form-ul-m:0 0 20px 0;                       //列(ul)的(margin)
     @ui-form-height:44px;                           //每项高度
     @ui-form-fz:16px;                               //字体尺寸
-    @ui-form-padding:0 0px 0 10px;                 //列内边据
+    @ui-form-padding:0 0px 0 10px;                  //列内边据
     @ui-form-lable-w:95px;                          //lable宽度
 
 .ui-form-one {
@@ -19,9 +19,6 @@
 
     //清除默认样式
     input, button, textarea, select {
-        // font-family: inherit;
-        // font-size: inherit;
-        // font-weight: inherit;
         border: 0;
         background: 0 0;
         -webkit-appearance: none;
@@ -60,15 +57,18 @@
 
 
     }
-    //验证码
-    .btn.btn-primary{
+
+    // 验证码按钮
+    .btn{
+         .mx-bd-l();
          height: 100%;
          width: 200px;
          line-height: @ui-form-height;
-         border-color: 0;
+         border-width: 0px 0px 0px 1px;
          border-radius: 0;
     }
-    //textarea需要独立高度
+
+    // textarea需要独立高度
     .ui-form-item-textarea{
         height: 65px;
         line-height: 44px;
@@ -76,7 +76,8 @@
             margin-top: 13px;
         }
     }
-    //创建关闭按钮
+
+    // 创建关闭按钮
     .ui-form-link{
         position: relative;
 

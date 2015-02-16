@@ -56,24 +56,8 @@
   font-weight: normal;
   font-style: normal;
 }
-.order-submit {
-  font-size: 1.6rem;
-}
-.order-submit img {
-  background: #f1f1f1;
-}
-.order-submit .ui-list-text,
-.order-submit .ui-list-one {
-  margin-bottom: 0;
-}
-.order-submit .ui-list-text li,
-.order-submit .ui-list-one .ui-list-item {
-  border-bottom: 1px solid #dddddd;
-}
-.order-submit .ui-list-text li:last-child,
-.order-submit .ui-list-one li:last-child {
-  border: 0;
-}
-.order-submit .ui-list-tt {
-  color: #333333;
-}
+/**
+*
+* write your css
+*
+**/
