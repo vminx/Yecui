@@ -1,0 +1,54 @@
+// Tab 基础样式
+//
+// Description: tab切换
+//
+//模块基本结构
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+//
+//
+// Variables
+  // @ui-menu-position:  relative;
+
+// =============================================================================
+// Browser Resets
+// =============================================================================
+.ui-list{
+    a:hover,
+    a:focus{
+    outline: none;
+    }
+}
+
+.ui-list,
+.ui-list li{
+    .mx-reset-box();
+}
+// =============================================================================
+
+.ui-list {
+    display: block;
+   .ui-list-p{}                 //图片模块        (picture)
+   .ui-list-d{                  //文字模块        (doc)
+        .ui-list-dt{}           //文字模块标题     (title)
+        .ui-list-dc{}           //文字模块内容     (content)
+   }
+}
+.ui-list-tt{
+    .mx-reset-box();
+    font-size: 16px;
+    line-height: 40px;
+    margin-left: 10px;
+    color: @global-primary;
+    font-weight: bold;
+}
+.ui-list-active{
+  &:active{background: #f1f1f1;}
+}

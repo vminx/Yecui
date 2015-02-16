@@ -3270,25 +3270,22 @@ img {
   background: #0e90d2;
   color: #ffffff;
 }
-/*	
-
-<div class="ui-header ui-header-default ui-header-fixed">
-	<div class="ui-header-left ui-header-nav"></div>
-	<div class="ui-header-title"></div>
-	<div class="ui-header-right ui-header-nav"></div>
-</div>	
-
-*/
-.ui-list a:hover,
-.ui-list a:focus {
-  outline: none;
-}
-.ui-list,
-.ui-list li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+/*==========  list 基础样式  ==========*/
+/**
+*** 模块基本结构
+    <ul class="ui-list ui-list-text">
+      <li class="ui-list-item ui-list-link">
+        <div class="ui-list-p">
+          <img src="../img/pic.jpg" alt="">
+        </div>
+        <div class="ui-list-d">
+          <h4 class="ui-list-dt">标题</h4>
+          <p class="ui-list-dc">内容</p>
+        </div>
+      </li>
+    </ul>
+*
+**/
 .ui-list {
   display: block;
 }
@@ -3306,14 +3303,21 @@ img {
   background: #f1f1f1;
 }
 /**
-  * Header Theme: default
-  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
-  */
-.ui-list-one {
+*
+* 合并专项
+*
+**/
+.ui-list-text,
+.ui-list-one,
+.ui-list-fun,
+.ui-list-brick {
   background: #fff;
   margin: 0 0 20px 0;
 }
-.ui-list-one .ui-list-item {
+.ui-list-text .ui-list-item,
+.ui-list-one .ui-list-item,
+.ui-list-fun .ui-list-item,
+.ui-list-brick .ui-list-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -3321,16 +3325,23 @@ img {
   display: -ms-flex;
   display: flex;
   margin: 0 0 0 10px;
+  min-height: 45px;
 }
-.ui-list-one .ui-list-link {
+.ui-list-text .ui-list-link,
+.ui-list-one .ui-list-link,
+.ui-list-fun .ui-list-link,
+.ui-list-brick .ui-list-link {
   position: relative;
   padding-right: 28px;
 }
-.ui-list-one .ui-list-link:after {
-  right: 10px;
+.ui-list-text .ui-list-link:after,
+.ui-list-one .ui-list-link:after,
+.ui-list-fun .ui-list-link:after,
+.ui-list-brick .ui-list-link:after {
   content: '';
   position: absolute;
   top: 50%;
+  right: 10px;
   margin-top: -4px;
   display: inline-block;
   width: 8px;
@@ -3341,148 +3352,70 @@ img {
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.ui-list-one .ui-list-p {
-  width: 100px;
-  margin: 10px 10px 10px 0;
-  position: relative;
-}
-.ui-list-one .ui-list-p img {
-  width: 100%;
-}
-.ui-list-one .ui-list-d {
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  -webkit-box-flex: 1;
-          flex: 1;
-  overflow: hidden;
-  margin-left: 0;
-  padding-right: 10px;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  display: box;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-}
-.ui-list-one .ui-list-dt {
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-weight: 300;
-  color: #555555;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  line-height: 24px;
-  max-height: 48px;
-}
-.ui-list-one .ui-list-dc {
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  color: #555555;
-}
-/**
-  * Header Theme: default
-  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
-  */
-.ui-list-brick {
-  padding: 10px;
-  padding-left: 0;
-  background: #fff;
-}
-.ui-list-brick .ui-list-item {
-  padding-left: 10px;
-  display: block;
-}
-.ui-list-brick .ui-list-p {
-  width: 100%;
-}
+.ui-list-text .ui-list-p img,
+.ui-list-one .ui-list-p img,
+.ui-list-fun .ui-list-p img,
 .ui-list-brick .ui-list-p img {
   width: 100%;
 }
+.ui-list-text .ui-list-d,
+.ui-list-one .ui-list-d,
+.ui-list-fun .ui-list-d,
 .ui-list-brick .ui-list-d {
-  height: auto;
-  overflow: hidden;
-}
-.ui-list-brick .ui-list-dt {
-  display: block;
-  margin: 0;
-  margin: 5px 0 0 0;
-  font-weight: 300;
-  color: #555555;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  line-height: 20px;
-  max-height: 40px;
-}
-.ui-list-brick .ui-list-dc {
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 100%;
-  color: gray;
-}
-/**
-  * Header Theme: default
-  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
-  */
-.ui-list-text {
-  background: #fff;
-  margin: 0 0 20px 0;
-}
-.ui-list-text .ui-list-item {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  margin: 0 0 0 10px;
-  color: #555555;
-}
-.ui-list-text .ui-list-link {
-  position: relative;
-  padding-right: 28px;
-}
-.ui-list-text .ui-list-link:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  margin-top: -4px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: #555555 solid;
-  border-width: 2px 2px 0 0;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.ui-list-text .ui-list-d {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
   position: relative;
-  padding: 10px 0;
   overflow: hidden;
   margin-left: 0;
+}
+.ui-list-text .ui-list-dt,
+.ui-list-one .ui-list-dt,
+.ui-list-fun .ui-list-dt,
+.ui-list-brick .ui-list-dt,
+.ui-list-text .ui-list-dc,
+.ui-list-one .ui-list-dc,
+.ui-list-fun .ui-list-dc,
+.ui-list-brick .ui-list-dc {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+.ui-list-text .ui-list-dc,
+.ui-list-one .ui-list-dc,
+.ui-list-fun .ui-list-dc,
+.ui-list-brick .ui-list-dc {
+  color: #999999;
+}
+/**
+*
+* 列表文字
+*
+**/
+.ui-list-text .ui-list-item {
+  color: #555555;
+}
+.ui-list-text .ui-list-p {
+  width: 60px;
+  margin: 10px 10px 10px 0;
+  position: relative;
+}
+.ui-list-text .ui-list-d {
+  padding: 10px 0;
+}
+.ui-list-text .ui-list-dr {
+  padding: 0 10px;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  text-align: center;
 }
 .ui-list-text .ui-list-dt {
   -webkit-box-flex: 1;
@@ -3490,10 +3423,6 @@ img {
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-weight: 300;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -3507,13 +3436,13 @@ img {
   margin-left: 5px;
 }
 .ui-list-text .ui-list-dc {
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 48px;
 }
 .ui-list-text .ui-list-dr {
   -webkit-box-flex: 1;
@@ -3526,60 +3455,17 @@ img {
   text-align: center;
 }
 /**
-  * Header Theme: default
-  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
-  */
-.ui-list-fun {
-  background: #fff;
-  margin: 0 0 20px 0;
-}
-.ui-list-fun .ui-list-item {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  margin: 0 0 0 10px;
-}
-.ui-list-fun .ui-list-link {
-  position: relative;
-}
-.ui-list-fun .ui-list-link .ui-list-d {
-  padding-right: 28px;
-}
-.ui-list-fun .ui-list-link:after {
-  right: 10px;
-  content: '';
-  position: absolute;
-  top: 50%;
-  margin-top: -4px;
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border: #555555 solid;
-  border-width: 2px 2px 0 0;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-.ui-list-fun .ui-list-p {
-  width: 60px;
+*
+* 图文列表
+*
+**/
+.ui-list-one .ui-list-p {
+  width: 100px;
   margin: 10px 10px 10px 0;
   position: relative;
 }
-.ui-list-fun .ui-list-p img {
-  width: 100%;
-}
-.ui-list-fun .ui-list-d {
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  -webkit-box-flex: 1;
-          flex: 1;
-  padding: 10px;
-  overflow: hidden;
-  margin-left: 0;
+.ui-list-one .ui-list-d {
+  padding-right: 10px;
   -webkit-box-flex: 1;
   box-flex: 1;
   display: box;
@@ -3587,26 +3473,7 @@ img {
   -webkit-box-orient: vertical;
   -webkit-box-pack: center;
 }
-.ui-list-fun .ui-list-dr {
-  width: 50px;
-  background: #0e90d2;
-  color: #fff;
-  font-size: 14px;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  display: box;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  text-align: center;
-}
-.ui-list-fun .ui-list-dt {
-  display: block;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 300;
+.ui-list-one .ui-list-dt {
   color: #555555;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -3616,17 +3483,54 @@ img {
   line-height: 24px;
   max-height: 48px;
 }
-.ui-list-fun .ui-list-dc {
+.ui-list-one .ui-list-dc {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 24px;
+}
+/**
+*
+* brick
+*
+**/
+.ui-list-brick {
+  padding: 10px;
+  padding-left: 0;
+  background: #fff;
+}
+.ui-list-brick .ui-list-item {
+  padding-left: 10px;
   display: block;
   margin: 0;
-  padding: 0;
-  font-size: 12px;
-  line-height: 22px;
-  overflow: hidden;
-  white-space: nowrap;
+}
+.ui-list-brick .ui-list-p {
+  width: 100%;
+}
+.ui-list-brick .ui-list-d {
+  height: auto;
+}
+.ui-list-brick .ui-list-dt {
+  margin: 5px 0 0 0;
   text-overflow: ellipsis;
-  max-width: 100%;
-  color: gray;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 24px;
+}
+.ui-list-brick .ui-list-dc {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 24px;
+  max-height: 48px;
 }
 /*	
 
