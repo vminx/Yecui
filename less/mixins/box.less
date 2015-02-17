@@ -1,0 +1,58 @@
+/**
+*
+* 盒模型
+*
+**/
+
+// Micro clear fix
+// via: http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+// -----------------------------------------------------------------------------
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+
+.square(@size) {
+  .size(@size; @size);
+}
+
+.cricle(@size) {
+  border-radius: 1000px;
+  width: @size;
+  height: @size;
+}
+
+// Resize anything
+// -----------------------------------------------------------------------------
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// Scrollable
+// -----------------------------------------------------------------------------
+// TODO: add scrollableX & scrollableY
+.scrollable() {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}

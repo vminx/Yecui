@@ -1,0 +1,43 @@
+/**
+*
+* 排版
+*
+**/
+
+// Text overflow
+// Requires inline-block or block for proper styling
+// -----------------------------------------------------------------------------
+
+.text-overflow(@display: block) {
+  display: @display;
+  word-wrap: normal; /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// CSS image replacement
+// via: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+// -----------------------------------------------------------------------------
+
+.text-hide() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+// Line clamp
+// http://dropshado.ws/post/1015351370/webkit-line-clamp
+// -----------------------------------------------------------------------------
+
+.line-clamp(@lines, @line-height: 1.3em) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @lines; // number of lines to show
+  overflow: hidden;
+  line-height: @line-height;
+  max-height: @line-height * @lines;
+}

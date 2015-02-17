@@ -1,0 +1,51 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+  @import "../mixins.less";
+
+@menu-one-top:                  0;
+@menu-one-width:                100%;
+@menu-one-height:               30px;
+@menu-one-bg:                   #fff;
+@menu-one-acolor:               @gray-dark;
+@menu-one-boxshadow:            0 3px 3px rgba(0, 0, 0, 0.1);
+@menu-one-nav2-bg:              @global-primary;
+@menu-one-nav2-acolor:          @white;
+@menu-one-nav2-width:           25%;
+
+.ui-menu-wacai {
+  position:   relative;
+  width:      @menu-one-width;
+
+  // 提取共性
+  .ui-menu-nav{
+    .item-cont {
+      .text-overflow();
+      display:            block;
+      text-align:         center;
+      font-size:          1.4rem;
+    }
+  }
+
+  // 一级菜单
+  .ui-menu-nav {
+    height:                auto;
+    background:             @menu-one-bg;
+    padding: 10px 0;
+    > .nav-item {
+      > .item-cont {
+        height:         @menu-one-height;
+        line-height:    @menu-one-height;
+        color:          @menu-one-acolor;
+        border-left: 1px solid @gray-light;
+        border-bottom: 1px solid @gray-light;
+      }
+    }
+    .z-active > .item-cont{
+      position: relative;
+    }
+  }
+}
+
+// TODO: 需要新增一个滑动的模式

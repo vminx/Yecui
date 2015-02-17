@@ -1,0 +1,105 @@
+// 公共的
+// Backface visibility
+// 属性定义当元素不面向屏幕时是否可见。
+// 如果在旋转元素不希望看到其背面时，该属性很有用。
+// -----------------------------------------------------------------------------
+// border
+.mx-bd-t(@bd-color:@global-border){border-top: 1px solid     @bd-color;}
+.mx-bd-r(@bd-color:@global-border){border-right: 1px solid   @bd-color;}
+.mx-bd-b(@bd-color:@global-border){border-bottom: 1px solid  @bd-color;}
+.mx-bd-l(@bd-color:@global-border){border-left: 1px solid    @bd-color;}
+
+//垂直居中
+.mx-center(){
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+}
+
+//垂直水平居中
+.mx-center-center(){
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    display: box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    text-align: center;
+}
+
+// 清除normalize内置样式
+.mx-reset-box(){
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mx-reset-font(){
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+}
+// 过度
+.mx-transform(@property,@time){
+	transition-property: @property;
+	transition-duration: @time;
+}
+
+// -----------------------------------------------------------------------------
+.backface-visibility(@visibility) {
+  backface-visibility: @visibility;
+}
+
+// Box shadows
+// -----------------------------------------------------------------------------
+
+.box-shadow(@shadow) {
+  box-shadow: @shadow;
+}
+
+
+// Box sizing
+// -----------------------------------------------------------------------------
+.box-sizing(@boxmodel) {
+  box-sizing: @boxmodel;
+}
+
+
+// Content Columns
+// -----------------------------------------------------------------------------
+.content-columns(@column-count; @column-gap: @grid-gutter-width) {
+  column-count: @column-count;
+  column-gap: @column-gap;
+}
+
+
+// Optional hyphenation
+// -----------------------------------------------------------------------------
+.hyphens(@mode: auto) {
+  word-wrap: break-word;
+  hyphens: @mode;
+}
+
+
+// Placeholder text
+// -----------------------------------------------------------------------------
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1;
+  }
+
+  // Internet Explorer 10+
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+
+  // Safari and Chrome
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+}

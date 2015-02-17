@@ -1,61 +1,82 @@
-/*
-//----------------------------------------------------------------------------
-// - 盒模型              18
+/* 
+公共的 
+    .mx-bd-[t|r|b|l](color)                     1px边框
+    .mx-center()                                通过box-flex垂直居中
+    .mx-center-center()                         垂直水平居中
+    .mx-transform(@property,@time)              过度
+    .placeholder(@color)      
 
-    .clearfix           清除浮动
-    .center-block       居中 相当于margin:0 auto
-    .size(px;px)        宽高不同
-    .square(px)         宽高相等的正方形
-    .resizable          (none|both|horizontal|vertical)
-                        规定用户是否可以调整元素尺寸
-    .scrollable         元素滚动回弹效果'暂时只支持safair'
+盒模型
+    .clearfix                                   清除浮动
+    .center-block                               居中 相当于margin:0 auto
+    .size(px;px)                                宽高不同
+    .square(px)                                 宽高相等的正方形
+    .resizable                                  (none|both|horizontal|vertical)
+                                                规定用户是否可以调整元素尺寸
+    .scrollable                                 元素滚动回弹效果'暂时只支持safair'
 
-
-// - 排版                72
-
+排版
     .text-overflow(display|inline-block)        单行文字截取
     .text-hide                                  就隐藏文字
     .line-clamp(num,line-height)                多行文字截取,(行数,行高)
 
-// - Visual             117
+视觉类
+    .tab-focus                                  焦点状态
+    .border-[t|r|b|l]-radius(px)                边框圆角[top|right|bottom|left](圆角大小)
+    .opacity(num)                               透明度
 
-    .tab-focus                    焦点状态
-    .border-[t|r|b|l]-radius(px)  边框圆角[top|right|bottom|left](圆角大小)
-    .opacity(num)                 透明度
-
-// - Flex Box           159
-
-    .flexbox(flex|inline-flex)  弹性布局父元素
+flex box
+    .flexbox(flex|inline-flex)                  弹性布局父元素
     .flex(num)弹性布局子元素
-    >>>TODO 其他flex以后完善,感觉作用不大,就是加了前缀
 
-// - 箭头               317
-
-    .caret-[d|u|l|r](px,color)                              三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
-    .arrow(color,px,px,deg)                                 箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
+创建箭头
+    .caret-[d|u|l|r](px,color)                  三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
+    .arrow(color,px,px,deg)                     箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
     .angle-base                                 
-    .angle-[u|d|l|r]-variant(color,color,px)                带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
+    .angle-[u|d|l|r]-variant(color,color,px)    带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
 
-// - 元件               493
-// - 公共的             634
-// - 渐变               709
-// - CSS3 前缀          814
-// - 其他               1010
+渐变
+    .gradient-horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%)              水平
+    .gradient-vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%)                垂直
+    .gradient-directional(@start-color: #555; @end-color: #333; @deg: 45deg)                                        方向性
+    .gradient-horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f)      水平3色
+    .gradient-vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f)        垂直3色
+    .gradient-radial(@inner-color: #555; @outer-color: #333)                                                        放射状
+    .gradient-striped(@color: rgba(255,255,255,.15); @angle: 45deg)                                                 条纹
 
-  .retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) 需要做retina适应的背景图
+其他
+    .retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) ;               需要做retina适应的背景图
 
-//---------------------------------------------------------------------------
 */
-.mx-reset-box {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.mx-reset-font {
-  font-size: 1em;
-  font-weight: normal;
-  font-style: normal;
-}
+/* 公共的 */
+/* 盒模型 */
+/**
+*
+* 盒模型
+*
+**/
+/* 排版 */
+/**
+*
+* 排版
+*
+**/
+/* 视觉类 */
+/**
+*
+* 视觉类
+*
+**/
+/* flex box */
+/**
+*
+* 基于css3-flex布局
+*
+**/
+/* 创建箭头 */
+/* 元件 */
+/* 渐变 */
+/* 其他 */
 /*
 	** css reset
 	*/
@@ -3294,12 +3315,11 @@ img {
   说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
   */
 .ui-menu-one {
-  position: absolute;
-  top: 0;
+  position: relative;
   width: 100%;
 }
-.ui-menu-one .ui-menu-nav a,
-.ui-menu-one .ui-menu-nav2 a {
+.ui-menu-one .ui-menu-nav .item-cont,
+.ui-menu-one .ui-menu-nav2 .item-cont {
   word-wrap: normal;
   /* for IE */
   text-overflow: ellipsis;
@@ -3318,24 +3338,22 @@ img {
   display: flex;
   height: 50px;
   background: #eeeeee;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .ui-menu-one .ui-menu-nav > .nav-item {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-.ui-menu-one .ui-menu-nav > .nav-item > a {
+.ui-menu-one .ui-menu-nav > .nav-item > .item-cont {
   height: 50px;
   line-height: 50px;
   color: #333333;
 }
-.ui-menu-one .ui-menu-nav .z-active > a {
+.ui-menu-one .ui-menu-nav .z-active > .item-cont {
   position: relative;
 }
-.ui-menu-one .ui-menu-nav .z-active > a:before {
+.ui-menu-one .ui-menu-nav .z-active > .item-cont:before {
   display: inline-block;
   width: 0;
   height: 0;
@@ -3374,7 +3392,7 @@ img {
   float: left;
   width: 25%;
 }
-.ui-menu-one .ui-menu-nav2 > .nav-item > a {
+.ui-menu-one .ui-menu-nav2 > .nav-item > .item-cont {
   height: 40px;
   line-height: 40px;
   color: #ffffff;
@@ -3428,9 +3446,8 @@ img {
 .ui-tab-one .ui-tab-nav .nav-item {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: center;
 }
 .ui-tab-one .ui-tab-nav .z-active {
@@ -3534,9 +3551,8 @@ img {
 .ui-list-brick .ui-list-d {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
   overflow: hidden;
   margin-left: 0;
@@ -3606,9 +3622,8 @@ img {
 .ui-list-text .ui-list-dt {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -3871,9 +3886,8 @@ img {
 .ui-slide.ui-slide-horizbar .ui-slide-hd li {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .ui-slide.ui-slide-horizbar .ui-slide-bd li img {
   width: 100%;
