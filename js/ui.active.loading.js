@@ -1,9 +1,9 @@
 var imgUrls = [
-    '../images/active/bg.jpg',
-    '../images/active/btn.png',
-    '../images/active/denglong.png',
-    '../images/active/ft-bg.png',
-    '../images/active/tit.png'
+    '../img/active/bg.jpg',
+    '../img/active/btn.png',
+    '../img/active/denglong.png',
+    '../img/active/ft-bg.png',
+    '../img/active/tit.png'
 ];
 var imgs = [];
 var sum = 0;

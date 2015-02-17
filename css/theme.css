@@ -57,6 +57,10 @@
   font-style: normal;
 }
 /**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+/**
 *
 * header
 *
@@ -98,6 +102,103 @@
 }
 /**
 *
-* list
+* menu
 *
 **/
+.model-menu {
+  position: relative;
+  z-index: 1020;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.model-menu .ui-menu-nav {
+  margin: 0;
+  padding: 0;
+}
+.model-menu .nav-item {
+  list-style: none;
+}
+.model-menu .ui-menu-nav a,
+.model-menu .ui-menu-nav2 a {
+  word-wrap: normal;
+  /* for IE */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.model-menu .ui-menu-nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  height: 50px;
+  background: #eeeeee;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.model-menu .ui-menu-nav > .nav-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.model-menu .ui-menu-nav > .nav-item > a {
+  height: 50px;
+  line-height: 50px;
+  color: #333333;
+}
+.model-menu .ui-menu-nav .z-active > a {
+  position: relative;
+}
+.model-menu .ui-menu-nav .z-active > a:before {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: 6px solid #0e90d2;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 0 dotted;
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+  content: '';
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+}
+.model-menu .ui-menu-nav2 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background: #0e90d2;
+  margin: 0;
+  padding: 0;
+}
+.model-menu .ui-menu-nav2:before,
+.model-menu .ui-menu-nav2:after {
+  content: " ";
+  display: table;
+}
+.model-menu .ui-menu-nav2:after {
+  clear: both;
+}
+.model-menu .ui-menu-nav2 > .nav-item {
+  float: left;
+  width: 25%;
+}
+.model-menu .ui-menu-nav2 > .nav-item > a {
+  height: 40px;
+  line-height: 40px;
+  color: #ffffff;
+}

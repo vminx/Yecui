@@ -14,71 +14,71 @@
 @menu-one-nav2-acolor:          @white;
 @menu-one-nav2-width:           25%;
 
-  .ui-menu-one {
-    position:   absolute;
-    top:        @menu-one-top;
-    width:      @menu-one-width;
+.ui-menu-one {
+position:   absolute;
+top:        @menu-one-top;
+width:      @menu-one-width;
 
-    //提取共性
-    .ui-menu-nav,
-    .ui-menu-nav2{
-        a {
-            .text-overflow();
-            display:            block;
-            text-align:         center;
-            font-size:          1.4rem;
-        }
+  // 提取共性
+  .ui-menu-nav,
+  .ui-menu-nav2{
+    a {
+      .text-overflow();
+      display:            block;
+      text-align:         center;
+      font-size:          1.4rem;
     }
+  }
 
-    .ui-menu-nav {
-        .flexbox;
-        height:                 @menu-one-height;
-        background:             @menu-one-bg;
-        box-shadow:             @menu-one-boxshadow;
+  // 一级菜单
+  .ui-menu-nav {
+    .flexbox;
+    height:                 @menu-one-height;
+    background:             @menu-one-bg;
+    box-shadow:             @menu-one-boxshadow;
 
-        > .nav-item {
-            .flex(1);
-            > a {
-                height:         @menu-one-height;
-                line-height:    @menu-one-height;
-                color:          @menu-one-acolor;
-            }
-        }
-        .z-active > a{
-            position: relative;
-        }
-        .z-active > a:before{
-            .caret-up(6px,@menu-one-nav2-bg);
-            content: '';
-            bottom: 0;
-            left: 50%;
-            margin-left: -10px;
-            position: absolute;
-
-        }
-
+    > .nav-item {
+      .flex(1);
+      > a {
+        height:         @menu-one-height;
+        line-height:    @menu-one-height;
+        color:          @menu-one-acolor;
+      }
     }
-    .ui-menu-nav2{
-        position:               absolute;
-        top:                    @menu-one-height;
-        left:                   0;
-        width:                  100%;
-        background:             @menu-one-nav2-bg;
-        margin:                 0;
-        padding:                0;
-        .clearfix();
-
-        > .nav-item{
-            float:              left;
-            width:              @menu-one-nav2-width;
-
-            > a{
-                height:         @menu-one-height - 10;
-                line-height:    @menu-one-height - 10;
-                color:          @menu-one-nav2-acolor;
-            }
-        }
+    .z-active > a{
+      position: relative;
     }
+    .z-active > a:before{
+      .caret-up(6px,@menu-one-nav2-bg);
+      content: '';
+      bottom: 0;
+      left: 50%;
+      margin-left: -10px;
+      position: absolute;
+    }
+  }
+  // 二级菜单
+  .ui-menu-nav2{
+    position:               absolute;
+    top:                    @menu-one-height;
+    left:                   0;
+    width:                  100%;
+    background:             @menu-one-nav2-bg;
+    margin:                 0;
+    padding:                0;
+    .clearfix();
+
+    > .nav-item{
+        float:              left;
+        width:              @menu-one-nav2-width;
+
+      > a{
+        height:         @menu-one-height - 10;
+        line-height:    @menu-one-height - 10;
+        color:          @menu-one-nav2-acolor;
+      }
+    }
+  }
 }
 
 // TODO: 需要新增一个滑动的模式

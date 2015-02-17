@@ -47,8 +47,8 @@
   </ul>
     
   <h2 class="ui-list-tt">配送信息</h2>
-  <ul class="ui-form ui-form-one">
-    <li class="ui-form-item">
+  <ul class="ui-list ui-list-text">
+    <li class="ui-list-item ui-list-item-form">
       <label>配送时间</label>
       <!-- 需要独立包裹一个容器,为使用伪类 -->
       <div class="ui-select">
@@ -62,13 +62,18 @@
   </ul>
 
   <h2 class="ui-list-tt">支付信息</h2>
-  <ul class="ui-list ui-list-text  ui-form ui-form-one">
+  <ul class="ui-list ui-list-text">
     <li>
-      <a href="" class="ui-list-item ui-list-link">
+      <a href="" class="ui-list-item">
         <div class="ui-list-d">
           <h4 class="ui-list-dt">支付方式</h4>
         </div>
-        <span class="ui-list-dr">支付宝</span>
+        <span class="ui-list-dr">
+          <label for="#" class="ui-checkbox">
+          支付宝
+          <input type="radio" name="checkbox">
+          </label>
+        </span>
       </a>
     </li>
     <li class="ui-list-item ui-list-link">
@@ -76,12 +81,12 @@
         <h4 class="ui-list-dt">支付方式</h4>
       </div>
     </li>
-    <li class="ui-form-item">
+    <li class="ui-list-item ui-list-item-form">
       <label>验证码</label>
       <input type="text" placeholder="请输入验证码">
-      <div class="btn btn-default">获取验证码</div>
+      <div class="btn btn-captcha">获取验证码</div>
     </li>
-    <li class="ui-form-item">
+    <li class="ui-list-item ui-list-item-form">
       <span>积分抵扣</span>
       <label for="#" class="ui-switch">
         <input type="checkbox">
@@ -90,8 +95,8 @@
   </ul>
 
   <h2 class="ui-list-tt">发票信息</h2>
-  <ul class="ui-form ui-form-one">
-    <li class="ui-form-item">
+  <ul class="ui-list ui-list-text">
+    <li class="ui-list-item ui-list-item-form">
       <span>是否需要发票</span>
       <label for="#" class="ui-switch">
         <input type="checkbox">
@@ -100,15 +105,15 @@
   </ul>
 
   <h2 class="ui-list-tt">备注</h2>
-  <ul class="ui-form ui-form-one">
-    <li class="ui-form-item ui-form-item-textarea">
+  <ul class="ui-list ui-list-text">
+    <li class="ui-list-item ui-list-item-textarea">
       <label for="">备注信息</label>
       <textarea name="" placeholder="详细内容"></textarea>
     </li>
   </ul>
   
   <h2 class="ui-list-tt">商品清单</h2>
-  <ul class="ui-list ui-list-brick rowavg-sm-2">
+  <ul class="ui-list ui-list-brick avg-sm-2">
     <li>
       <a href="" class="ui-list-item">
         <div class="ui-list-p">
@@ -134,7 +139,7 @@
   </ul>
 
   <h2 class="ui-list-tt">商品清单-2</h2>
-  <ul class="ui-list ui-list-one">
+  <ul class="ui-list ui-list-row">
     <li>
       <a href="" class="ui-list-item ui-list-link">
         <div class="ui-list-p">
