@@ -1,0 +1,94 @@
+// Name:            liveapp
+//
+// Description:     场景应用
+//
+// Component:       `.ui-liveapp`
+//
+// Modifiers:       none
+//
+// Uses             none
+//
+// Used by:         none
+//          
+// States:			none
+//          
+// TODO: 1. 
+//       2. 
+//
+// Variables
+// =============================================================================
+@body-bg:#000;
+@page-bg:#fff;
+@bg-position-x:'center';
+@bg-position-y:'top';
+// Mixins
+// =============================================================================
+
+
+/* ==========================================================================
+   Component: liveapp
+ ============================================================================ */
+
+.ui-liveapp{
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 640px;
+	min-width: 320px;
+	background: @body-bg;
+}
+.ui-liveapp-page {
+	position: absolute;
+	left: 0;
+	top: 0%;
+	height: 100%;
+	width: 100%;
+	background: @page-bg;
+	&.show{
+		z-index: 10;
+		display: block;
+	}
+	&.hide {
+		z-index: 5;
+		display: none;
+	}
+	&.active {
+		z-index: 15;
+		display: block;
+	}
+	.page-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-position-x: @bg-position-x;
+		background-position-y: @bg-position-y;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+	.page-arrow{
+		position: fixed;
+		bottom: 30px; 
+		left: 50%; 
+		z-index: 150; 
+		width: 80px;
+		height: 80px; 
+		margin-left: -40px;
+	}
+	.page-arrow-deful:before{
+		.am-arrow-start;
+		content:'';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 36.5px;
+		height: 25px;
+		margin: -14px 0 0 -18px;
+		background-size: 36.5px 25px;
+		-webkit-background-size: 36.5px 25px;
+		background-image: url(../img/arrowT.png);
+		background-repeat: no-repeat;
+		opacity: 0;
+	}
+}

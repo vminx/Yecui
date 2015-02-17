@@ -1,0 +1,47 @@
+// LESS 变量 和 函数 
+@import "base/variables.less";
+@import "base/mixins.less";
+@import "widget/menu/menu.mixins.less";
+
+/**
+*
+* header
+*
+**
+.ui-header-default {
+  height: 50px;
+  line-height: 50px;
+}
+
+
+/**
+*
+* list
+*
+**/
+.ui-list-text,
+.ui-list-one {margin-bottom: 0;}
+
+.ui-list-text li,
+.ui-list-one .ui-list-item{.mx-bd-b();}
+
+.ui-list-text li:last-child,
+.ui-list-one li:last-child{border: 0;}
+
+.ui-list-tt{color: @gray-dark;}
+
+.ui-list-brick {
+   .ui-list-dc{
+      .line-clamp(2,24px);
+    }
+}
+
+/**
+*
+* menu
+*
+**/
+.model-menu{
+	.ui-menu;
+	.ui-menu-one;
+}

@@ -1,0 +1,682 @@
+// Name:              Utility
+//
+// Description:       Useful classes 页面里一些有用的样式
+//
+// Component:
+//                    `.f-scrollable-horizontal`
+//                    `.f-scrollable-vertical`
+        /* Position */
+//                    `.f-fixed`
+//                    `.f-static`
+        /* Border-radius*/
+//                    `.f-square`
+//                    `.f-radius`
+//                    `.f-round`
+//                    `.f-circle`
+        /* Float blocks*/
+//                    `.f-cf`
+//                    `.f-fl`
+//                    `.f-fr`
+//                    `.f-nbfc`
+//                    `.f-center`
+        /* Display */
+//                    `.f-block
+//                    `.f-inline`
+//                    `.f-inline-block`
+//                    `.f-hide`
+//                    `.f-show`
+        /* Vertical alignment*/
+//                    `.f-vertical-align:before`
+//                    `.f-vertical-align-middle`
+//                    `.f-vertical-align-bottom`
+//                    `.f-vertical-align-middle`
+//                    `.f-vertical-align-bottom`
+        /*Responsive width*/
+//                    `.f-responsive-width`
+        /* Margin & Padding*/
+//                    `.f-spacing-variant`
+//
+// =============================================================================
+
+
+/* ==========================================================================
+   Component: Utility
+ ============================================================================ */
+.f-body-bg{
+    background: @gray-lighter;
+}
+.f-bd-t{
+    border: 0;
+    border-top: 1px solid @global-border;
+}
+.f-bd-r{
+    border: 0;
+    border-right: 1px solid @global-border;
+}
+.f-bd-b{
+    border: 0;
+    border-bottom: 1px solid @global-border;
+}
+.f-bd-l{
+    border: 0;
+    border-left: 1px solid @global-border;
+}
+
+.f-scrollable-horizontal {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+.f-scrollable-vertical {
+    height: @utility-scrollable-height;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    resize: vertical;
+}
+
+
+/* Position */
+.f-fixed{
+    position: fixed !important;
+}
+.f-static{
+    position: static !important;
+}
+.f-top-0{
+    top: 0 !important;
+}
+// .f-top
+/* Border-radius*/
+
+.f-square {
+    border-radius: 0;
+}
+
+.f-radius {
+    border-radius: @radius-normal;
+}
+
+.f-round {
+    border-radius: @global-rounded;
+}
+
+.f-circle {
+    border-radius: 50%;
+}
+
+
+/* Float blocks*/
+
+.f-cf {
+    .clearfix();
+}
+
+.f-fl {
+    float: left;
+}
+
+.f-fr {
+    float: right;
+}
+
+.f-nbfc {
+    overflow: hidden;
+}
+
+
+.f-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Display */
+
+.f-block {
+    display: block !important;
+}
+
+.f-inline {
+    display: inline !important;
+}
+
+.f-inline-block {
+    display: inline-block !important;
+}
+
+.f-hide {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.f-show {
+    display: block !important;
+    visibility: visible !important;
+}
+
+// Vertical alignment
+// =============================================================================
+
+/*
+* Remove whitespace between child elements when using `inline-block`
+*/
+
+.f-vertical-align {
+    font-size: 0.001px;
+}
+
+/*
+* The `@{ns}vertical-align` container needs a specific height
+*/
+
+.f-vertical-align:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/*
+* Sub-object which can have any height
+* 1. Reset whitespace hack
+*/
+
+.f-vertical-align-middle,
+.f-vertical-align-bottom {
+    display: inline-block;
+    font-size: @global-font-size; /* 1 */
+    max-width: 100%;
+}
+
+.f-vertical-align-middle {
+    vertical-align: middle;
+}
+
+.f-vertical-align-bottom {
+    vertical-align: bottom;
+}
+
+
+// Responsive width
+// =============================================================================
+
+.f-responsive-width {
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+}
+
+
+// =============================================================================
+// Margin & Padding
+// =============================================================================
+
+// margin mixin
+
+.spacing-variant(@type, @dimension) {
+    .f-@{type}@{dimension} {
+    @{type}@{dimension}: @global-margin;
+    }
+
+    .f-@{type}@{dimension}-xs {
+    @{type}@{dimension}: @global-margin-xs;
+    }
+
+    .f-@{type}@{dimension}-sm {
+    @{type}@{dimension}: @global-margin-sm;
+    }
+
+    .f-@{type}@{dimension}-lg {
+    @{type}@{dimension}: @global-margin-lg;
+    }
+
+    .f-@{type}@{dimension}-xl {
+    @{type}@{dimension}: @global-margin-xl;
+    }
+}
+
+.spacing-all-variant(@type) {
+    .f-@{type} {
+    @{type}: @global-margin;
+    }
+
+    .f-@{type}-xs {
+    @{type}: @global-margin-xs;
+    }
+
+    .f-@{type}-sm {
+    @{type}: @global-margin-sm;
+    }
+
+    .f-@{type}-lg {
+    @{type}: @global-margin-lg;
+    }
+
+    .f-@{type}-xl {
+    @{type}: @global-margin-xl;
+    }
+}
+
+.spacing-hv-variant (@type, @dimension, @dimension1, @dimension2) {
+    .f-@{type}@{dimension} {
+    @{type}@{dimension1}: @global-margin;
+    @{type}@{dimension2}: @global-margin;
+    }
+
+    .f-@{type}@{dimension}-xs {
+    @{type}@{dimension1}: @global-margin-xs;
+    @{type}@{dimension2}: @global-margin-xs;
+    }
+
+    .f-@{type}@{dimension}-sm {
+    @{type}@{dimension1}: @global-margin-sm;
+    @{type}@{dimension2}: @global-margin-sm;
+    }
+
+    .f-@{type}@{dimension}-lg {
+    @{type}@{dimension1}: @global-margin-lg;
+    @{type}@{dimension2}: @global-margin-lg;
+    }
+
+    .f-@{type}@{dimension}-xl {
+    @{type}@{dimension1}: @global-margin-xl;
+    @{type}@{dimension2}: @global-margin-xl;
+    }
+}
+
+
+/* Margin helpers */
+
+.spacing-all-variant(margin);
+.spacing-hv-variant(margin, -horizontal, -left, -right);
+.spacing-hv-variant(margin, -vertical, -top, -bottom);
+.spacing-variant(margin, -top);
+.spacing-variant(margin, -bottom);
+.spacing-variant(margin, -left);
+.spacing-variant(margin, -right);
+
+/* Padding helpers */
+
+.spacing-all-variant(padding);
+.spacing-hv-variant(padding, -horizontal, -left, -right);
+.spacing-hv-variant(padding, -vertical, -top, -bottom);
+.spacing-variant(padding, -top);
+.spacing-variant(padding, -bottom);
+.spacing-variant(padding, -left);
+.spacing-variant(padding, -right);
+
+
+// =============================================================================
+// Foundation Visibility HTML Classes
+// =============================================================================
+
+/* small displays */
+
+@media @screen {
+    .f-show-sm-only,
+    .f-show-sm-up,
+    .f-show-sm,
+    .f-show-sm-down,
+    .f-hide-md-only,
+    .f-hide-md-up,
+    .f-hide-md,
+    .f-show-md-down,
+    .f-hide-lg-only,
+    .f-hide-lg-up,
+    .f-hide-lg,
+    .f-show-lg-down {
+    display: inherit !important;
+    }
+
+    .f-hide-sm-only,
+    .f-hide-sm-up,
+    .f-hide-sm,
+    .f-hide-sm-down,
+    .f-show-md-only,
+    .f-show-md-up,
+    .f-show-md,
+    .f-hide-md-down,
+    .f-show-lg-only,
+    .f-show-lg-up,
+    .f-show-lg,
+    .f-hide-lg-down {
+    display: none !important;
+    }
+}
+
+/* medium displays */
+
+@media @medium-up {
+    .f-hide-sm-only,
+    .f-show-sm-up,
+    .f-hide-sm,
+    .f-hide-sm-down,
+    .f-show-md-only,
+    .f-show-md-up,
+    .f-show-md,
+    .f-show-md-down,
+    .f-hide-lg-only,
+    .f-hide-lg-up,
+    .f-hide-lg,
+    .f-show-lg-down {
+    display: inherit !important;
+    }
+
+    .f-show-sm-only,
+    .f-hide-sm-up,
+    .f-show-sm,
+    .f-show-sm-down,
+    .f-hide-md-only,
+    .f-hide-md-up,
+    .f-hide-md,
+    .f-hide-md-down,
+    .f-show-lg-only,
+    .f-show-lg-up,
+    .f-show-lg,
+    .f-hide-lg-down {
+    display: none !important;
+    }
+}
+
+/* large displays */
+
+@media @large-up {
+    .f-hide-sm-only,
+    .f-show-sm-up,
+    .f-hide-sm,
+    .f-hide-sm-down,
+    .f-hide-md-only,
+    .f-show-md-up,
+    .f-hide-md,
+    .f-hide-md-down,
+    .f-show-lg-only,
+    .f-show-lg-up,
+    .f-show-lg,
+    .f-show-lg-down {
+    display: inherit !important;
+    }
+
+    .f-show-sm-only,
+    .f-hide-sm-up,
+    .f-show-sm,
+    .f-show-sm-down,
+    .f-show-md-only,
+    .f-hide-md-up,
+    .f-show-md,
+    .f-show-md-down,
+    .f-hide-lg-only,
+    .f-hide-lg-up,
+    .f-hide-lg,
+    .f-hide-lg-down {
+    display: none !important;
+    }
+}
+
+@media @landscape {
+    .f-show-landscape,
+    .f-hide-portrait {
+    display: inherit !important;
+    }
+
+    .f-hide-landscape,
+    .f-show-portrait {
+    display: none !important;
+    }
+    }
+
+    @media @portrait {
+    .f-show-portrait,
+    .f-hide-landscape {
+    display: inherit !important;
+    }
+
+    .f-hide-portrait,
+    .f-show-landscape {
+    display: none !important;
+    }
+}
+
+
+// =============================================================================
+// Text Utility
+// =============================================================================
+
+// Font family
+// -----------------------------------------------------------------------------
+
+.f-sans-serif {
+    font-family: @font-family-sans-serif;
+}
+
+.f-serif {
+    font-family: @font-family-serif;
+}
+
+.f-kai {
+    font-family: @font-family-kai;
+}
+
+.f-monospace {
+    font-family: @font-family-monospace;
+}
+
+
+// Text color
+// -----------------------------------------------------------------------------
+
+.f-text-primary {
+    color: @global-primary;
+}
+
+.f-text-secondary {
+    color: @global-secondary;
+}
+
+.f-text-success {
+    color: @global-success;
+}
+
+.f-text-warning {
+    color: @global-warning;
+}
+
+.f-text-danger {
+    color: @global-danger;
+}
+
+.f-link-muted {
+    color: #666;
+    a {
+    color: #666;
+    }
+
+    &:hover,
+    & a:hover {
+    color: #555;
+    }
+}
+
+
+// Text size
+// -----------------------------------------------------------------------------
+
+.f-text-default {
+    font-size: @base-font-size;
+}
+
+/*
+.f-text-xxs {
+  font-size: @font-size-xxs;
+}
+*/
+
+.f-text-xs {
+    font-size: @font-size-xs;
+}
+
+.f-text-sm {
+    font-size: @font-size-sm;
+}
+
+.f-text-lg {
+    font-size: @font-size-lg;
+}
+
+.f-text-xl {
+    font-size: @font-size-xl;
+}
+
+.f-text-xxl {
+    font-size: @font-size-xxl;
+}
+
+.f-text-xxxl {
+    font-size: @font-size-xxxl;
+}
+
+
+// Text overflow
+// Requires inline-block or block for proper styling
+// =============================================================================
+
+.f-ellipsis,
+.f-text-truncate {
+    word-wrap: normal; /* for IE */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.f-text-break {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.f-text-nowrap {
+    white-space: nowrap;
+}
+
+
+[class*='f-align-'] {
+    margin-bottom: 1rem;
+}
+
+.f-align-left {
+    margin-right: 1rem;
+    float: left;
+}
+
+.f-align-right {
+    margin-left: 1rem;
+    float: right;
+}
+
+
+/** Only display content to screen readers
+ * See: http://a11yproject.com/posts/how-to-hide-content/
+ */
+
+.f-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/* Text Image Replacement */
+
+.f-text-ir {
+    .text-hide();
+}
+
+
+/* Text align */
+
+// Text align mixin
+.text-align-variant(@point) {
+    .f-@{point}text-left {
+    text-align: left !important;
+  }
+
+  .f-@{point}text-right {
+    text-align: right !important;
+  }
+
+  .f-@{point}text-center {
+    text-align: center !important;
+  }
+
+  .f-@{point}text-justify {
+    text-align: justify !important;
+  }
+}
+
+@media @screen {
+    .text-align-variant(~"");
+}
+
+@media @small-only {
+    .text-align-variant(sm-only-);
+}
+
+@media @medium-only {
+    .text-align-variant(md-only-);
+}
+
+@media @medium-up {
+    .text-align-variant(md-);
+}
+
+@media @large-up {
+    .text-align-variant(lg-);
+}
+
+.f-text-top {
+    vertical-align: top !important;
+}
+
+.f-text-middle {
+    vertical-align: middle !important;
+}
+
+.f-text-bottom {
+    vertical-align: bottom !important;
+}
+
+
+// angle
+// ========================================================================
+
+.f-angle {
+    position: absolute;
+    .angle-base;
+}
+
+.f-angle-up {
+    top: 0;
+    .angle-up-variant();
+}
+
+.f-angle-down {
+    .angle-down-variant();
+}
+
+.f-angle-left {
+    .angle-left-variant();
+}
+
+.f-angle-right {
+    .angle-right-variant();
+}
