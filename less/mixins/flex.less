@@ -3,8 +3,16 @@
 * 基于css3-flex布局
 *
 **/
+.flexbox{
+  display: box;
+  display: -webkit-box;
+}
+.flex(@colums){
+  box-flex:@colums;
+  -webkit-box-flex:@colums;
+}
 
-// Flexbox display
+/*// Flexbox display
 // 属性: flex | inline-flex
 .flexbox(@display: flex) {
   display: -webkit-box; // Old syntax
@@ -21,9 +29,10 @@
 // 默认属性: 1 0 auto
 // - 应用于: flex items
 .flex(@columns: 1) {
+  display: block;
   -webkit-box-flex: @columns; // Old syntax
   flex: @columns;
-}
+}*/
 
 // Flex 方向
 // - 应用于: flex 父元素
