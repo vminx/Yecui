@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-transform " />
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/yepui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body class="f-body-bg">
+    <h2 class="ui-list-tt">表单输入项-基于List / ui-list-item-form</h2>
+    <ul class="ui-list ui-list-text">
+        <li class="ui-list-item ui-list-item-form">
+            <label>用户名</label>
+            <input type="text" placeholder="请输入用户名">
+        </li>
+        <li class="ui-list-item ui-list-item-form">
+            <label>验证码</label>
+            <input type="text" placeholder="请输入验证码">
+            <div class="btn btn-captcha">获取验证码</div>
+        </li>
+        <li class="ui-list-item ui-list-item-textarea">
+            <label>地址</label>
+            <textarea name="" placeholder="详细地址"></textarea>
+        </li>
+        <li class="ui-list-item ui-list-item-form">
+            <label>选项 </label>
+            <!-- 需要独立包裹一个容器,为使用伪类 -->
+            <div class="ui-select">
+                <select name="select" id="">
+                    <option value="请选择">请选择</option>
+                    <option value="上海">上海</option>
+                    <option value="北京">北京</option>
+                </select>
+            </div>
+        </li>
+        <li class="ui-list-item ui-list-item-form">
+            <span>开关按钮</span>
+            <label for="#" class="ui-switch">
+                <input type="checkbox">
+            </label>
+        </li>
+    </ul>
+
+    <ul class="ui-list ui-list-text">
+        <li class="ui-list-item ui-list-item-form">
+            <label for="#" class="ui-radio">
+                <input type="radio" name="radio">单选按钮
+            </label>
+        </li>
+        <li class="ui-list-item ui-list-item-form">
+            <label for="#" class="ui-radio">
+                <input type="radio" name="radio">单选按钮
+            </label>
+        </li>
+        <li class="ui-list-item ui-list-item-form">
+            <label for="#" class="ui-checkbox">
+                <input type="checkbox" name="checkbox"><span>复选按钮</span>
+            </label>
+        </li>
+    </ul>
+</body>
+
+</html>

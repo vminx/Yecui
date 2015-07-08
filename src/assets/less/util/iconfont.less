@@ -1,0 +1,55 @@
+//
+// iconfont
+// 基于淘宝公共字体图标服务 |  http://www.iconfont.cn/
+//
+//example
+// <a href="#"><i class="icons icons-home"></i> Star</a>
+//
+// Variables
+// =============================================================================
+
+  @fa-font-path: '../fonts';
+  @fa-font: 'iconfont';
+  @fa-font-name: 'iconfont';
+  @fa-version: '1.0.1';
+// 网络字体
+// @fa-font-path: 'http://at.alicdn.com/t';
+// @fa-font-name: 'font_1421637571_9753683';
+
+// /* ==========================================================================
+//    Component: icons
+//  ============================================================================ */
+
+/* Font-face
+============================================================================= */
+
+@font-face {
+  font-family: @fa-font;
+  src: ~"url('@{fa-font-path}/@{fa-font-name}.eot?v=@{fa-version}')";
+  src: ~"url('@{fa-font-path}/@{fa-font-name}.eot?#iefix&v=@{fa-version}') format('embedded-opentype')",
+  ~"url('@{fa-font-path}/@{fa-font-name}.woff?v=@{fa-version}') format('woff')",
+  ~"url('@{fa-font-path}/@{fa-font-name}.ttf?v=@{fa-version}') format('truetype')",
+  ~"url('@{fa-font-path}/@{fa-font-name}.svg?v=@{fa-version}#fontawesomeregular') format('svg')";
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Catchall baseclass
+.icons {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'iconfont';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Individual icons
+.icons-home                   { &:before { content: "\e600"; } }
+.icons-home-lg                   { &:before { content: "\e600"; font-size: 40px;} }
+.icons-back                   { &:before { content: "\e601"; } }
+.icons-more                   { &:before { content: "\e602"; } }
+.icons-down                   { &:before { content: "\e603"; } }

@@ -1,0 +1,34 @@
+/**
+  * Header Theme: default
+  说明: .ui-menu-nav 为一级菜单父元素 .ui-menu-nav2 为二级菜单父元素, 以此类推!
+  */
+
+
+
+//mixins
+
+@ui-tab-height: 50px;           //tab栏目高度
+@ui-tab-fontsize: 14px;          //字体大小
+@ui-tab-fontcolor: @black;          //字体颜色
+
+  .ui-tab-one{
+    
+    .ui-tab-nav{
+        .flexbox();
+        height: @ui-tab-height;
+        line-height:  @ui-tab-height;
+        font-size: @ui-tab-fontsize;
+        color: @ui-tab-fontcolor;
+
+        .nav-item{
+            .flex(1);
+            text-align: center;
+        }
+        .z-active{
+            background: @global-primary;
+            color: @white;
+        }
+    }
+}
+
+// TODO: 

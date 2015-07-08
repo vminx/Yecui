@@ -1,0 +1,295 @@
+/*==========  list 基础样式  ==========*/
+
+/**
+*** 模块基本结构
+    <ul class="ui-list ui-list-text">
+      <li class="ui-list-item ui-list-link">
+        <div class="ui-list-p">
+          <img src="../img/pic.jpg" alt="">
+        </div>
+        <div class="ui-list-d">
+          <h4 class="ui-list-dt">标题</h4>
+          <p class="ui-list-dc">内容</p>
+        </div>
+      </li>
+    </ul>
+***
+**/
+
+  @ui-list-item-min-h:45px;                     //每列最小高度
+
+  @ui-list-ul-m:0 0 20px 0;                     //列表(ul)的(margin)
+  @ui-list-li-m:0 0 0 10px;                     //每列(li)的(margin)
+  @ui-list-thumb-m:10px 10px 10px 0;            //图文列表-图片间距(margin)
+  @ui-list-spacing: 10px;                       //间距
+  
+  @ui-list-thumb-s-md:100px;                    //图文列表-图片尺寸设置(size)
+  @ui-list-thumb-s-sm:60px;                     //图文列表-图片尺寸设置(size)
+
+  @ui-list-tit-line:2;                          //标题行数
+  @ui-list-tit-lh:24px;                         //标题行高
+  @ui-list-tit-fs:16px;                         //标题大小
+
+  @ui-list-link-s:8px;                          //箭头大小
+  @ui-list-link-r:10px;                         //箭头距右距离
+
+  @ui-list-brick-d-h: auto;                     //块模块-文字区域高度
+
+  @ui-list-form-lable-w:95px;                          //lable宽度
+
+// =============================================================================
+
+.ui-list {
+  display: block;
+  .ui-list-p{}                 //图片模块        (picture)
+  .ui-list-d{                  //文字模块        (doc)
+    .ui-list-dt{}              //文字模块标题     (title)
+    .ui-list-dc{}              //文字模块内容     (content)
+  }
+  //清除默认样式
+  input, textarea, select {
+    border: 0;
+    background: 0 0;
+    -webkit-appearance: none;
+    outline: 0;
+  }
+}
+.ui-list-tt{
+  .mx-reset-box();
+  font-size: 16px;
+  line-height: 40px;
+  margin-left: 10px;
+  color: @global-primary;
+  font-weight: bold;
+}
+.ui-list-active{
+  &:active{background: #f1f1f1;}
+}
+
+/**
+*
+* 合并专项
+*
+**/
+.ui-list-text,
+.ui-list-row,
+.ui-list-brick{
+  background: #fff;
+  margin:  @ui-list-ul-m;
+
+  .ui-list-item{
+    position: relative;
+    .flexbox();
+    margin:  @ui-list-li-m;
+    min-height: @ui-list-item-min-h;
+  }
+
+  // 创建箭头
+  .ui-list-link{
+    position: relative;
+    padding-right: (@ui-list-link-r+(@ui-list-link-s/2))*2;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top:50%;
+      right: @ui-list-link-r;
+      margin-top: -@ui-list-link-s/2;
+      .arrow(@gray,@ui-list-link-s,2px,45deg);
+    }
+  }
+
+  // 图片区域
+  .ui-list-p{
+    img{width: 100%;}
+  }
+
+  // 文字区域
+  .ui-list-d{
+    .flex(1);
+    position: relative;
+    overflow: hidden;
+    margin-left: 0;
+  }
+
+ // 文字区域-标题,内容
+ .ui-list-dt,
+ .ui-list-dc{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+  }
+  
+  // 标题注解
+  .ui-list-dt {
+    color: @gray; // 为防止父元素是a,颜色固定住
+    .dt-note{
+      color: @gray-light;
+      margin-left: 5px;
+    }
+  }
+
+  // 文字区域-内容
+  .ui-list-dc{
+    color: @gray-light;
+  }
+
+  // 右侧固定
+  .ui-list-dr{
+    padding: 0 10px;
+    .mx-center-center;
+   }
+}
+
+/**
+*
+* 列表文字
+*
+**/
+
+.ui-list-text {
+
+    .ui-list-item{
+        color: @gray;
+    }
+
+   //图片区域
+    .ui-list-p{
+      width:  @ui-list-thumb-s-sm;
+      margin:  @ui-list-thumb-m;
+      position: relative;
+    }
+
+    .ui-list-d{
+      padding: @ui-list-spacing 0;
+      .mx-center;
+   }
+
+   .ui-list-dt{
+      .flex(1);
+      .line-clamp(1,@ui-list-tit-lh);
+    }
+    .ui-list-dc{
+      .line-clamp(2,@ui-list-tit-lh);
+    }
+    .ui-list-dr{
+      .mx-center-center;
+    }
+}
+
+/**
+*
+* 图文列表
+*
+**/
+.ui-list-row {
+
+    .ui-list-p{
+      width:  @ui-list-thumb-s-md;
+      margin:  @ui-list-thumb-m;
+      position: relative;
+    }
+    
+    .ui-list-d{
+      padding-right: @ui-list-spacing;
+      .mx-center();
+   }
+
+   .ui-list-dt{
+      color: @gray;
+      .line-clamp(@ui-list-tit-line,@ui-list-tit-lh);
+    }
+    .ui-list-dc{
+      .line-clamp(1,@ui-list-tit-lh);
+    }
+}
+
+/**
+*
+* 块列表
+*
+**/
+.ui-list-brick {
+    padding: @ui-list-spacing;
+    padding-left: 0;
+    background: #fff;
+
+  .ui-list-item{
+    padding-left: @ui-list-spacing;
+    display: block;
+    margin: 0;
+  }
+
+  .ui-list-p{
+    width:  100%;
+  }
+
+  .ui-list-d{
+    height: @ui-list-brick-d-h;
+  }
+
+  .ui-list-dt{
+    margin: 5px 0 0 0;
+    .line-clamp(1,@ui-list-tit-lh);
+  }
+
+  .ui-list-dc{
+    .line-clamp(2,@ui-list-tit-lh);
+  }
+}
+
+/**
+*
+* 表单项(这是一个子项) - 兄弟元素 + .ui-list-item
+*
+**/
+
+.ui-list-item-form{
+  height: @ui-list-item-min-h;
+  line-height: @ui-list-item-min-h;
+  vertical-align: middle;
+  position: relative;
+  color: @gray;
+  .mx-bd-b();
+  .flexbox();
+
+  label:not(.ui-switch):not(.ui-checkout):not(.ui-checkbox):not(.ui-radio){
+    width: @ui-list-form-lable-w;
+    position: absolute;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  input:not([type=checkbox]):not([type=radio]), textarea,.ui-select{
+    width: 100%;
+    line-height: normal;
+    padding-left: @ui-list-form-lable-w;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+  }
+  // 验证码按钮
+  .btn-captcha{
+     .mx-bd-l();
+     height: 100%;
+     width: 200px;
+     line-height: @ui-list-item-min-h;
+     border-width: 0px 0px 0px 1px;
+     border-radius: 0;
+  }
+}
+// textarea需要独立高度
+.ui-list-item-textarea{
+  .ui-list-item-form();
+  height: 65px;
+  line-height: 44px;
+  textarea{
+    margin-top: 13px;
+  }
+}
+
+// 创建清除按钮
+.ui-list-clear{
+  position: relative;
+}
+

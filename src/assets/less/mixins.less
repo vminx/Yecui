@@ -1,0 +1,112 @@
+// LESS 常用函数封装
+/* 
+公共的 
+    .mx-bd-[t|r|b|l](color)                     1px边框
+    .mx-center()                                通过box-flex垂直居中
+    .mx-center-center()                         垂直水平居中
+    .mx-transform(@property,@time)              过度
+    .placeholder(@color)      
+
+盒模型
+    .clearfix                                   清除浮动
+    .center-block                               居中 相当于margin:0 auto
+    .size(px;px)                                宽高不同
+    .square(px)                                 宽高相等的正方形
+    .resizable                                  (none|both|horizontal|vertical)
+                                                规定用户是否可以调整元素尺寸
+    .scrollable                                 元素滚动回弹效果'暂时只支持safair'
+
+排版
+    .text-overflow(display|inline-block)        单行文字截取
+    .text-hide                                  就隐藏文字
+    .line-clamp(num,line-height)                多行文字截取,(行数,行高)
+
+视觉类
+    .tab-focus                                  焦点状态
+    .border-[t|r|b|l]-radius(px)                边框圆角[top|right|bottom|left](圆角大小)
+    .opacity(num)                               透明度
+
+flex box
+    .flexbox(flex|inline-flex)                  弹性布局父元素
+    .flex(num)弹性布局子元素
+
+创建箭头
+    .caret-[d|u|l|r](px,color)                  三角形方向[down|up|left|right](大小,颜色),如果是before,after需要content
+    .arrow(color,px,px,deg)                     箭头> (颜色,长度,宽度,方向),默认右45deg,下135,上-45,左-135
+    .angle-base                                 
+    .angle-[u|d|l|r]-variant(color,color,px)    带边框边框的三角形[up|down|left|right](边框色,背景色,大小),要配合上面base
+
+渐变
+    .gradient-horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%)              水平
+    .gradient-vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%)                垂直
+    .gradient-directional(@start-color: #555; @end-color: #333; @deg: 45deg)                                        方向性
+    .gradient-horizontal-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f)      水平3色
+    .gradient-vertical-3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f)        垂直3色
+    .gradient-radial(@inner-color: #555; @outer-color: #333)                                                        放射状
+    .gradient-striped(@color: rgba(255,255,255,.15); @angle: 45deg)                                                 条纹
+
+其他
+    .retina-bg-img(@file-1x; @file-2x; @width-1x; @height-1x) ;               需要做retina适应的背景图
+
+*/
+
+
+/* 公共的 */
+@import "mixins/util.less";
+
+/* 盒模型 */
+@import "mixins/box.less";
+
+/* 排版 */
+@import "mixins/typeset.less";
+
+/* 视觉类 */
+@import "mixins/visual.less";
+
+/* flex box */
+@import "mixins/flex.less";
+
+/* 创建箭头 */
+@import "mixins/arrow.less";
+
+/* 元件 */
+@import "mixins/atom.less";
+
+/* 渐变 */
+@import "mixins/gradient.less";
+
+/* 其他 */
+@import "mixins/other.less";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

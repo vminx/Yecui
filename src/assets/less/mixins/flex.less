@@ -1,0 +1,121 @@
+/**
+*
+* 基于css3-flex布局
+*
+**/
+.flexbox{
+  display: box;
+  display: -webkit-box;
+}
+.flex(@colums){
+  box-flex:@colums;
+  -webkit-box-flex:@colums;
+}
+
+// -webkit-box-align: center;
+  // -webkit-align-items: center;
+
+/*// Flexbox display
+// 属性: flex | inline-flex
+.flexbox(@display: flex) {
+  display: -webkit-box; // Old syntax
+  display: ~"-webkit-@{display}";
+  display: ~"-moz-@{display}";
+  display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+  display: ~"-ms-@{display}"; // IE11
+  display: @display;
+}
+
+// flex 的简写
+// 和 `flex-grow`, `flex-shrink` and `flex-basis` 结合使用.
+// 第二个和第三个参数(flex-shrink和flex-basis)是可选的。
+// 默认属性: 1 0 auto
+// - 应用于: flex items
+.flex(@columns: 1) {
+  display: block;
+  -webkit-box-flex: @columns; // Old syntax
+  flex: @columns;
+}*/
+
+// Flex 方向
+// - 应用于: flex 父元素
+// 属性: row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+  flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - 应用于: flex 父元素
+// 属性: nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+  flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// `flex-direction` 和 `flex-wrap` 简写
+// - 应用于: flex 父元素
+.flex-flow(@flow: ~"row nowrap") {
+  flex-flow: @flow;
+}
+
+// 轴对齐
+// - 应用于: flex containers
+// flex-start | flex-end | center | space-between | space-around
+.justify-content(@justify: flex-start) {
+  justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - 应用于: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+.align-content(@align: stretch) {
+  // http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/#flex-pack
+  -webkit-box-pack: @align; // Old syntax: start | end | center | justify | distribute
+  align-content: @align;
+}
+
+// 横向对齐
+// - 应用于: flex containers
+// flex-start | flex-end | center | baseline | stretch
+.align-items(@align: stretch) {
+  // start | center | end | baseline | stretch
+  -webkit-box-align: @align;  // Old syntax
+  align-items: @align;
+}
+
+// Display Order
+// - 应用于: flex items
+// <integer>
+.flex-order(@order: 0) {
+  -webkit-flex-order: @order; // Old syntax
+  order: @order;
+}
+
+// Flex grow factor
+// - 应用于: flex items
+// <number>
+.flex-grow(@grow: 0) {
+  flex-grow: @grow;
+}
+
+// Flex shr
+// - 应用于: flex itemsink factor
+// <number>
+.flex-shrink(@shrink: 1) {
+  flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - 应用于: flex itemsnitial main size of the flex item
+// <width>
+.flex-basis(@width: auto) {
+  flex-basis: @width;
+}
+
+// Cross-axis Alignment
+// - 应用于: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+.align-self(@align: auto) {
+  align-self: @align;
+}

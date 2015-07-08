@@ -1,0 +1,175 @@
+// =============================================================================
+// 创建一个 三角形 或 箭头  元素
+// 注意: 如果使用伪类元素如:before,after, `content: ""` 是必须的
+// =============================================================================
+
+// 创建一个 border 三角形 
+// Caret - down
+// -----------------------------------------------------------------------------
+.caret-down(@size: 6px; @color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: @size solid @color;
+  border-right: @size solid transparent;
+  border-left: @size solid transparent;
+  border-bottom: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - up
+// -----------------------------------------------------------------------------
+.caret-up(@size:6px; @color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: @size solid @color;
+  border-right: @size solid transparent;
+  border-left: @size solid transparent;
+  border-top: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - left
+// -----------------------------------------------------------------------------
+.caret-left(@size:6px; @color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-right: @size solid @color;
+  border-top: @size solid transparent;
+  border-bottom: @size solid transparent;
+  border-left: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - right
+// -----------------------------------------------------------------------------
+.caret-right(@size:6px; @color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-left: @size solid @color;
+  border-top: @size solid transparent;
+  border-bottom: @size solid transparent;
+  border-right: 0 dotted;
+  transform: rotate(360deg);
+}
+
+
+// CSS Arrow Mixin
+// 创建一个 箭头 > 元素
+// -----------------------------------------------------------------------------
+//
+// 箭头的方向:  45deg (default) - right
+//             135deg - down
+//             -45deg - up
+//             -135deg -left
+// ------------------------------------------------------------------------
+
+.arrow(@color:#DDD; @width:6px; @border-width: 2px; @deg: 45deg) {
+  display: inline-block;
+  width: @width;
+  height: @width;
+  border: @color solid;
+  border-width: @border-width @border-width 0 0;
+  transform: rotate(@deg);
+}
+
+// 带边框边框的三角形  angle-***-variant需要和 .angle-base 配合使用
+// -----------------------------------------------------------------------------
+
+.angle-base() {
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 0;
+    height: 0;
+    border: 8px dashed transparent;
+    z-index: 1;
+  }
+}
+
+.angle-up-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  &:before,
+  &:after {
+    border-bottom-style: solid;
+    border-width: 0 @border-width @border-width;
+  }
+
+  &:before {
+    border-bottom-color: @border-color;
+    bottom: 0;
+  }
+
+  &:after {
+    border-bottom-color: @bg-color;
+    bottom: -1px;
+  }
+}
+
+.angle-down-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  bottom: -(@border-width + 1);
+
+  &:before,
+  &:after {
+    border-top-style: solid;
+    border-width: @border-width @border-width 0;
+  }
+
+  &:before {
+    border-top-color: @border-color;
+    bottom: 0;
+  }
+
+  &:after {
+    border-top-color: @bg-color;
+    bottom: 1px;
+  }
+}
+
+.angle-left-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  left: -(@border-width + 1);
+
+  &:before,
+  &:after {
+    border-right-style: solid;
+    border-width: @border-width @border-width @border-width 0;
+  }
+
+  &:before {
+    border-right-color: @border-color;
+    left: 0;
+  }
+
+  &:after {
+    border-right-color: @bg-color;
+    left: 1px;
+  }
+}
+
+.angle-right-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px) {
+  right: 0;
+
+  &:before,
+  &:after {
+    border-left-style: solid;
+    border-width: @border-width 0 @border-width @border-width;
+  }
+
+  &:before {
+    border-left-color: @border-color;
+    left: 0;
+  }
+
+  &:after {
+    border-left-color: @bg-color;
+    left: -1px;
+  }
+}

@@ -1,0 +1,94 @@
+/**
+  * Header Theme: btn
+  说明:左右按钮圆点
+  */
+
+// Slide btn Styles
+// =============================================================================
+    
+
+    @slide-btn-btnwidth:              40px;                         //  按钮宽
+    @slide-btn-btnheight:             80px;                         //  按钮高
+    @slide-btn-btncolor:              rgba(0, 0, 0, .8);            //  按钮背景颜色
+    @slide-btn-size:                  20px;                         //  箭头大小
+    @slide-btn-color:                 #fff;                         //  箭头颜色
+
+
+    @slide-btn-hd-height:             40px;                         //  hd 高度
+    @slide-btn-hd-li-height:          20px;                         //  圆点大小
+    @slide-btn-hd-li-gutter:          3px;                          //  圆点间距
+    @slide-btn-hd-bg:                 rgba(0, 0, 0, .8);            //  默认圆点色
+    @slide-btn-hd-active-bg:          @global-primary;              //  高亮原点色
+
+// =============================================================================
+  .ui-slide.ui-slide-btn{
+    .prev,.next{
+        position: absolute;
+        top:50%;
+        margin-top: -@slide-btn-btnheight/2;
+        z-index: 2;
+        width: @slide-btn-btnwidth;
+        height: @slide-btn-btnheight;
+        background: @slide-btn-btncolor;
+        &:before{
+            content:'';
+            position: absolute;
+            top:50%;
+            margin-top: -@slide-btn-size/2;
+            .arrow(#fff,@slide-btn-size,3px)
+        }
+    }
+    .prev{left: 10px;
+        &:before{
+            left: 50%;
+            margin-left: -@slide-btn-size/2 + @slide-btn-size/4;
+            transform:rotate(-135deg);
+        }
+    }
+    .next{right: 10px;
+        &:before{
+            right: 50%;
+            margin-right: -@slide-btn-size/2 + @slide-btn-size/4;
+            transform:rotate(45deg);
+        }
+    }
+
+    .ui-slide-hd {
+        width: 100%;
+        height: @slide-btn-hd-height;
+        line-height: @slide-btn-hd-height - @slide-btn-hd-li-height - @slide-btn-hd-li-height/2;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        text-align: center;
+        
+        ul {
+            overflow: hidden;
+            height: @slide-btn-hd-height;
+           
+            
+            .z-active {
+                background: @slide-btn-hd-active-bg;
+            }
+        }
+
+        li {
+            .text-hide();
+            .cricle(@slide-btn-hd-li-height);
+            display:        inline-block;
+            background:     @slide-btn-hd-bg;
+            margin-left:    @slide-btn-hd-li-gutter;
+            border:         1px solid #fff;
+        }
+    }
+
+    .ui-slide-bd {
+
+        li img {
+            width: @slide-img-width;
+        }
+
+    }
+}
+
+

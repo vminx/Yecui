@@ -1,0 +1,47 @@
+// Tab 基础样式
+//
+// Description: tab切换
+//
+//模块基本结构
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+//
+//
+// Variables
+  // @ui-menu-position:  relative;
+
+// =============================================================================
+// Browser Resets
+// =============================================================================
+.ui-tab{
+    a:hover,
+    a:focus{
+    outline: none;
+    }
+}
+
+.ui-tab ul,
+.ui-tab ul li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+// =============================================================================
+
+.ui-tab {
+    background: @gray-lighter;
+    height: auto;
+    width: 100%;
+    .ui-tab-cont{
+        .cont-item{display: none;}
+        .cont-item:first-child{display: block;}
+    }
+}
+

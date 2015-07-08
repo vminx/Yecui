@@ -1,0 +1,38 @@
+// Header 基础样式
+//
+// Description: 顶部栏目
+//
+//模块基本结构
+/*	
+
+<div class="ui-header ui-header-default ui-header-fixed">
+	<div class="ui-header-left ui-header-nav"></div>
+	<div class="ui-header-title"></div>
+	<div class="ui-header-right ui-header-nav"></div>
+</div>	
+
+*/
+//
+//
+// Variables
+  @ui-menu-position:  relative;
+// =============================================================================
+
+.ui-menu {
+    position:@ui-menu-position;
+    z-index: @z-index-menu;
+    padding: 0;
+    margin: 0;
+
+    .ui-menu-nav {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-item {
+        list-style: none;
+        a {
+            
+        }
+    }
+}

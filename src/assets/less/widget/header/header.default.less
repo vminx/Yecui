@@ -1,0 +1,75 @@
+/**
+  * Header Theme: default
+  说明:
+  */
+
+// Header default Styles
+// =============================================================================
+
+  @header-def-bg:                 @global-primary;
+  @header-def-title-color:        @white;
+  @header-def-title-link-color:   @header-def-title-color;
+  @header-def-nav-color:          @gray-lighter;
+
+// =============================================================================
+
+.ui-header-default {
+
+  background-color: @header-def-bg;
+
+  .ui-header-title {
+    color: @header-def-title-color;
+
+    a {
+      color: @header-def-title-link-color;
+    }
+  }
+
+  .icons {
+    font-size: 20px;
+  }
+
+  .ui-header-nav {
+    color: @header-def-nav-color;
+
+    > a {
+      display: inline-block;
+      min-width: 36px;
+      text-align: center;
+      color: @header-def-nav-color;
+
+      & + a {
+        margin-left: 5px;
+      }
+    }
+
+    .ui-btn {
+      margin-top: 9px;
+      height: 31px;
+      padding: 0 0.5em;
+      line-height: 30px;
+      font-size: 14px;
+      vertical-align: top;
+
+      .icons {
+        font-size: inherit;
+      }
+    }
+
+    .ui-btn-default {
+      color: @gray-light;
+    }
+  }
+
+  .ui-header-nav-title,
+  .ui-header-nav-title + .icons {
+    font-size: 14px;
+  }
+
+  .hook-ui-header-default;
+}
+
+.hook-ui-header-default() {}
+
+// TODO: 增加一个按钮图标模式
+// TODO: 使用 flex 布局，让中间部分宽度自适应

@@ -1,0 +1,58 @@
+/**
+  * Header Theme: num
+  说明:带数字圆点
+  */
+
+// Slide circle Styles
+// =============================================================================
+
+    @slide-num-hd-height:             40px;                         //  hd 高度
+    @slide-num-hd-li-height:          20px;                         //  圆点大小
+    @slide-num-hd-li-gutter:          3px;                          //  圆点间距
+    @slide-num-hd-bg:                 rgba(51, 51, 51, 0.9);        //  默认圆点色
+    @slide-num-hd-active-bg:          @global-primary;              //  高亮原点色
+
+// =============================================================================
+  .ui-slide.ui-slide-num{
+    .ui-slide-hd {
+        width: 100%;
+        height: @slide-num-hd-height;
+        line-height: @slide-num-hd-height;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        text-align: center;
+        
+        ul {
+            overflow: hidden;
+            height: @slide-num-hd-height;
+
+            .z-active {
+                background: @slide-num-hd-active-bg;
+            }
+        }
+
+        li {
+            .cricle(@slide-num-hd-li-height);
+            display:        inline-block;
+            background:     @slide-num-hd-bg;
+            color:          #fff;
+            margin-left:    @slide-num-hd-li-gutter;
+            border:         1px solid #fff;
+            text-align:     center;
+            line-height:    @slide-num-hd-li-height;
+            font-size:      12px;
+            font-family:    @font-family-monospace;
+        }
+    }
+
+    .ui-slide-bd {
+
+        li img {
+            width: @slide-img-width;
+        }
+
+    }
+}
+
+
